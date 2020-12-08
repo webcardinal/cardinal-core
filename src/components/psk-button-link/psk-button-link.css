@@ -1,0 +1,4 @@
+:host(.footer-item) > *,
+:host(.footer-item) psk-icon .icon {
+  margin: 0; padding: 0;
+}
