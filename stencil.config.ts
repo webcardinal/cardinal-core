@@ -43,11 +43,11 @@ export const config: CardinalConfig = {
       type: 'dist-custom-elements-bundle',
       dir: 'build/elements-bundle'
     },
-    // {
-    //   type: 'www',
-    //   dir: 'build/www',
-    //   serviceWorker: null
-    // },
+    {
+      type: 'www',
+      dir: 'build/www',
+      serviceWorker: null
+    },
     {
       type: 'docs-readme'
     }
