@@ -1,7 +1,7 @@
 {
   "name": "@cardinal/core",
   "version": "1.0.0",
-  "description": "",
+  "description": "Cardinal core components, decorators, controllers.",
   "main": "./build/dist/index.cjs.js",
   "module": "./build/dist/index.js",
   "es2015": "./build/dist/esm/index.mjs",
