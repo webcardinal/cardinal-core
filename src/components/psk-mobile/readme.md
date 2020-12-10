@@ -45,6 +45,7 @@ Type: `Promise<void>`
 ### Depends on
 
 - [psk-button](../psk-button)
+- [psk-icon](../psk-icon)
 - [psk-user-profile](../psk-user-profile)
 - [psk-app-menu](../psk-app-menu)
 
@@ -52,6 +53,7 @@ Type: `Promise<void>`
 ```mermaid
 graph TD;
   psk-mobile --> psk-button
+  psk-mobile --> psk-icon
   psk-mobile --> psk-user-profile
   psk-mobile --> psk-app-menu
   style psk-mobile fill:#f9f,stroke:#333,stroke-width:4px

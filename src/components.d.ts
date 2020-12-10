@@ -9,6 +9,8 @@ import { LocationSegments, MatchResults, RouterHistory } from "@stencil/router";
 import { MenuItem } from "./interfaces/MenuItem";
 import { ExtendedHistoryType } from "./interfaces/ExtendedHistoryType";
 import { BreadcrumbSegment } from "./interfaces/BreadcrumbSegment";
+import { StyleCustomisation } from "./interfaces/StyleCustomisation";
+import { WizardStep } from "./interfaces/Wizard";
 export namespace Components {
     interface DropdownRenderer {
         "active": boolean;
@@ -33,6 +35,15 @@ export namespace Components {
     interface MobileProfileRenderer {
         "userInfo": any;
     }
+    interface PskAccordion {
+        "layout": string;
+        "multiple": boolean;
+    }
+    interface PskAccordionItem {
+        "layout": string;
+        "opened": boolean;
+        "title": string;
+    }
     interface PskAppMenu {
         "hamburgerMaxWidth"?: number;
         "historyType": ExtendedHistoryType;
@@ -46,6 +57,23 @@ export namespace Components {
     interface PskAppRouter {
         "historyType": ExtendedHistoryType;
         "routesItems"?: MenuItem[];
+    }
+    interface PskAttachmentsList {
+        "attachmentsClass": string;
+        "files": any;
+        "noAttachmentsText": string;
+        "readOnly": boolean;
+    }
+    interface PskBarcodeGenerator {
+        "data": any;
+        "includeText": boolean;
+        "size"?: any;
+        "title": string;
+        "type": string;
+    }
+    interface PskBarcodeScanner {
+        "data": any;
+        "title": string;
     }
     interface PskBreadcrumbNavigator {
         "eventName": string | null;
@@ -77,8 +105,21 @@ export namespace Components {
         "name"?: string;
         "page": string;
     }
+    interface PskButtonTest {
+    }
     interface PskCard {
         "id": string;
+        "title": string;
+    }
+    interface PskChapter {
+        "guid": string;
+        "title": string;
+    }
+    interface PskChapterWrapper {
+        "title": string;
+    }
+    interface PskCode {
+        "language": string;
         "title": string;
     }
     interface PskCondition {
@@ -93,9 +134,22 @@ export namespace Components {
     interface PskControllerDescriptor {
         "title": string;
     }
+    interface PskCopyClipboard {
+        "id": string;
+    }
+    interface PskCustom {
+    }
+    interface PskDate {
+        "format": string | null;
+        "hoverFormat": string | null;
+        "value": string | number | null;
+    }
     interface PskDefaultRenderer {
         "disableSidebar": boolean;
         "mobileLayout": boolean;
+    }
+    interface PskDescription {
+        "title": string;
     }
     interface PskDetails {
         "eventData": any | null;
@@ -104,6 +158,8 @@ export namespace Components {
         "layout": string;
         "opened": boolean;
         "title": string;
+    }
+    interface PskDraggableList {
     }
     interface PskEcho {
         "value": string | null;
@@ -114,12 +170,51 @@ export namespace Components {
     interface PskExample {
         "title": string;
     }
+    interface PskFilesChooser {
+        "accept"?: string;
+        "eventName"?: string;
+        "filesAppend"?: boolean;
+        "label": string;
+        "listFiles"?: boolean;
+    }
+    interface PskFloatingMenu {
+        "opened": boolean;
+    }
     interface PskForEach {
         "dataViewModel"?: string | null;
     }
     interface PskGrid {
         "columns": number | null;
         "layout": string | null;
+    }
+    interface PskHighlight {
+        "title": string;
+        "typeOfHighlight": string;
+    }
+    interface PskHoc {
+    }
+    interface PskIcon {
+        "classes"?: string | null;
+        "color"?: string | null;
+        "disableColor"?: boolean;
+        "icon": string | null;
+    }
+    interface PskIconChooser {
+        "iconsColor"?: string | null;
+        "iconsSize"?: string | null;
+        "value": string | null;
+    }
+    interface PskImg {
+        "height": string;
+        "src": string;
+        "title": string;
+        "width": string;
+    }
+    interface PskLabelTest {
+        "firstlabel": any;
+        "labelValue": any;
+        "secondLabel": any;
+        "thirdLabel": any;
     }
     interface PskLayout {
         "alignContent": string | null;
@@ -158,6 +253,19 @@ export namespace Components {
     interface PskList {
         "listType": string;
     }
+    interface PskListFeedbacks {
+        "alertRenderer"?: string;
+        "messagesToDisplay"?: number;
+        "styleCustomisation"?: StyleCustomisation | string;
+        "timeAlive"?: number;
+        "toastRenderer"?: string;
+    }
+    interface PskLiveCode {
+        "language": string;
+        "value": string;
+    }
+    interface PskLoadPlaceholder {
+    }
     interface PskMenuItemRenderer {
         "active": boolean;
         "historyType": ExtendedHistoryType;
@@ -172,6 +280,11 @@ export namespace Components {
         "title": string;
         "toggleOptions": (visible: any) => Promise<void>;
         "toggleSidebar": (visible: any) => Promise<void>;
+    }
+    interface PskModal {
+        "eventName": string | null;
+        "expanded": boolean;
+        "opened": boolean;
     }
     interface PskPage {
         "badgeBackgroundColor": string;
@@ -195,12 +308,22 @@ export namespace Components {
     }
     interface PskPageNotFoundRenderer {
     }
+    interface PskPinPopup {
+        "opened": boolean;
+    }
     interface PskPropertyDescriptor {
         "title": string;
     }
     interface PskRouteRedirect {
         "history": RouterHistory;
         "url": any;
+    }
+    interface PskSlideshow {
+        "caption": string;
+        "fadeSeconds": number;
+        "images": string;
+        "title": string;
+        "visibleSeconds": number;
     }
     interface PskSsapp {
         "appName": string;
@@ -210,8 +333,61 @@ export namespace Components {
         "params": string;
         "seed": string;
     }
+    interface PskStepper {
+        "activeStep": WizardStep;
+        "componentRender": string;
+        "handleStepChange": Function;
+        "wizardSteps": WizardStep[];
+    }
+    interface PskStepperRenderer {
+        "activeStep": WizardStep;
+        "handleStepChange": Function;
+        "wizardSteps": WizardStep[];
+    }
     interface PskStyle {
         "src": string | null;
+    }
+    interface PskSwitchButton {
+        "active": string | null;
+        "eventDispatcher": string | null;
+        "inactive": string | null;
+        "title": string | null;
+        "toggleEvent": string | null;
+    }
+    interface PskTab {
+        "title": string;
+    }
+    interface PskTabNavigator {
+        "default": number;
+        "layout": string;
+    }
+    interface PskTable {
+        "cellsWidth": string;
+        "footer": boolean;
+        "header": boolean;
+    }
+    interface PskToc {
+        "title": string;
+    }
+    interface PskToolbar {
+        "actions": string | null;
+        "eventData": string | null;
+        "icons": boolean;
+    }
+    interface PskUiAlert {
+        "message": any;
+        "styleCustomisation": StyleCustomisation | string;
+        "timeAlive": any;
+        "typeOfAlert": string;
+    }
+    interface PskUiLoader {
+        "shouldBeRendered": boolean;
+    }
+    interface PskUiToast {
+        "message": any;
+        "styleCustomisation"?: StyleCustomisation | string;
+        "timeMeasure": string;
+        "timeSinceCreation": number;
     }
     interface PskUserProfile {
         "profileRenderer": any;
@@ -219,6 +395,10 @@ export namespace Components {
     }
     interface PskUserProfileRenderer {
         "userInfo": any;
+    }
+    interface PskWizard {
+        "componentRender": string;
+        "wizardSteps"?: WizardStep[];
     }
     interface QueryPageLink {
         "activeClass": string;
@@ -279,6 +459,18 @@ declare global {
         prototype: HTMLMobileProfileRendererElement;
         new (): HTMLMobileProfileRendererElement;
     };
+    interface HTMLPskAccordionElement extends Components.PskAccordion, HTMLStencilElement {
+    }
+    var HTMLPskAccordionElement: {
+        prototype: HTMLPskAccordionElement;
+        new (): HTMLPskAccordionElement;
+    };
+    interface HTMLPskAccordionItemElement extends Components.PskAccordionItem, HTMLStencilElement {
+    }
+    var HTMLPskAccordionItemElement: {
+        prototype: HTMLPskAccordionItemElement;
+        new (): HTMLPskAccordionItemElement;
+    };
     interface HTMLPskAppMenuElement extends Components.PskAppMenu, HTMLStencilElement {
     }
     var HTMLPskAppMenuElement: {
@@ -296,6 +488,24 @@ declare global {
     var HTMLPskAppRouterElement: {
         prototype: HTMLPskAppRouterElement;
         new (): HTMLPskAppRouterElement;
+    };
+    interface HTMLPskAttachmentsListElement extends Components.PskAttachmentsList, HTMLStencilElement {
+    }
+    var HTMLPskAttachmentsListElement: {
+        prototype: HTMLPskAttachmentsListElement;
+        new (): HTMLPskAttachmentsListElement;
+    };
+    interface HTMLPskBarcodeGeneratorElement extends Components.PskBarcodeGenerator, HTMLStencilElement {
+    }
+    var HTMLPskBarcodeGeneratorElement: {
+        prototype: HTMLPskBarcodeGeneratorElement;
+        new (): HTMLPskBarcodeGeneratorElement;
+    };
+    interface HTMLPskBarcodeScannerElement extends Components.PskBarcodeScanner, HTMLStencilElement {
+    }
+    var HTMLPskBarcodeScannerElement: {
+        prototype: HTMLPskBarcodeScannerElement;
+        new (): HTMLPskBarcodeScannerElement;
     };
     interface HTMLPskBreadcrumbNavigatorElement extends Components.PskBreadcrumbNavigator, HTMLStencilElement {
     }
@@ -321,11 +531,35 @@ declare global {
         prototype: HTMLPskButtonLinkElement;
         new (): HTMLPskButtonLinkElement;
     };
+    interface HTMLPskButtonTestElement extends Components.PskButtonTest, HTMLStencilElement {
+    }
+    var HTMLPskButtonTestElement: {
+        prototype: HTMLPskButtonTestElement;
+        new (): HTMLPskButtonTestElement;
+    };
     interface HTMLPskCardElement extends Components.PskCard, HTMLStencilElement {
     }
     var HTMLPskCardElement: {
         prototype: HTMLPskCardElement;
         new (): HTMLPskCardElement;
+    };
+    interface HTMLPskChapterElement extends Components.PskChapter, HTMLStencilElement {
+    }
+    var HTMLPskChapterElement: {
+        prototype: HTMLPskChapterElement;
+        new (): HTMLPskChapterElement;
+    };
+    interface HTMLPskChapterWrapperElement extends Components.PskChapterWrapper, HTMLStencilElement {
+    }
+    var HTMLPskChapterWrapperElement: {
+        prototype: HTMLPskChapterWrapperElement;
+        new (): HTMLPskChapterWrapperElement;
+    };
+    interface HTMLPskCodeElement extends Components.PskCode, HTMLStencilElement {
+    }
+    var HTMLPskCodeElement: {
+        prototype: HTMLPskCodeElement;
+        new (): HTMLPskCodeElement;
     };
     interface HTMLPskConditionElement extends Components.PskCondition, HTMLStencilElement {
     }
@@ -345,17 +579,47 @@ declare global {
         prototype: HTMLPskControllerDescriptorElement;
         new (): HTMLPskControllerDescriptorElement;
     };
+    interface HTMLPskCopyClipboardElement extends Components.PskCopyClipboard, HTMLStencilElement {
+    }
+    var HTMLPskCopyClipboardElement: {
+        prototype: HTMLPskCopyClipboardElement;
+        new (): HTMLPskCopyClipboardElement;
+    };
+    interface HTMLPskCustomElement extends Components.PskCustom, HTMLStencilElement {
+    }
+    var HTMLPskCustomElement: {
+        prototype: HTMLPskCustomElement;
+        new (): HTMLPskCustomElement;
+    };
+    interface HTMLPskDateElement extends Components.PskDate, HTMLStencilElement {
+    }
+    var HTMLPskDateElement: {
+        prototype: HTMLPskDateElement;
+        new (): HTMLPskDateElement;
+    };
     interface HTMLPskDefaultRendererElement extends Components.PskDefaultRenderer, HTMLStencilElement {
     }
     var HTMLPskDefaultRendererElement: {
         prototype: HTMLPskDefaultRendererElement;
         new (): HTMLPskDefaultRendererElement;
     };
+    interface HTMLPskDescriptionElement extends Components.PskDescription, HTMLStencilElement {
+    }
+    var HTMLPskDescriptionElement: {
+        prototype: HTMLPskDescriptionElement;
+        new (): HTMLPskDescriptionElement;
+    };
     interface HTMLPskDetailsElement extends Components.PskDetails, HTMLStencilElement {
     }
     var HTMLPskDetailsElement: {
         prototype: HTMLPskDetailsElement;
         new (): HTMLPskDetailsElement;
+    };
+    interface HTMLPskDraggableListElement extends Components.PskDraggableList, HTMLStencilElement {
+    }
+    var HTMLPskDraggableListElement: {
+        prototype: HTMLPskDraggableListElement;
+        new (): HTMLPskDraggableListElement;
     };
     interface HTMLPskEchoElement extends Components.PskEcho, HTMLStencilElement {
     }
@@ -375,6 +639,18 @@ declare global {
         prototype: HTMLPskExampleElement;
         new (): HTMLPskExampleElement;
     };
+    interface HTMLPskFilesChooserElement extends Components.PskFilesChooser, HTMLStencilElement {
+    }
+    var HTMLPskFilesChooserElement: {
+        prototype: HTMLPskFilesChooserElement;
+        new (): HTMLPskFilesChooserElement;
+    };
+    interface HTMLPskFloatingMenuElement extends Components.PskFloatingMenu, HTMLStencilElement {
+    }
+    var HTMLPskFloatingMenuElement: {
+        prototype: HTMLPskFloatingMenuElement;
+        new (): HTMLPskFloatingMenuElement;
+    };
     interface HTMLPskForEachElement extends Components.PskForEach, HTMLStencilElement {
     }
     var HTMLPskForEachElement: {
@@ -386,6 +662,42 @@ declare global {
     var HTMLPskGridElement: {
         prototype: HTMLPskGridElement;
         new (): HTMLPskGridElement;
+    };
+    interface HTMLPskHighlightElement extends Components.PskHighlight, HTMLStencilElement {
+    }
+    var HTMLPskHighlightElement: {
+        prototype: HTMLPskHighlightElement;
+        new (): HTMLPskHighlightElement;
+    };
+    interface HTMLPskHocElement extends Components.PskHoc, HTMLStencilElement {
+    }
+    var HTMLPskHocElement: {
+        prototype: HTMLPskHocElement;
+        new (): HTMLPskHocElement;
+    };
+    interface HTMLPskIconElement extends Components.PskIcon, HTMLStencilElement {
+    }
+    var HTMLPskIconElement: {
+        prototype: HTMLPskIconElement;
+        new (): HTMLPskIconElement;
+    };
+    interface HTMLPskIconChooserElement extends Components.PskIconChooser, HTMLStencilElement {
+    }
+    var HTMLPskIconChooserElement: {
+        prototype: HTMLPskIconChooserElement;
+        new (): HTMLPskIconChooserElement;
+    };
+    interface HTMLPskImgElement extends Components.PskImg, HTMLStencilElement {
+    }
+    var HTMLPskImgElement: {
+        prototype: HTMLPskImgElement;
+        new (): HTMLPskImgElement;
+    };
+    interface HTMLPskLabelTestElement extends Components.PskLabelTest, HTMLStencilElement {
+    }
+    var HTMLPskLabelTestElement: {
+        prototype: HTMLPskLabelTestElement;
+        new (): HTMLPskLabelTestElement;
     };
     interface HTMLPskLayoutElement extends Components.PskLayout, HTMLStencilElement {
     }
@@ -411,6 +723,24 @@ declare global {
         prototype: HTMLPskListElement;
         new (): HTMLPskListElement;
     };
+    interface HTMLPskListFeedbacksElement extends Components.PskListFeedbacks, HTMLStencilElement {
+    }
+    var HTMLPskListFeedbacksElement: {
+        prototype: HTMLPskListFeedbacksElement;
+        new (): HTMLPskListFeedbacksElement;
+    };
+    interface HTMLPskLiveCodeElement extends Components.PskLiveCode, HTMLStencilElement {
+    }
+    var HTMLPskLiveCodeElement: {
+        prototype: HTMLPskLiveCodeElement;
+        new (): HTMLPskLiveCodeElement;
+    };
+    interface HTMLPskLoadPlaceholderElement extends Components.PskLoadPlaceholder, HTMLStencilElement {
+    }
+    var HTMLPskLoadPlaceholderElement: {
+        prototype: HTMLPskLoadPlaceholderElement;
+        new (): HTMLPskLoadPlaceholderElement;
+    };
     interface HTMLPskMenuItemRendererElement extends Components.PskMenuItemRenderer, HTMLStencilElement {
     }
     var HTMLPskMenuItemRendererElement: {
@@ -422,6 +752,12 @@ declare global {
     var HTMLPskMobileElement: {
         prototype: HTMLPskMobileElement;
         new (): HTMLPskMobileElement;
+    };
+    interface HTMLPskModalElement extends Components.PskModal, HTMLStencilElement {
+    }
+    var HTMLPskModalElement: {
+        prototype: HTMLPskModalElement;
+        new (): HTMLPskModalElement;
     };
     interface HTMLPskPageElement extends Components.PskPage, HTMLStencilElement {
     }
@@ -447,6 +783,12 @@ declare global {
         prototype: HTMLPskPageNotFoundRendererElement;
         new (): HTMLPskPageNotFoundRendererElement;
     };
+    interface HTMLPskPinPopupElement extends Components.PskPinPopup, HTMLStencilElement {
+    }
+    var HTMLPskPinPopupElement: {
+        prototype: HTMLPskPinPopupElement;
+        new (): HTMLPskPinPopupElement;
+    };
     interface HTMLPskPropertyDescriptorElement extends Components.PskPropertyDescriptor, HTMLStencilElement {
     }
     var HTMLPskPropertyDescriptorElement: {
@@ -459,17 +801,89 @@ declare global {
         prototype: HTMLPskRouteRedirectElement;
         new (): HTMLPskRouteRedirectElement;
     };
+    interface HTMLPskSlideshowElement extends Components.PskSlideshow, HTMLStencilElement {
+    }
+    var HTMLPskSlideshowElement: {
+        prototype: HTMLPskSlideshowElement;
+        new (): HTMLPskSlideshowElement;
+    };
     interface HTMLPskSsappElement extends Components.PskSsapp, HTMLStencilElement {
     }
     var HTMLPskSsappElement: {
         prototype: HTMLPskSsappElement;
         new (): HTMLPskSsappElement;
     };
+    interface HTMLPskStepperElement extends Components.PskStepper, HTMLStencilElement {
+    }
+    var HTMLPskStepperElement: {
+        prototype: HTMLPskStepperElement;
+        new (): HTMLPskStepperElement;
+    };
+    interface HTMLPskStepperRendererElement extends Components.PskStepperRenderer, HTMLStencilElement {
+    }
+    var HTMLPskStepperRendererElement: {
+        prototype: HTMLPskStepperRendererElement;
+        new (): HTMLPskStepperRendererElement;
+    };
     interface HTMLPskStyleElement extends Components.PskStyle, HTMLStencilElement {
     }
     var HTMLPskStyleElement: {
         prototype: HTMLPskStyleElement;
         new (): HTMLPskStyleElement;
+    };
+    interface HTMLPskSwitchButtonElement extends Components.PskSwitchButton, HTMLStencilElement {
+    }
+    var HTMLPskSwitchButtonElement: {
+        prototype: HTMLPskSwitchButtonElement;
+        new (): HTMLPskSwitchButtonElement;
+    };
+    interface HTMLPskTabElement extends Components.PskTab, HTMLStencilElement {
+    }
+    var HTMLPskTabElement: {
+        prototype: HTMLPskTabElement;
+        new (): HTMLPskTabElement;
+    };
+    interface HTMLPskTabNavigatorElement extends Components.PskTabNavigator, HTMLStencilElement {
+    }
+    var HTMLPskTabNavigatorElement: {
+        prototype: HTMLPskTabNavigatorElement;
+        new (): HTMLPskTabNavigatorElement;
+    };
+    interface HTMLPskTableElement extends Components.PskTable, HTMLStencilElement {
+    }
+    var HTMLPskTableElement: {
+        prototype: HTMLPskTableElement;
+        new (): HTMLPskTableElement;
+    };
+    interface HTMLPskTocElement extends Components.PskToc, HTMLStencilElement {
+    }
+    var HTMLPskTocElement: {
+        prototype: HTMLPskTocElement;
+        new (): HTMLPskTocElement;
+    };
+    interface HTMLPskToolbarElement extends Components.PskToolbar, HTMLStencilElement {
+    }
+    var HTMLPskToolbarElement: {
+        prototype: HTMLPskToolbarElement;
+        new (): HTMLPskToolbarElement;
+    };
+    interface HTMLPskUiAlertElement extends Components.PskUiAlert, HTMLStencilElement {
+    }
+    var HTMLPskUiAlertElement: {
+        prototype: HTMLPskUiAlertElement;
+        new (): HTMLPskUiAlertElement;
+    };
+    interface HTMLPskUiLoaderElement extends Components.PskUiLoader, HTMLStencilElement {
+    }
+    var HTMLPskUiLoaderElement: {
+        prototype: HTMLPskUiLoaderElement;
+        new (): HTMLPskUiLoaderElement;
+    };
+    interface HTMLPskUiToastElement extends Components.PskUiToast, HTMLStencilElement {
+    }
+    var HTMLPskUiToastElement: {
+        prototype: HTMLPskUiToastElement;
+        new (): HTMLPskUiToastElement;
     };
     interface HTMLPskUserProfileElement extends Components.PskUserProfile, HTMLStencilElement {
     }
@@ -482,6 +896,12 @@ declare global {
     var HTMLPskUserProfileRendererElement: {
         prototype: HTMLPskUserProfileRendererElement;
         new (): HTMLPskUserProfileRendererElement;
+    };
+    interface HTMLPskWizardElement extends Components.PskWizard, HTMLStencilElement {
+    }
+    var HTMLPskWizardElement: {
+        prototype: HTMLPskWizardElement;
+        new (): HTMLPskWizardElement;
     };
     interface HTMLQueryPageLinkElement extends Components.QueryPageLink, HTMLStencilElement {
     }
@@ -506,40 +926,80 @@ declare global {
         "event-expandable-renderer": HTMLEventExpandableRendererElement;
         "expandable-renderer": HTMLExpandableRendererElement;
         "mobile-profile-renderer": HTMLMobileProfileRendererElement;
+        "psk-accordion": HTMLPskAccordionElement;
+        "psk-accordion-item": HTMLPskAccordionItemElement;
         "psk-app-menu": HTMLPskAppMenuElement;
         "psk-app-root": HTMLPskAppRootElement;
         "psk-app-router": HTMLPskAppRouterElement;
+        "psk-attachments-list": HTMLPskAttachmentsListElement;
+        "psk-barcode-generator": HTMLPskBarcodeGeneratorElement;
+        "psk-barcode-scanner": HTMLPskBarcodeScannerElement;
         "psk-breadcrumb-navigator": HTMLPskBreadcrumbNavigatorElement;
         "psk-button": HTMLPskButtonElement;
         "psk-button-group": HTMLPskButtonGroupElement;
         "psk-button-link": HTMLPskButtonLinkElement;
+        "psk-button-test": HTMLPskButtonTestElement;
         "psk-card": HTMLPskCardElement;
+        "psk-chapter": HTMLPskChapterElement;
+        "psk-chapter-wrapper": HTMLPskChapterWrapperElement;
+        "psk-code": HTMLPskCodeElement;
         "psk-condition": HTMLPskConditionElement;
         "psk-container": HTMLPskContainerElement;
         "psk-controller-descriptor": HTMLPskControllerDescriptorElement;
+        "psk-copy-clipboard": HTMLPskCopyClipboardElement;
+        "psk-custom": HTMLPskCustomElement;
+        "psk-date": HTMLPskDateElement;
         "psk-default-renderer": HTMLPskDefaultRendererElement;
+        "psk-description": HTMLPskDescriptionElement;
         "psk-details": HTMLPskDetailsElement;
+        "psk-draggable-list": HTMLPskDraggableListElement;
         "psk-echo": HTMLPskEchoElement;
         "psk-event-descriptor": HTMLPskEventDescriptorElement;
         "psk-example": HTMLPskExampleElement;
+        "psk-files-chooser": HTMLPskFilesChooserElement;
+        "psk-floating-menu": HTMLPskFloatingMenuElement;
         "psk-for-each": HTMLPskForEachElement;
         "psk-grid": HTMLPskGridElement;
+        "psk-highlight": HTMLPskHighlightElement;
+        "psk-hoc": HTMLPskHocElement;
+        "psk-icon": HTMLPskIconElement;
+        "psk-icon-chooser": HTMLPskIconChooserElement;
+        "psk-img": HTMLPskImgElement;
+        "psk-label-test": HTMLPskLabelTestElement;
         "psk-layout": HTMLPskLayoutElement;
         "psk-layout-item": HTMLPskLayoutItemElement;
         "psk-link": HTMLPskLinkElement;
         "psk-list": HTMLPskListElement;
+        "psk-list-feedbacks": HTMLPskListFeedbacksElement;
+        "psk-live-code": HTMLPskLiveCodeElement;
+        "psk-load-placeholder": HTMLPskLoadPlaceholderElement;
         "psk-menu-item-renderer": HTMLPskMenuItemRendererElement;
         "psk-mobile": HTMLPskMobileElement;
+        "psk-modal": HTMLPskModalElement;
         "psk-page": HTMLPskPageElement;
         "psk-page-loader": HTMLPskPageLoaderElement;
         "psk-page-not-found": HTMLPskPageNotFoundElement;
         "psk-page-not-found-renderer": HTMLPskPageNotFoundRendererElement;
+        "psk-pin-popup": HTMLPskPinPopupElement;
         "psk-property-descriptor": HTMLPskPropertyDescriptorElement;
         "psk-route-redirect": HTMLPskRouteRedirectElement;
+        "psk-slideshow": HTMLPskSlideshowElement;
         "psk-ssapp": HTMLPskSsappElement;
+        "psk-stepper": HTMLPskStepperElement;
+        "psk-stepper-renderer": HTMLPskStepperRendererElement;
         "psk-style": HTMLPskStyleElement;
+        "psk-switch-button": HTMLPskSwitchButtonElement;
+        "psk-tab": HTMLPskTabElement;
+        "psk-tab-navigator": HTMLPskTabNavigatorElement;
+        "psk-table": HTMLPskTableElement;
+        "psk-toc": HTMLPskTocElement;
+        "psk-toolbar": HTMLPskToolbarElement;
+        "psk-ui-alert": HTMLPskUiAlertElement;
+        "psk-ui-loader": HTMLPskUiLoaderElement;
+        "psk-ui-toast": HTMLPskUiToastElement;
         "psk-user-profile": HTMLPskUserProfileElement;
         "psk-user-profile-renderer": HTMLPskUserProfileRendererElement;
+        "psk-wizard": HTMLPskWizardElement;
         "query-page-link": HTMLQueryPageLinkElement;
         "query-pages-router": HTMLQueryPagesRouterElement;
         "sidebar-renderer": HTMLSidebarRendererElement;
@@ -570,6 +1030,15 @@ declare namespace LocalJSX {
     interface MobileProfileRenderer {
         "userInfo"?: any;
     }
+    interface PskAccordion {
+        "layout"?: string;
+        "multiple"?: boolean;
+    }
+    interface PskAccordionItem {
+        "layout"?: string;
+        "opened"?: boolean;
+        "title"?: string;
+    }
     interface PskAppMenu {
         "hamburgerMaxWidth"?: number;
         "historyType"?: ExtendedHistoryType;
@@ -589,6 +1058,23 @@ declare namespace LocalJSX {
         "onGetHistoryType"?: (event: CustomEvent<any>) => void;
         "onNeedRoutes"?: (event: CustomEvent<any>) => void;
         "routesItems"?: MenuItem[];
+    }
+    interface PskAttachmentsList {
+        "attachmentsClass"?: string;
+        "files"?: any;
+        "noAttachmentsText"?: string;
+        "readOnly"?: boolean;
+    }
+    interface PskBarcodeGenerator {
+        "data"?: any;
+        "includeText"?: boolean;
+        "size"?: any;
+        "title"?: string;
+        "type"?: string;
+    }
+    interface PskBarcodeScanner {
+        "data"?: any;
+        "title"?: string;
     }
     interface PskBreadcrumbNavigator {
         "eventName"?: string | null;
@@ -620,8 +1106,22 @@ declare namespace LocalJSX {
         "name"?: string;
         "page"?: string;
     }
+    interface PskButtonTest {
+    }
     interface PskCard {
         "id"?: string;
+        "title"?: string;
+    }
+    interface PskChapter {
+        "guid"?: string;
+        "onPsk-send-chapter"?: (event: CustomEvent<any>) => void;
+        "title"?: string;
+    }
+    interface PskChapterWrapper {
+        "title"?: string;
+    }
+    interface PskCode {
+        "language"?: string;
         "title"?: string;
     }
     interface PskCondition {
@@ -637,10 +1137,24 @@ declare namespace LocalJSX {
     interface PskControllerDescriptor {
         "title"?: string;
     }
+    interface PskCopyClipboard {
+        "id"?: string;
+        "onGetHistoryType"?: (event: CustomEvent<any>) => void;
+    }
+    interface PskCustom {
+    }
+    interface PskDate {
+        "format"?: string | null;
+        "hoverFormat"?: string | null;
+        "value"?: string | number | null;
+    }
     interface PskDefaultRenderer {
         "disableSidebar"?: boolean;
         "mobileLayout"?: boolean;
         "onGetAppVersion"?: (event: CustomEvent<any>) => void;
+    }
+    interface PskDescription {
+        "title"?: string;
     }
     interface PskDetails {
         "eventData"?: any | null;
@@ -649,6 +1163,8 @@ declare namespace LocalJSX {
         "layout"?: string;
         "opened"?: boolean;
         "title"?: string;
+    }
+    interface PskDraggableList {
     }
     interface PskEcho {
         "value"?: string | null;
@@ -659,6 +1175,17 @@ declare namespace LocalJSX {
     interface PskExample {
         "title"?: string;
     }
+    interface PskFilesChooser {
+        "accept"?: string;
+        "eventName"?: string;
+        "filesAppend"?: boolean;
+        "label"?: string;
+        "listFiles"?: boolean;
+    }
+    interface PskFloatingMenu {
+        "onNeedFloatingMenu"?: (event: CustomEvent<any>) => void;
+        "opened"?: boolean;
+    }
     interface PskForEach {
         "dataViewModel"?: string | null;
         "onGetModelEvent"?: (event: CustomEvent<any>) => void;
@@ -666,6 +1193,35 @@ declare namespace LocalJSX {
     interface PskGrid {
         "columns"?: number | null;
         "layout"?: string | null;
+    }
+    interface PskHighlight {
+        "title"?: string;
+        "typeOfHighlight"?: string;
+    }
+    interface PskHoc {
+    }
+    interface PskIcon {
+        "classes"?: string | null;
+        "color"?: string | null;
+        "disableColor"?: boolean;
+        "icon"?: string | null;
+    }
+    interface PskIconChooser {
+        "iconsColor"?: string | null;
+        "iconsSize"?: string | null;
+        "value"?: string | null;
+    }
+    interface PskImg {
+        "height"?: string;
+        "src"?: string;
+        "title"?: string;
+        "width"?: string;
+    }
+    interface PskLabelTest {
+        "firstlabel"?: any;
+        "labelValue"?: any;
+        "secondLabel"?: any;
+        "thirdLabel"?: any;
     }
     interface PskLayout {
         "alignContent"?: string | null;
@@ -706,6 +1262,20 @@ declare namespace LocalJSX {
     interface PskList {
         "listType"?: string;
     }
+    interface PskListFeedbacks {
+        "alertRenderer"?: string;
+        "messagesToDisplay"?: number;
+        "onOpenFeedback"?: (event: CustomEvent<any>) => void;
+        "styleCustomisation"?: StyleCustomisation | string;
+        "timeAlive"?: number;
+        "toastRenderer"?: string;
+    }
+    interface PskLiveCode {
+        "language"?: string;
+        "value"?: string;
+    }
+    interface PskLoadPlaceholder {
+    }
     interface PskMenuItemRenderer {
         "active"?: boolean;
         "historyType"?: ExtendedHistoryType;
@@ -719,6 +1289,12 @@ declare namespace LocalJSX {
         "enableBack"?: boolean;
         "history"?: RouterHistory;
         "title"?: string;
+    }
+    interface PskModal {
+        "eventName"?: string | null;
+        "expanded"?: boolean;
+        "onCloseModal"?: (event: CustomEvent<any>) => void;
+        "opened"?: boolean;
     }
     interface PskPage {
         "badgeBackgroundColor"?: string;
@@ -742,12 +1318,23 @@ declare namespace LocalJSX {
     }
     interface PskPageNotFoundRenderer {
     }
+    interface PskPinPopup {
+        "onSendPin"?: (event: CustomEvent<any>) => void;
+        "opened"?: boolean;
+    }
     interface PskPropertyDescriptor {
         "title"?: string;
     }
     interface PskRouteRedirect {
         "history"?: RouterHistory;
         "url"?: any;
+    }
+    interface PskSlideshow {
+        "caption"?: string;
+        "fadeSeconds"?: number;
+        "images"?: string;
+        "title"?: string;
+        "visibleSeconds"?: number;
     }
     interface PskSsapp {
         "appName"?: string;
@@ -757,8 +1344,63 @@ declare namespace LocalJSX {
         "params"?: string;
         "seed"?: string;
     }
+    interface PskStepper {
+        "activeStep"?: WizardStep;
+        "componentRender"?: string;
+        "handleStepChange"?: Function;
+        "wizardSteps"?: WizardStep[];
+    }
+    interface PskStepperRenderer {
+        "activeStep"?: WizardStep;
+        "handleStepChange"?: Function;
+        "wizardSteps"?: WizardStep[];
+    }
     interface PskStyle {
         "src"?: string | null;
+    }
+    interface PskSwitchButton {
+        "active"?: string | null;
+        "eventDispatcher"?: string | null;
+        "inactive"?: string | null;
+        "title"?: string | null;
+        "toggleEvent"?: string | null;
+    }
+    interface PskTab {
+        "title"?: string;
+    }
+    interface PskTabNavigator {
+        "default"?: number;
+        "layout"?: string;
+    }
+    interface PskTable {
+        "cellsWidth"?: string;
+        "footer"?: boolean;
+        "header"?: boolean;
+    }
+    interface PskToc {
+        "title"?: string;
+    }
+    interface PskToolbar {
+        "actions"?: string | null;
+        "eventData"?: string | null;
+        "icons"?: boolean;
+    }
+    interface PskUiAlert {
+        "message"?: any;
+        "onCloseFeedback"?: (event: CustomEvent<any>) => void;
+        "styleCustomisation"?: StyleCustomisation | string;
+        "timeAlive"?: any;
+        "typeOfAlert"?: string;
+    }
+    interface PskUiLoader {
+        "shouldBeRendered"?: boolean;
+    }
+    interface PskUiToast {
+        "message"?: any;
+        "onCloseFeedback"?: (event: CustomEvent<any>) => void;
+        "styleCustomisation"?: StyleCustomisation | string;
+        "timeMeasure"?: string;
+        "timeSinceCreation"?: number;
     }
     interface PskUserProfile {
         "onGetUserInfo"?: (event: CustomEvent<any>) => void;
@@ -767,6 +1409,13 @@ declare namespace LocalJSX {
     }
     interface PskUserProfileRenderer {
         "userInfo"?: any;
+    }
+    interface PskWizard {
+        "componentRender"?: string;
+        "onChangeStep"?: (event: CustomEvent<any>) => void;
+        "onFinishWizard"?: (event: CustomEvent<any>) => void;
+        "onNeedWizardConfiguration"?: (event: CustomEvent<any>) => void;
+        "wizardSteps"?: WizardStep[];
     }
     interface QueryPageLink {
         "activeClass"?: string;
@@ -806,40 +1455,80 @@ declare namespace LocalJSX {
         "event-expandable-renderer": EventExpandableRenderer;
         "expandable-renderer": ExpandableRenderer;
         "mobile-profile-renderer": MobileProfileRenderer;
+        "psk-accordion": PskAccordion;
+        "psk-accordion-item": PskAccordionItem;
         "psk-app-menu": PskAppMenu;
         "psk-app-root": PskAppRoot;
         "psk-app-router": PskAppRouter;
+        "psk-attachments-list": PskAttachmentsList;
+        "psk-barcode-generator": PskBarcodeGenerator;
+        "psk-barcode-scanner": PskBarcodeScanner;
         "psk-breadcrumb-navigator": PskBreadcrumbNavigator;
         "psk-button": PskButton;
         "psk-button-group": PskButtonGroup;
         "psk-button-link": PskButtonLink;
+        "psk-button-test": PskButtonTest;
         "psk-card": PskCard;
+        "psk-chapter": PskChapter;
+        "psk-chapter-wrapper": PskChapterWrapper;
+        "psk-code": PskCode;
         "psk-condition": PskCondition;
         "psk-container": PskContainer;
         "psk-controller-descriptor": PskControllerDescriptor;
+        "psk-copy-clipboard": PskCopyClipboard;
+        "psk-custom": PskCustom;
+        "psk-date": PskDate;
         "psk-default-renderer": PskDefaultRenderer;
+        "psk-description": PskDescription;
         "psk-details": PskDetails;
+        "psk-draggable-list": PskDraggableList;
         "psk-echo": PskEcho;
         "psk-event-descriptor": PskEventDescriptor;
         "psk-example": PskExample;
+        "psk-files-chooser": PskFilesChooser;
+        "psk-floating-menu": PskFloatingMenu;
         "psk-for-each": PskForEach;
         "psk-grid": PskGrid;
+        "psk-highlight": PskHighlight;
+        "psk-hoc": PskHoc;
+        "psk-icon": PskIcon;
+        "psk-icon-chooser": PskIconChooser;
+        "psk-img": PskImg;
+        "psk-label-test": PskLabelTest;
         "psk-layout": PskLayout;
         "psk-layout-item": PskLayoutItem;
         "psk-link": PskLink;
         "psk-list": PskList;
+        "psk-list-feedbacks": PskListFeedbacks;
+        "psk-live-code": PskLiveCode;
+        "psk-load-placeholder": PskLoadPlaceholder;
         "psk-menu-item-renderer": PskMenuItemRenderer;
         "psk-mobile": PskMobile;
+        "psk-modal": PskModal;
         "psk-page": PskPage;
         "psk-page-loader": PskPageLoader;
         "psk-page-not-found": PskPageNotFound;
         "psk-page-not-found-renderer": PskPageNotFoundRenderer;
+        "psk-pin-popup": PskPinPopup;
         "psk-property-descriptor": PskPropertyDescriptor;
         "psk-route-redirect": PskRouteRedirect;
+        "psk-slideshow": PskSlideshow;
         "psk-ssapp": PskSsapp;
+        "psk-stepper": PskStepper;
+        "psk-stepper-renderer": PskStepperRenderer;
         "psk-style": PskStyle;
+        "psk-switch-button": PskSwitchButton;
+        "psk-tab": PskTab;
+        "psk-tab-navigator": PskTabNavigator;
+        "psk-table": PskTable;
+        "psk-toc": PskToc;
+        "psk-toolbar": PskToolbar;
+        "psk-ui-alert": PskUiAlert;
+        "psk-ui-loader": PskUiLoader;
+        "psk-ui-toast": PskUiToast;
         "psk-user-profile": PskUserProfile;
         "psk-user-profile-renderer": PskUserProfileRenderer;
+        "psk-wizard": PskWizard;
         "query-page-link": QueryPageLink;
         "query-pages-router": QueryPagesRouter;
         "sidebar-renderer": SidebarRenderer;
@@ -853,40 +1542,80 @@ declare module "@stencil/core" {
             "event-expandable-renderer": LocalJSX.EventExpandableRenderer & JSXBase.HTMLAttributes<HTMLEventExpandableRendererElement>;
             "expandable-renderer": LocalJSX.ExpandableRenderer & JSXBase.HTMLAttributes<HTMLExpandableRendererElement>;
             "mobile-profile-renderer": LocalJSX.MobileProfileRenderer & JSXBase.HTMLAttributes<HTMLMobileProfileRendererElement>;
+            "psk-accordion": LocalJSX.PskAccordion & JSXBase.HTMLAttributes<HTMLPskAccordionElement>;
+            "psk-accordion-item": LocalJSX.PskAccordionItem & JSXBase.HTMLAttributes<HTMLPskAccordionItemElement>;
             "psk-app-menu": LocalJSX.PskAppMenu & JSXBase.HTMLAttributes<HTMLPskAppMenuElement>;
             "psk-app-root": LocalJSX.PskAppRoot & JSXBase.HTMLAttributes<HTMLPskAppRootElement>;
             "psk-app-router": LocalJSX.PskAppRouter & JSXBase.HTMLAttributes<HTMLPskAppRouterElement>;
+            "psk-attachments-list": LocalJSX.PskAttachmentsList & JSXBase.HTMLAttributes<HTMLPskAttachmentsListElement>;
+            "psk-barcode-generator": LocalJSX.PskBarcodeGenerator & JSXBase.HTMLAttributes<HTMLPskBarcodeGeneratorElement>;
+            "psk-barcode-scanner": LocalJSX.PskBarcodeScanner & JSXBase.HTMLAttributes<HTMLPskBarcodeScannerElement>;
             "psk-breadcrumb-navigator": LocalJSX.PskBreadcrumbNavigator & JSXBase.HTMLAttributes<HTMLPskBreadcrumbNavigatorElement>;
             "psk-button": LocalJSX.PskButton & JSXBase.HTMLAttributes<HTMLPskButtonElement>;
             "psk-button-group": LocalJSX.PskButtonGroup & JSXBase.HTMLAttributes<HTMLPskButtonGroupElement>;
             "psk-button-link": LocalJSX.PskButtonLink & JSXBase.HTMLAttributes<HTMLPskButtonLinkElement>;
+            "psk-button-test": LocalJSX.PskButtonTest & JSXBase.HTMLAttributes<HTMLPskButtonTestElement>;
             "psk-card": LocalJSX.PskCard & JSXBase.HTMLAttributes<HTMLPskCardElement>;
+            "psk-chapter": LocalJSX.PskChapter & JSXBase.HTMLAttributes<HTMLPskChapterElement>;
+            "psk-chapter-wrapper": LocalJSX.PskChapterWrapper & JSXBase.HTMLAttributes<HTMLPskChapterWrapperElement>;
+            "psk-code": LocalJSX.PskCode & JSXBase.HTMLAttributes<HTMLPskCodeElement>;
             "psk-condition": LocalJSX.PskCondition & JSXBase.HTMLAttributes<HTMLPskConditionElement>;
             "psk-container": LocalJSX.PskContainer & JSXBase.HTMLAttributes<HTMLPskContainerElement>;
             "psk-controller-descriptor": LocalJSX.PskControllerDescriptor & JSXBase.HTMLAttributes<HTMLPskControllerDescriptorElement>;
+            "psk-copy-clipboard": LocalJSX.PskCopyClipboard & JSXBase.HTMLAttributes<HTMLPskCopyClipboardElement>;
+            "psk-custom": LocalJSX.PskCustom & JSXBase.HTMLAttributes<HTMLPskCustomElement>;
+            "psk-date": LocalJSX.PskDate & JSXBase.HTMLAttributes<HTMLPskDateElement>;
             "psk-default-renderer": LocalJSX.PskDefaultRenderer & JSXBase.HTMLAttributes<HTMLPskDefaultRendererElement>;
+            "psk-description": LocalJSX.PskDescription & JSXBase.HTMLAttributes<HTMLPskDescriptionElement>;
             "psk-details": LocalJSX.PskDetails & JSXBase.HTMLAttributes<HTMLPskDetailsElement>;
+            "psk-draggable-list": LocalJSX.PskDraggableList & JSXBase.HTMLAttributes<HTMLPskDraggableListElement>;
             "psk-echo": LocalJSX.PskEcho & JSXBase.HTMLAttributes<HTMLPskEchoElement>;
             "psk-event-descriptor": LocalJSX.PskEventDescriptor & JSXBase.HTMLAttributes<HTMLPskEventDescriptorElement>;
             "psk-example": LocalJSX.PskExample & JSXBase.HTMLAttributes<HTMLPskExampleElement>;
+            "psk-files-chooser": LocalJSX.PskFilesChooser & JSXBase.HTMLAttributes<HTMLPskFilesChooserElement>;
+            "psk-floating-menu": LocalJSX.PskFloatingMenu & JSXBase.HTMLAttributes<HTMLPskFloatingMenuElement>;
             "psk-for-each": LocalJSX.PskForEach & JSXBase.HTMLAttributes<HTMLPskForEachElement>;
             "psk-grid": LocalJSX.PskGrid & JSXBase.HTMLAttributes<HTMLPskGridElement>;
+            "psk-highlight": LocalJSX.PskHighlight & JSXBase.HTMLAttributes<HTMLPskHighlightElement>;
+            "psk-hoc": LocalJSX.PskHoc & JSXBase.HTMLAttributes<HTMLPskHocElement>;
+            "psk-icon": LocalJSX.PskIcon & JSXBase.HTMLAttributes<HTMLPskIconElement>;
+            "psk-icon-chooser": LocalJSX.PskIconChooser & JSXBase.HTMLAttributes<HTMLPskIconChooserElement>;
+            "psk-img": LocalJSX.PskImg & JSXBase.HTMLAttributes<HTMLPskImgElement>;
+            "psk-label-test": LocalJSX.PskLabelTest & JSXBase.HTMLAttributes<HTMLPskLabelTestElement>;
             "psk-layout": LocalJSX.PskLayout & JSXBase.HTMLAttributes<HTMLPskLayoutElement>;
             "psk-layout-item": LocalJSX.PskLayoutItem & JSXBase.HTMLAttributes<HTMLPskLayoutItemElement>;
             "psk-link": LocalJSX.PskLink & JSXBase.HTMLAttributes<HTMLPskLinkElement>;
             "psk-list": LocalJSX.PskList & JSXBase.HTMLAttributes<HTMLPskListElement>;
+            "psk-list-feedbacks": LocalJSX.PskListFeedbacks & JSXBase.HTMLAttributes<HTMLPskListFeedbacksElement>;
+            "psk-live-code": LocalJSX.PskLiveCode & JSXBase.HTMLAttributes<HTMLPskLiveCodeElement>;
+            "psk-load-placeholder": LocalJSX.PskLoadPlaceholder & JSXBase.HTMLAttributes<HTMLPskLoadPlaceholderElement>;
             "psk-menu-item-renderer": LocalJSX.PskMenuItemRenderer & JSXBase.HTMLAttributes<HTMLPskMenuItemRendererElement>;
             "psk-mobile": LocalJSX.PskMobile & JSXBase.HTMLAttributes<HTMLPskMobileElement>;
+            "psk-modal": LocalJSX.PskModal & JSXBase.HTMLAttributes<HTMLPskModalElement>;
             "psk-page": LocalJSX.PskPage & JSXBase.HTMLAttributes<HTMLPskPageElement>;
             "psk-page-loader": LocalJSX.PskPageLoader & JSXBase.HTMLAttributes<HTMLPskPageLoaderElement>;
             "psk-page-not-found": LocalJSX.PskPageNotFound & JSXBase.HTMLAttributes<HTMLPskPageNotFoundElement>;
             "psk-page-not-found-renderer": LocalJSX.PskPageNotFoundRenderer & JSXBase.HTMLAttributes<HTMLPskPageNotFoundRendererElement>;
+            "psk-pin-popup": LocalJSX.PskPinPopup & JSXBase.HTMLAttributes<HTMLPskPinPopupElement>;
             "psk-property-descriptor": LocalJSX.PskPropertyDescriptor & JSXBase.HTMLAttributes<HTMLPskPropertyDescriptorElement>;
             "psk-route-redirect": LocalJSX.PskRouteRedirect & JSXBase.HTMLAttributes<HTMLPskRouteRedirectElement>;
+            "psk-slideshow": LocalJSX.PskSlideshow & JSXBase.HTMLAttributes<HTMLPskSlideshowElement>;
             "psk-ssapp": LocalJSX.PskSsapp & JSXBase.HTMLAttributes<HTMLPskSsappElement>;
+            "psk-stepper": LocalJSX.PskStepper & JSXBase.HTMLAttributes<HTMLPskStepperElement>;
+            "psk-stepper-renderer": LocalJSX.PskStepperRenderer & JSXBase.HTMLAttributes<HTMLPskStepperRendererElement>;
             "psk-style": LocalJSX.PskStyle & JSXBase.HTMLAttributes<HTMLPskStyleElement>;
+            "psk-switch-button": LocalJSX.PskSwitchButton & JSXBase.HTMLAttributes<HTMLPskSwitchButtonElement>;
+            "psk-tab": LocalJSX.PskTab & JSXBase.HTMLAttributes<HTMLPskTabElement>;
+            "psk-tab-navigator": LocalJSX.PskTabNavigator & JSXBase.HTMLAttributes<HTMLPskTabNavigatorElement>;
+            "psk-table": LocalJSX.PskTable & JSXBase.HTMLAttributes<HTMLPskTableElement>;
+            "psk-toc": LocalJSX.PskToc & JSXBase.HTMLAttributes<HTMLPskTocElement>;
+            "psk-toolbar": LocalJSX.PskToolbar & JSXBase.HTMLAttributes<HTMLPskToolbarElement>;
+            "psk-ui-alert": LocalJSX.PskUiAlert & JSXBase.HTMLAttributes<HTMLPskUiAlertElement>;
+            "psk-ui-loader": LocalJSX.PskUiLoader & JSXBase.HTMLAttributes<HTMLPskUiLoaderElement>;
+            "psk-ui-toast": LocalJSX.PskUiToast & JSXBase.HTMLAttributes<HTMLPskUiToastElement>;
             "psk-user-profile": LocalJSX.PskUserProfile & JSXBase.HTMLAttributes<HTMLPskUserProfileElement>;
             "psk-user-profile-renderer": LocalJSX.PskUserProfileRenderer & JSXBase.HTMLAttributes<HTMLPskUserProfileRendererElement>;
+            "psk-wizard": LocalJSX.PskWizard & JSXBase.HTMLAttributes<HTMLPskWizardElement>;
             "query-page-link": LocalJSX.QueryPageLink & JSXBase.HTMLAttributes<HTMLQueryPageLinkElement>;
             "query-pages-router": LocalJSX.QueryPagesRouter & JSXBase.HTMLAttributes<HTMLQueryPagesRouterElement>;
             "sidebar-renderer": LocalJSX.SidebarRenderer & JSXBase.HTMLAttributes<HTMLSidebarRendererElement>;

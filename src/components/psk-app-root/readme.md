@@ -1,4 +1,4 @@
-# app-root
+# psk-app-root
 
 
 

@@ -17,11 +17,13 @@
 
 ### Depends on
 
+- [psk-icon](../psk-icon)
 - [psk-button](../psk-button)
 
 ### Graph
 ```mermaid
 graph TD;
+  psk-breadcrumb-navigator --> psk-icon
   psk-breadcrumb-navigator --> psk-button
   style psk-breadcrumb-navigator fill:#f9f,stroke:#333,stroke-width:4px
 ```

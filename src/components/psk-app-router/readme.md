@@ -31,6 +31,7 @@
 ### Depends on
 
 - stencil-route
+- [psk-ui-loader](../psk-ui-loader)
 - stencil-router
 - stencil-route-switch
 - stencil-router-redirect
@@ -39,6 +40,7 @@
 ```mermaid
 graph TD;
   psk-app-router --> stencil-route
+  psk-app-router --> psk-ui-loader
   psk-app-router --> stencil-router
   psk-app-router --> stencil-route-switch
   psk-app-router --> stencil-router-redirect

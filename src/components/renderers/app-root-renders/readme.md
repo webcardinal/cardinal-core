@@ -1,4 +1,4 @@
-# psk-default-render
+# psk-default-renderer
 
 
 
@@ -35,6 +35,7 @@ graph TD;
   psk-default-renderer --> psk-user-profile
   psk-default-renderer --> psk-app-router
   psk-app-router --> stencil-route
+  psk-app-router --> psk-ui-loader
   psk-app-router --> stencil-router
   psk-app-router --> stencil-route-switch
   psk-app-router --> stencil-router-redirect
