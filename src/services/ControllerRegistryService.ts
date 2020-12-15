@@ -1,9 +1,8 @@
-window['cardinal'] = window['cardinal'] || {
-  controllers: {},
-  pendingControllerRequests: {}
-};
+window.cardinal = window.cardinal || {};
+window.cardinal.controllers = window.cardinal.controllers || {};
+window.cardinal.pendingControllerRequests = window.cardinal.pendingControllerRequests || {};
 
-const { controllers, pendingControllerRequests } = window['cardinal'];
+const { controllers, pendingControllerRequests } = window.cardinal;
 
 const ControllerRegistryService = {
   registerController: (controllerName, controller) => {

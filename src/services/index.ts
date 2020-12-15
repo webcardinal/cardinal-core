@@ -1,1 +1,1 @@
-export * from "./ControllerRegistryService";
+export { default as ControllerRegistryService } from "./ControllerRegistryService";
