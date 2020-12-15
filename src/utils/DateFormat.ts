@@ -1,4 +1,4 @@
-import { DATE_FORMAT_MASKS } from '../../../utils/constants';
+import { DATE_FORMAT_MASKS } from './constants';
 
 class DateFormat {
 

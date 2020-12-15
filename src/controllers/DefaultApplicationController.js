@@ -1,6 +1,6 @@
 import AppConfigurationHelper from "./AppConfigurationHelper.js";
-import defaultApplicationConfig from "./defaultApplicationConfig.json";
-import fetch from "../utils/fetch.js";
+import defaultApplicationConfig from "./config";
+import fetch from "../utils/fetch";
 
 let configUrl = "config.json";
 let menuUrl = "menu.json";

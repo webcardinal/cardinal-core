@@ -1,4 +1,4 @@
-{
+const config = {
   "theme": "default",
   "appVersion": "1.0.0",
   "profile": {
@@ -24,3 +24,5 @@
     ]
   }
 }
+
+export default config;

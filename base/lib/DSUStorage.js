@@ -1,4 +1,4 @@
-import fetch from "../../../utils/fetch.js";
+import fetch from "../utils/fetch.js";
 
 function doDownload(url, expectedResultType, callback) {
   fetch(url)
