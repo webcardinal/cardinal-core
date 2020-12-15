@@ -1,6 +1,6 @@
 import { ComponentInterface, getElement } from "@stencil/core";
 import { applyStyles } from "../../utils/utilFunctions";
-import fetch from "../../utils/fetch.js";
+import fetch from "../../utils/fetch";
 
 window.cardinal = window.cardinal || {};
 window.cardinal.customTheme = window.cardinal.customTheme || {

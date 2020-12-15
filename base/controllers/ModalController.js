@@ -1,5 +1,11 @@
-import ModalDataEvent from "../../events/ModalDataEvent.js";
 import ContainerController from "./ContainerController.js";
+
+class ModalDataEvent extends CustomEvent {
+  constructor(eventName, eventData, eventOptions) {
+    super(eventName, eventOptions);
+    this.data = eventData;
+  }
+}
 
 export default class ModalController extends ContainerController {
 

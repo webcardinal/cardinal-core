@@ -1,6 +1,6 @@
-import PskBindableModel from "./lib/bindableModel.js";
-import DSUStorage from "./lib/DSUStorage.js";
-import History from "./lib/History.js";
+import PskBindableModel from "../lib/bindableModel.js";
+import DSUStorage from "../lib/DSUStorage.js";
+import History from "../lib/History.js";
 
 export default class ContainerController {
 

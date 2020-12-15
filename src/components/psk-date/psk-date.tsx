@@ -1,11 +1,10 @@
 import { h, Component, Prop } from '@stencil/core';
 
-import { BindModel } from '../../decorators/BindModel';
-import { TableOfContentProperty } from '../../decorators/TableOfContentProperty';
+import { BindModel, TableOfContentProperty } from '../../decorators';
 import CustomTheme from '../../decorators/CustomTheme';
 
 import { DATE_FORMAT_MASKS } from '../../utils/constants';
-import DateFormat from '../../controllers/base-controllers/lib/DateFormat';
+import DateFormat from '../../utils/DateFormat';
 
 @Component({
     tag: 'psk-date'

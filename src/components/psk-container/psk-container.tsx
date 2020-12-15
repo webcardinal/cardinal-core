@@ -1,7 +1,6 @@
 import {Component, h, Prop, Element, State} from "@stencil/core";
 import ControllerRegistryService from "../../services/ControllerRegistryService";
 import {TableOfContentProperty} from "../../decorators/TableOfContentProperty";
-import DefaultContainerController from "../../controllers/base-controllers/ContainerController.js";
 import {injectHistory, RouterHistory} from "@stencil/router";
 import CustomTheme from "../../decorators/CustomTheme";
 
@@ -56,9 +55,9 @@ export class PskContainer {
     ];
   }
 
-  promisifyControllerLoad = (controllerName) => {
+  promisifyControllerLoad = (controllerName, isBaseController = false) => {
     return new Promise((resolve, reject) => {
-      ControllerRegistryService.getController(controllerName).then((controller) => {
+      ControllerRegistryService.getController(controllerName, isBaseController).then((controller) => {
         // Prevent javascript execution if the node has been removed from DOM
         resolve(controller);
       }).catch(reject);
@@ -69,8 +68,8 @@ export class PskContainer {
     let promise;
     if (typeof this.controllerName === "string" && this.controllerName.length > 0) {
        promise = this.promisifyControllerLoad(this.controllerName);
-    }else{
-       promise = Promise.resolve(DefaultContainerController);
+    } else {
+       promise = this.promisifyControllerLoad("ContainerController", true);
     }
 
     promise.then((Controller)=>{
