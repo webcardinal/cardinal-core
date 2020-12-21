@@ -23,8 +23,7 @@
   },
   "devDependencies": {
     "@stencil/core": "^2.3.0",
-    "@stencil/router": "^1.0.1",
-    "octopus": "git+http://github.com/privatesky/octopus.git"
+    "@stencil/router": "^1.0.1"
   },
   "repository": {
     "type": "git",
