@@ -64,17 +64,6 @@ export namespace Components {
         "noAttachmentsText": string;
         "readOnly": boolean;
     }
-    interface PskBarcodeGenerator {
-        "data": any;
-        "includeText": boolean;
-        "size"?: any;
-        "title": string;
-        "type": string;
-    }
-    interface PskBarcodeScanner {
-        "data": any;
-        "title": string;
-    }
     interface PskBreadcrumbNavigator {
         "eventName": string | null;
         "segments": BreadcrumbSegment[];
@@ -494,18 +483,6 @@ declare global {
     var HTMLPskAttachmentsListElement: {
         prototype: HTMLPskAttachmentsListElement;
         new (): HTMLPskAttachmentsListElement;
-    };
-    interface HTMLPskBarcodeGeneratorElement extends Components.PskBarcodeGenerator, HTMLStencilElement {
-    }
-    var HTMLPskBarcodeGeneratorElement: {
-        prototype: HTMLPskBarcodeGeneratorElement;
-        new (): HTMLPskBarcodeGeneratorElement;
-    };
-    interface HTMLPskBarcodeScannerElement extends Components.PskBarcodeScanner, HTMLStencilElement {
-    }
-    var HTMLPskBarcodeScannerElement: {
-        prototype: HTMLPskBarcodeScannerElement;
-        new (): HTMLPskBarcodeScannerElement;
     };
     interface HTMLPskBreadcrumbNavigatorElement extends Components.PskBreadcrumbNavigator, HTMLStencilElement {
     }
@@ -932,8 +909,6 @@ declare global {
         "psk-app-root": HTMLPskAppRootElement;
         "psk-app-router": HTMLPskAppRouterElement;
         "psk-attachments-list": HTMLPskAttachmentsListElement;
-        "psk-barcode-generator": HTMLPskBarcodeGeneratorElement;
-        "psk-barcode-scanner": HTMLPskBarcodeScannerElement;
         "psk-breadcrumb-navigator": HTMLPskBreadcrumbNavigatorElement;
         "psk-button": HTMLPskButtonElement;
         "psk-button-group": HTMLPskButtonGroupElement;
@@ -1064,17 +1039,6 @@ declare namespace LocalJSX {
         "files"?: any;
         "noAttachmentsText"?: string;
         "readOnly"?: boolean;
-    }
-    interface PskBarcodeGenerator {
-        "data"?: any;
-        "includeText"?: boolean;
-        "size"?: any;
-        "title"?: string;
-        "type"?: string;
-    }
-    interface PskBarcodeScanner {
-        "data"?: any;
-        "title"?: string;
     }
     interface PskBreadcrumbNavigator {
         "eventName"?: string | null;
@@ -1461,8 +1425,6 @@ declare namespace LocalJSX {
         "psk-app-root": PskAppRoot;
         "psk-app-router": PskAppRouter;
         "psk-attachments-list": PskAttachmentsList;
-        "psk-barcode-generator": PskBarcodeGenerator;
-        "psk-barcode-scanner": PskBarcodeScanner;
         "psk-breadcrumb-navigator": PskBreadcrumbNavigator;
         "psk-button": PskButton;
         "psk-button-group": PskButtonGroup;
@@ -1548,8 +1510,6 @@ declare module "@stencil/core" {
             "psk-app-root": LocalJSX.PskAppRoot & JSXBase.HTMLAttributes<HTMLPskAppRootElement>;
             "psk-app-router": LocalJSX.PskAppRouter & JSXBase.HTMLAttributes<HTMLPskAppRouterElement>;
             "psk-attachments-list": LocalJSX.PskAttachmentsList & JSXBase.HTMLAttributes<HTMLPskAttachmentsListElement>;
-            "psk-barcode-generator": LocalJSX.PskBarcodeGenerator & JSXBase.HTMLAttributes<HTMLPskBarcodeGeneratorElement>;
-            "psk-barcode-scanner": LocalJSX.PskBarcodeScanner & JSXBase.HTMLAttributes<HTMLPskBarcodeScannerElement>;
             "psk-breadcrumb-navigator": LocalJSX.PskBreadcrumbNavigator & JSXBase.HTMLAttributes<HTMLPskBreadcrumbNavigatorElement>;
             "psk-button": LocalJSX.PskButton & JSXBase.HTMLAttributes<HTMLPskButtonElement>;
             "psk-button-group": LocalJSX.PskButtonGroup & JSXBase.HTMLAttributes<HTMLPskButtonGroupElement>;
