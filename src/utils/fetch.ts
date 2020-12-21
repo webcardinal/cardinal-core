@@ -1,4 +1,4 @@
-function executeFetch(url, options) {
+function executeFetch(url, options = null) {
     // check if we need to add the BASE_URL to the prefix of the url
     let $$ = window['$$'];
     const isBaseUrlSet = $$ && $$.SSAPP_CONTEXT && $$.SSAPP_CONTEXT.BASE_URL && $$.SSAPP_CONTEXT.SEED && url.indexOf($$.SSAPP_CONTEXT.BASE_URL) !== 0;
