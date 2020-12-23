@@ -18,9 +18,7 @@
     "dev": "stencil build --dev",
     "generate": "stencil generate"
   },
-  "dependencies": {
-    "prismjs": "^1.21.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@stencil/core": "^2.3.0",
     "@stencil/router": "^1.0.1"

@@ -100,17 +100,6 @@ export namespace Components {
         "id": string;
         "title": string;
     }
-    interface PskChapter {
-        "guid": string;
-        "title": string;
-    }
-    interface PskChapterWrapper {
-        "title": string;
-    }
-    interface PskCode {
-        "language": string;
-        "title": string;
-    }
     interface PskCondition {
         "condition": any | null;
     }
@@ -137,9 +126,6 @@ export namespace Components {
         "disableSidebar": boolean;
         "mobileLayout": boolean;
     }
-    interface PskDescription {
-        "title": string;
-    }
     interface PskDetails {
         "eventData": any | null;
         "eventDispatcher": string | null;
@@ -154,9 +140,6 @@ export namespace Components {
         "value": string | null;
     }
     interface PskEventDescriptor {
-        "title": string;
-    }
-    interface PskExample {
         "title": string;
     }
     interface PskFilesChooser {
@@ -179,8 +162,6 @@ export namespace Components {
     interface PskHighlight {
         "title": string;
         "typeOfHighlight": string;
-    }
-    interface PskHoc {
     }
     interface PskIcon {
         "classes"?: string | null;
@@ -248,10 +229,6 @@ export namespace Components {
         "styleCustomisation"?: StyleCustomisation | string;
         "timeAlive"?: number;
         "toastRenderer"?: string;
-    }
-    interface PskLiveCode {
-        "language": string;
-        "value": string;
     }
     interface PskLoadPlaceholder {
     }
@@ -349,14 +326,6 @@ export namespace Components {
     interface PskTabNavigator {
         "default": number;
         "layout": string;
-    }
-    interface PskTable {
-        "cellsWidth": string;
-        "footer": boolean;
-        "header": boolean;
-    }
-    interface PskToc {
-        "title": string;
     }
     interface PskToolbar {
         "actions": string | null;
@@ -520,24 +489,6 @@ declare global {
         prototype: HTMLPskCardElement;
         new (): HTMLPskCardElement;
     };
-    interface HTMLPskChapterElement extends Components.PskChapter, HTMLStencilElement {
-    }
-    var HTMLPskChapterElement: {
-        prototype: HTMLPskChapterElement;
-        new (): HTMLPskChapterElement;
-    };
-    interface HTMLPskChapterWrapperElement extends Components.PskChapterWrapper, HTMLStencilElement {
-    }
-    var HTMLPskChapterWrapperElement: {
-        prototype: HTMLPskChapterWrapperElement;
-        new (): HTMLPskChapterWrapperElement;
-    };
-    interface HTMLPskCodeElement extends Components.PskCode, HTMLStencilElement {
-    }
-    var HTMLPskCodeElement: {
-        prototype: HTMLPskCodeElement;
-        new (): HTMLPskCodeElement;
-    };
     interface HTMLPskConditionElement extends Components.PskCondition, HTMLStencilElement {
     }
     var HTMLPskConditionElement: {
@@ -580,12 +531,6 @@ declare global {
         prototype: HTMLPskDefaultRendererElement;
         new (): HTMLPskDefaultRendererElement;
     };
-    interface HTMLPskDescriptionElement extends Components.PskDescription, HTMLStencilElement {
-    }
-    var HTMLPskDescriptionElement: {
-        prototype: HTMLPskDescriptionElement;
-        new (): HTMLPskDescriptionElement;
-    };
     interface HTMLPskDetailsElement extends Components.PskDetails, HTMLStencilElement {
     }
     var HTMLPskDetailsElement: {
@@ -609,12 +554,6 @@ declare global {
     var HTMLPskEventDescriptorElement: {
         prototype: HTMLPskEventDescriptorElement;
         new (): HTMLPskEventDescriptorElement;
-    };
-    interface HTMLPskExampleElement extends Components.PskExample, HTMLStencilElement {
-    }
-    var HTMLPskExampleElement: {
-        prototype: HTMLPskExampleElement;
-        new (): HTMLPskExampleElement;
     };
     interface HTMLPskFilesChooserElement extends Components.PskFilesChooser, HTMLStencilElement {
     }
@@ -645,12 +584,6 @@ declare global {
     var HTMLPskHighlightElement: {
         prototype: HTMLPskHighlightElement;
         new (): HTMLPskHighlightElement;
-    };
-    interface HTMLPskHocElement extends Components.PskHoc, HTMLStencilElement {
-    }
-    var HTMLPskHocElement: {
-        prototype: HTMLPskHocElement;
-        new (): HTMLPskHocElement;
     };
     interface HTMLPskIconElement extends Components.PskIcon, HTMLStencilElement {
     }
@@ -705,12 +638,6 @@ declare global {
     var HTMLPskListFeedbacksElement: {
         prototype: HTMLPskListFeedbacksElement;
         new (): HTMLPskListFeedbacksElement;
-    };
-    interface HTMLPskLiveCodeElement extends Components.PskLiveCode, HTMLStencilElement {
-    }
-    var HTMLPskLiveCodeElement: {
-        prototype: HTMLPskLiveCodeElement;
-        new (): HTMLPskLiveCodeElement;
     };
     interface HTMLPskLoadPlaceholderElement extends Components.PskLoadPlaceholder, HTMLStencilElement {
     }
@@ -826,18 +753,6 @@ declare global {
         prototype: HTMLPskTabNavigatorElement;
         new (): HTMLPskTabNavigatorElement;
     };
-    interface HTMLPskTableElement extends Components.PskTable, HTMLStencilElement {
-    }
-    var HTMLPskTableElement: {
-        prototype: HTMLPskTableElement;
-        new (): HTMLPskTableElement;
-    };
-    interface HTMLPskTocElement extends Components.PskToc, HTMLStencilElement {
-    }
-    var HTMLPskTocElement: {
-        prototype: HTMLPskTocElement;
-        new (): HTMLPskTocElement;
-    };
     interface HTMLPskToolbarElement extends Components.PskToolbar, HTMLStencilElement {
     }
     var HTMLPskToolbarElement: {
@@ -915,9 +830,6 @@ declare global {
         "psk-button-link": HTMLPskButtonLinkElement;
         "psk-button-test": HTMLPskButtonTestElement;
         "psk-card": HTMLPskCardElement;
-        "psk-chapter": HTMLPskChapterElement;
-        "psk-chapter-wrapper": HTMLPskChapterWrapperElement;
-        "psk-code": HTMLPskCodeElement;
         "psk-condition": HTMLPskConditionElement;
         "psk-container": HTMLPskContainerElement;
         "psk-controller-descriptor": HTMLPskControllerDescriptorElement;
@@ -925,18 +837,15 @@ declare global {
         "psk-custom": HTMLPskCustomElement;
         "psk-date": HTMLPskDateElement;
         "psk-default-renderer": HTMLPskDefaultRendererElement;
-        "psk-description": HTMLPskDescriptionElement;
         "psk-details": HTMLPskDetailsElement;
         "psk-draggable-list": HTMLPskDraggableListElement;
         "psk-echo": HTMLPskEchoElement;
         "psk-event-descriptor": HTMLPskEventDescriptorElement;
-        "psk-example": HTMLPskExampleElement;
         "psk-files-chooser": HTMLPskFilesChooserElement;
         "psk-floating-menu": HTMLPskFloatingMenuElement;
         "psk-for-each": HTMLPskForEachElement;
         "psk-grid": HTMLPskGridElement;
         "psk-highlight": HTMLPskHighlightElement;
-        "psk-hoc": HTMLPskHocElement;
         "psk-icon": HTMLPskIconElement;
         "psk-icon-chooser": HTMLPskIconChooserElement;
         "psk-img": HTMLPskImgElement;
@@ -946,7 +855,6 @@ declare global {
         "psk-link": HTMLPskLinkElement;
         "psk-list": HTMLPskListElement;
         "psk-list-feedbacks": HTMLPskListFeedbacksElement;
-        "psk-live-code": HTMLPskLiveCodeElement;
         "psk-load-placeholder": HTMLPskLoadPlaceholderElement;
         "psk-menu-item-renderer": HTMLPskMenuItemRendererElement;
         "psk-mobile": HTMLPskMobileElement;
@@ -966,8 +874,6 @@ declare global {
         "psk-switch-button": HTMLPskSwitchButtonElement;
         "psk-tab": HTMLPskTabElement;
         "psk-tab-navigator": HTMLPskTabNavigatorElement;
-        "psk-table": HTMLPskTableElement;
-        "psk-toc": HTMLPskTocElement;
         "psk-toolbar": HTMLPskToolbarElement;
         "psk-ui-alert": HTMLPskUiAlertElement;
         "psk-ui-loader": HTMLPskUiLoaderElement;
@@ -1076,18 +982,6 @@ declare namespace LocalJSX {
         "id"?: string;
         "title"?: string;
     }
-    interface PskChapter {
-        "guid"?: string;
-        "onPsk-send-chapter"?: (event: CustomEvent<any>) => void;
-        "title"?: string;
-    }
-    interface PskChapterWrapper {
-        "title"?: string;
-    }
-    interface PskCode {
-        "language"?: string;
-        "title"?: string;
-    }
     interface PskCondition {
         "condition"?: any | null;
         "onGetModelEvent"?: (event: CustomEvent<any>) => void;
@@ -1117,9 +1011,6 @@ declare namespace LocalJSX {
         "mobileLayout"?: boolean;
         "onGetAppVersion"?: (event: CustomEvent<any>) => void;
     }
-    interface PskDescription {
-        "title"?: string;
-    }
     interface PskDetails {
         "eventData"?: any | null;
         "eventDispatcher"?: string | null;
@@ -1134,9 +1025,6 @@ declare namespace LocalJSX {
         "value"?: string | null;
     }
     interface PskEventDescriptor {
-        "title"?: string;
-    }
-    interface PskExample {
         "title"?: string;
     }
     interface PskFilesChooser {
@@ -1161,8 +1049,6 @@ declare namespace LocalJSX {
     interface PskHighlight {
         "title"?: string;
         "typeOfHighlight"?: string;
-    }
-    interface PskHoc {
     }
     interface PskIcon {
         "classes"?: string | null;
@@ -1233,10 +1119,6 @@ declare namespace LocalJSX {
         "styleCustomisation"?: StyleCustomisation | string;
         "timeAlive"?: number;
         "toastRenderer"?: string;
-    }
-    interface PskLiveCode {
-        "language"?: string;
-        "value"?: string;
     }
     interface PskLoadPlaceholder {
     }
@@ -1336,14 +1218,6 @@ declare namespace LocalJSX {
         "default"?: number;
         "layout"?: string;
     }
-    interface PskTable {
-        "cellsWidth"?: string;
-        "footer"?: boolean;
-        "header"?: boolean;
-    }
-    interface PskToc {
-        "title"?: string;
-    }
     interface PskToolbar {
         "actions"?: string | null;
         "eventData"?: string | null;
@@ -1431,9 +1305,6 @@ declare namespace LocalJSX {
         "psk-button-link": PskButtonLink;
         "psk-button-test": PskButtonTest;
         "psk-card": PskCard;
-        "psk-chapter": PskChapter;
-        "psk-chapter-wrapper": PskChapterWrapper;
-        "psk-code": PskCode;
         "psk-condition": PskCondition;
         "psk-container": PskContainer;
         "psk-controller-descriptor": PskControllerDescriptor;
@@ -1441,18 +1312,15 @@ declare namespace LocalJSX {
         "psk-custom": PskCustom;
         "psk-date": PskDate;
         "psk-default-renderer": PskDefaultRenderer;
-        "psk-description": PskDescription;
         "psk-details": PskDetails;
         "psk-draggable-list": PskDraggableList;
         "psk-echo": PskEcho;
         "psk-event-descriptor": PskEventDescriptor;
-        "psk-example": PskExample;
         "psk-files-chooser": PskFilesChooser;
         "psk-floating-menu": PskFloatingMenu;
         "psk-for-each": PskForEach;
         "psk-grid": PskGrid;
         "psk-highlight": PskHighlight;
-        "psk-hoc": PskHoc;
         "psk-icon": PskIcon;
         "psk-icon-chooser": PskIconChooser;
         "psk-img": PskImg;
@@ -1462,7 +1330,6 @@ declare namespace LocalJSX {
         "psk-link": PskLink;
         "psk-list": PskList;
         "psk-list-feedbacks": PskListFeedbacks;
-        "psk-live-code": PskLiveCode;
         "psk-load-placeholder": PskLoadPlaceholder;
         "psk-menu-item-renderer": PskMenuItemRenderer;
         "psk-mobile": PskMobile;
@@ -1482,8 +1349,6 @@ declare namespace LocalJSX {
         "psk-switch-button": PskSwitchButton;
         "psk-tab": PskTab;
         "psk-tab-navigator": PskTabNavigator;
-        "psk-table": PskTable;
-        "psk-toc": PskToc;
         "psk-toolbar": PskToolbar;
         "psk-ui-alert": PskUiAlert;
         "psk-ui-loader": PskUiLoader;
@@ -1516,9 +1381,6 @@ declare module "@stencil/core" {
             "psk-button-link": LocalJSX.PskButtonLink & JSXBase.HTMLAttributes<HTMLPskButtonLinkElement>;
             "psk-button-test": LocalJSX.PskButtonTest & JSXBase.HTMLAttributes<HTMLPskButtonTestElement>;
             "psk-card": LocalJSX.PskCard & JSXBase.HTMLAttributes<HTMLPskCardElement>;
-            "psk-chapter": LocalJSX.PskChapter & JSXBase.HTMLAttributes<HTMLPskChapterElement>;
-            "psk-chapter-wrapper": LocalJSX.PskChapterWrapper & JSXBase.HTMLAttributes<HTMLPskChapterWrapperElement>;
-            "psk-code": LocalJSX.PskCode & JSXBase.HTMLAttributes<HTMLPskCodeElement>;
             "psk-condition": LocalJSX.PskCondition & JSXBase.HTMLAttributes<HTMLPskConditionElement>;
             "psk-container": LocalJSX.PskContainer & JSXBase.HTMLAttributes<HTMLPskContainerElement>;
             "psk-controller-descriptor": LocalJSX.PskControllerDescriptor & JSXBase.HTMLAttributes<HTMLPskControllerDescriptorElement>;
@@ -1526,18 +1388,15 @@ declare module "@stencil/core" {
             "psk-custom": LocalJSX.PskCustom & JSXBase.HTMLAttributes<HTMLPskCustomElement>;
             "psk-date": LocalJSX.PskDate & JSXBase.HTMLAttributes<HTMLPskDateElement>;
             "psk-default-renderer": LocalJSX.PskDefaultRenderer & JSXBase.HTMLAttributes<HTMLPskDefaultRendererElement>;
-            "psk-description": LocalJSX.PskDescription & JSXBase.HTMLAttributes<HTMLPskDescriptionElement>;
             "psk-details": LocalJSX.PskDetails & JSXBase.HTMLAttributes<HTMLPskDetailsElement>;
             "psk-draggable-list": LocalJSX.PskDraggableList & JSXBase.HTMLAttributes<HTMLPskDraggableListElement>;
             "psk-echo": LocalJSX.PskEcho & JSXBase.HTMLAttributes<HTMLPskEchoElement>;
             "psk-event-descriptor": LocalJSX.PskEventDescriptor & JSXBase.HTMLAttributes<HTMLPskEventDescriptorElement>;
-            "psk-example": LocalJSX.PskExample & JSXBase.HTMLAttributes<HTMLPskExampleElement>;
             "psk-files-chooser": LocalJSX.PskFilesChooser & JSXBase.HTMLAttributes<HTMLPskFilesChooserElement>;
             "psk-floating-menu": LocalJSX.PskFloatingMenu & JSXBase.HTMLAttributes<HTMLPskFloatingMenuElement>;
             "psk-for-each": LocalJSX.PskForEach & JSXBase.HTMLAttributes<HTMLPskForEachElement>;
             "psk-grid": LocalJSX.PskGrid & JSXBase.HTMLAttributes<HTMLPskGridElement>;
             "psk-highlight": LocalJSX.PskHighlight & JSXBase.HTMLAttributes<HTMLPskHighlightElement>;
-            "psk-hoc": LocalJSX.PskHoc & JSXBase.HTMLAttributes<HTMLPskHocElement>;
             "psk-icon": LocalJSX.PskIcon & JSXBase.HTMLAttributes<HTMLPskIconElement>;
             "psk-icon-chooser": LocalJSX.PskIconChooser & JSXBase.HTMLAttributes<HTMLPskIconChooserElement>;
             "psk-img": LocalJSX.PskImg & JSXBase.HTMLAttributes<HTMLPskImgElement>;
@@ -1547,7 +1406,6 @@ declare module "@stencil/core" {
             "psk-link": LocalJSX.PskLink & JSXBase.HTMLAttributes<HTMLPskLinkElement>;
             "psk-list": LocalJSX.PskList & JSXBase.HTMLAttributes<HTMLPskListElement>;
             "psk-list-feedbacks": LocalJSX.PskListFeedbacks & JSXBase.HTMLAttributes<HTMLPskListFeedbacksElement>;
-            "psk-live-code": LocalJSX.PskLiveCode & JSXBase.HTMLAttributes<HTMLPskLiveCodeElement>;
             "psk-load-placeholder": LocalJSX.PskLoadPlaceholder & JSXBase.HTMLAttributes<HTMLPskLoadPlaceholderElement>;
             "psk-menu-item-renderer": LocalJSX.PskMenuItemRenderer & JSXBase.HTMLAttributes<HTMLPskMenuItemRendererElement>;
             "psk-mobile": LocalJSX.PskMobile & JSXBase.HTMLAttributes<HTMLPskMobileElement>;
@@ -1567,8 +1425,6 @@ declare module "@stencil/core" {
             "psk-switch-button": LocalJSX.PskSwitchButton & JSXBase.HTMLAttributes<HTMLPskSwitchButtonElement>;
             "psk-tab": LocalJSX.PskTab & JSXBase.HTMLAttributes<HTMLPskTabElement>;
             "psk-tab-navigator": LocalJSX.PskTabNavigator & JSXBase.HTMLAttributes<HTMLPskTabNavigatorElement>;
-            "psk-table": LocalJSX.PskTable & JSXBase.HTMLAttributes<HTMLPskTableElement>;
-            "psk-toc": LocalJSX.PskToc & JSXBase.HTMLAttributes<HTMLPskTocElement>;
             "psk-toolbar": LocalJSX.PskToolbar & JSXBase.HTMLAttributes<HTMLPskToolbarElement>;
             "psk-ui-alert": LocalJSX.PskUiAlert & JSXBase.HTMLAttributes<HTMLPskUiAlertElement>;
             "psk-ui-loader": LocalJSX.PskUiLoader & JSXBase.HTMLAttributes<HTMLPskUiLoaderElement>;

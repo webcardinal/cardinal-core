@@ -1,4 +1,4 @@
-import { Chapter } from "../../interfaces/Chapter";
+import { Chapter } from "../../../../wiki/src/interfaces/Chapter";
 import { Component, h, Prop, Listen, State, Element } from "@stencil/core";
 
 import CustomTheme from "../../decorators/CustomTheme";
