@@ -47,9 +47,6 @@ export const config: CardinalConfig = {
       type: 'www',
       dir: 'build/www',
       serviceWorker: null
-    },
-    {
-      type: 'docs-readme'
     }
   ],
   useBootstrap: true
