@@ -1,4 +1,4 @@
-import { Component, h, Host } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'pskx-app-container'
@@ -6,16 +6,16 @@ import { Component, h, Host } from '@stencil/core';
 export class PskxAppContainer {
 
   render() {
-    const host = {
-      attributes: {
-        class: 'psk-app-container'
-      }
-    }
-
-    return (
-      <Host {...host.attributes}>
-        Container
-      </Host>
-    );
+    return [
+      <div class="container before">
+        <slot name="before"/>
+      </div>,
+      <div class="container app-container">
+        <pskx-app-router/>
+      </div>,
+      <div class="container after">
+        <slot name="after"/>
+      </div>
+    ];
   }
 }

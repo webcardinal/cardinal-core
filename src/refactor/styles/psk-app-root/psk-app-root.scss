@@ -5,10 +5,10 @@
   background: orange;
 }
 
-:host(.vertical) {
+:host([layout=vertical]) {
   grid-template-columns: auto 1fr;
 }
 
-:host(.horizontal) {
+:host([layout=horizontal]) {
   grid-template-rows: auto 1fr;
 }

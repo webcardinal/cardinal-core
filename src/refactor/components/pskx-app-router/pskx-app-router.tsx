@@ -1,6 +1,7 @@
 import { Component, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
 import { MenuItem } from '../../../interfaces/MenuItem';
 import { ExtendedHistoryType } from '../../../interfaces/ExtendedHistoryType';
+import { promisifyEvent } from '../../utils';
 
 @Component({
   tag: 'pskx-app-router'
@@ -21,22 +22,10 @@ export class PskxAppContainer {
     bubbles: true, cancelable: true, composed: true
   }) getHistoryTypeEvent: EventEmitter;
 
-  private __promisifyEvent(event): Promise<any> {
-    return new Promise((resolve, reject) => {
-      event.emit((error, data) => {
-        if (error) {
-          reject(error);
-        }
-        resolve(data);
-      });
-    })
-  }
-
   async componentWillLoad() {
     try {
-      this.menuItems = await this.__promisifyEvent(this.getRoutesEvent);
-      this.historyType = await this.__promisifyEvent(this.getHistoryTypeEvent);
-
+      this.menuItems = await promisifyEvent(this.getRoutesEvent);
+      this.historyType = await promisifyEvent(this.getHistoryTypeEvent);
     } catch (error) {
       console.error(error);
     }
@@ -51,7 +40,11 @@ export class PskxAppContainer {
 
     return (
       <Host {...host.attributes}>
-        Router
+        <stencil-router>
+          <stencil-route-switch scrollTopOffset={0}>
+
+          </stencil-route-switch>
+        </stencil-router>
       </Host>
     );
   }

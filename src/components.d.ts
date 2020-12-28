@@ -364,9 +364,17 @@ export namespace Components {
         "items"?: MenuItem[];
         "mode": string;
     }
+    interface PskxAppMenuItem {
+        "item": MenuItem;
+        "level": number;
+    }
     interface PskxAppRoot {
         "controller": any;
         "disableSidebar": boolean;
+    }
+    interface PskxAppRouter {
+        "historyType": ExtendedHistoryType;
+        "menuItems"?: MenuItem[];
     }
     interface QueryPageLink {
         "activeClass": string;
@@ -395,11 +403,6 @@ export namespace Components {
         "location": LocationSegments;
         "pages": MenuItem[];
         "redirectTo": string;
-    }
-    interface SidebarRenderer {
-        "active": boolean;
-        "historyType": ExtendedHistoryType;
-        "value": MenuItem;
     }
 }
 declare global {
@@ -817,11 +820,23 @@ declare global {
         prototype: HTMLPskxAppMenuElement;
         new (): HTMLPskxAppMenuElement;
     };
+    interface HTMLPskxAppMenuItemElement extends Components.PskxAppMenuItem, HTMLStencilElement {
+    }
+    var HTMLPskxAppMenuItemElement: {
+        prototype: HTMLPskxAppMenuItemElement;
+        new (): HTMLPskxAppMenuItemElement;
+    };
     interface HTMLPskxAppRootElement extends Components.PskxAppRoot, HTMLStencilElement {
     }
     var HTMLPskxAppRootElement: {
         prototype: HTMLPskxAppRootElement;
         new (): HTMLPskxAppRootElement;
+    };
+    interface HTMLPskxAppRouterElement extends Components.PskxAppRouter, HTMLStencilElement {
+    }
+    var HTMLPskxAppRouterElement: {
+        prototype: HTMLPskxAppRouterElement;
+        new (): HTMLPskxAppRouterElement;
     };
     interface HTMLQueryPageLinkElement extends Components.QueryPageLink, HTMLStencilElement {
     }
@@ -834,12 +849,6 @@ declare global {
     var HTMLQueryPagesRouterElement: {
         prototype: HTMLQueryPagesRouterElement;
         new (): HTMLQueryPagesRouterElement;
-    };
-    interface HTMLSidebarRendererElement extends Components.SidebarRenderer, HTMLStencilElement {
-    }
-    var HTMLSidebarRendererElement: {
-        prototype: HTMLSidebarRendererElement;
-        new (): HTMLSidebarRendererElement;
     };
     interface HTMLElementTagNameMap {
         "dropdown-renderer": HTMLDropdownRendererElement;
@@ -911,10 +920,11 @@ declare global {
         "psk-wizard": HTMLPskWizardElement;
         "pskx-app-container": HTMLPskxAppContainerElement;
         "pskx-app-menu": HTMLPskxAppMenuElement;
+        "pskx-app-menu-item": HTMLPskxAppMenuItemElement;
         "pskx-app-root": HTMLPskxAppRootElement;
+        "pskx-app-router": HTMLPskxAppRouterElement;
         "query-page-link": HTMLQueryPageLinkElement;
         "query-pages-router": HTMLQueryPagesRouterElement;
-        "sidebar-renderer": HTMLSidebarRendererElement;
     }
 }
 declare namespace LocalJSX {
@@ -1293,9 +1303,19 @@ declare namespace LocalJSX {
         "mode"?: string;
         "onNeedMenuItems"?: (event: CustomEvent<any>) => void;
     }
+    interface PskxAppMenuItem {
+        "item"?: MenuItem;
+        "level"?: number;
+    }
     interface PskxAppRoot {
         "controller"?: any;
         "disableSidebar"?: boolean;
+    }
+    interface PskxAppRouter {
+        "historyType"?: ExtendedHistoryType;
+        "menuItems"?: MenuItem[];
+        "onGetHistoryType"?: (event: CustomEvent<any>) => void;
+        "onNeedRoutes"?: (event: CustomEvent<any>) => void;
     }
     interface QueryPageLink {
         "activeClass"?: string;
@@ -1324,11 +1344,6 @@ declare namespace LocalJSX {
         "location"?: LocationSegments;
         "pages"?: MenuItem[];
         "redirectTo"?: string;
-    }
-    interface SidebarRenderer {
-        "active"?: boolean;
-        "historyType"?: ExtendedHistoryType;
-        "value"?: MenuItem;
     }
     interface IntrinsicElements {
         "dropdown-renderer": DropdownRenderer;
@@ -1400,10 +1415,11 @@ declare namespace LocalJSX {
         "psk-wizard": PskWizard;
         "pskx-app-container": PskxAppContainer;
         "pskx-app-menu": PskxAppMenu;
+        "pskx-app-menu-item": PskxAppMenuItem;
         "pskx-app-root": PskxAppRoot;
+        "pskx-app-router": PskxAppRouter;
         "query-page-link": QueryPageLink;
         "query-pages-router": QueryPagesRouter;
-        "sidebar-renderer": SidebarRenderer;
     }
 }
 export { LocalJSX as JSX };
@@ -1479,10 +1495,11 @@ declare module "@stencil/core" {
             "psk-wizard": LocalJSX.PskWizard & JSXBase.HTMLAttributes<HTMLPskWizardElement>;
             "pskx-app-container": LocalJSX.PskxAppContainer & JSXBase.HTMLAttributes<HTMLPskxAppContainerElement>;
             "pskx-app-menu": LocalJSX.PskxAppMenu & JSXBase.HTMLAttributes<HTMLPskxAppMenuElement>;
+            "pskx-app-menu-item": LocalJSX.PskxAppMenuItem & JSXBase.HTMLAttributes<HTMLPskxAppMenuItemElement>;
             "pskx-app-root": LocalJSX.PskxAppRoot & JSXBase.HTMLAttributes<HTMLPskxAppRootElement>;
+            "pskx-app-router": LocalJSX.PskxAppRouter & JSXBase.HTMLAttributes<HTMLPskxAppRouterElement>;
             "query-page-link": LocalJSX.QueryPageLink & JSXBase.HTMLAttributes<HTMLQueryPageLinkElement>;
             "query-pages-router": LocalJSX.QueryPagesRouter & JSXBase.HTMLAttributes<HTMLQueryPagesRouterElement>;
-            "sidebar-renderer": LocalJSX.SidebarRenderer & JSXBase.HTMLAttributes<HTMLSidebarRendererElement>;
         }
     }
 }

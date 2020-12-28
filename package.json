@@ -22,7 +22,8 @@
   "dependencies": {},
   "devDependencies": {
     "@stencil/core": "^2.3.0",
-    "@stencil/router": "^1.0.1"
+    "@stencil/router": "^1.0.1",
+    "@stencil/sass": "^1.4.1"
   },
   "repository": {
     "type": "git",

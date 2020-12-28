@@ -1,0 +1,12 @@
+pskx-app-menu {
+  display: grid;
+  padding: var(--app-menu-padding);
+
+  & pskx-app-menu-item {
+    display: flex;
+
+    & .item {
+      cursor: pointer;
+    }
+  }
+}

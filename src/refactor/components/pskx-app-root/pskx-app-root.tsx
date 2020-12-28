@@ -1,4 +1,4 @@
-import { Component, Element, h, Host, Prop, State } from '@stencil/core';
+import { Component, Element, h, Prop, State } from '@stencil/core';
 
 import { DefaultApplicationController } from "../../../controllers";
 import { TableOfContentProperty } from "../../../decorators";
@@ -9,7 +9,7 @@ import { ExtendedHistoryType } from "../../../interfaces/ExtendedHistoryType";
 @Component({
   tag: 'pskx-app-root',
   styleUrls: {
-    default: '../../styles/psk-app-root/psk-app-root.css'
+    default: '../../styles/psk-app-root/psk-app-root.scss'
   },
   shadow: true
 })
@@ -93,12 +93,6 @@ export class PskxAppRoot {
   }
 
   render() {
-    const host = {
-      attributes: {
-        class: 'psk-app-root'
-      }
-    }
-
     if (!this.hasSlot) {
       this.host.innerHTML = `
         <pskx-app-menu></pskx-app-menu>
@@ -106,10 +100,6 @@ export class PskxAppRoot {
       `;
     }
 
-    return (
-      <Host {...host.attributes}>
-        <slot/>
-      </Host>
-    )
+    return <slot/>;
   }
 }
