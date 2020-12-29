@@ -47,7 +47,7 @@ export class PskxAppMenuItem {
       items: []
     };
 
-    const { name, children } = this.item as any;
+    const { path: url, name, children } = this.item as any;
 
     if (children && children['type'] === 'known') {
       const { items } = children;
@@ -57,9 +57,9 @@ export class PskxAppMenuItem {
     }
 
     return (
-      <Host>
+        <Host>
         { !children
-          ? <stencil-route-link class="item">{name}</stencil-route-link>
+          ? <stencil-route-link class="item" url={url}>{name}</stencil-route-link>
           : (
             <div {...dropdown.attributes}>
               <div class="item" onClick={this.handleClick.bind(this)}>{name}</div>

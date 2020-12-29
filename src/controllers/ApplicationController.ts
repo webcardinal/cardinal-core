@@ -1,14 +1,14 @@
 import fetch from '../utils/fetch';
-// import AppConfigurationHelper from "./AppConfigurationHelper";
+import defaultConfig from './default/cardinal.config';
 
-// const CONFIG_PATH = 'cardinal.json';
-const CONFIG_PATH = 'config.json';
-const MENU_PATH = 'menu.json';
+const CONFIG_PATH = 'cardinal.json';
+const PAGES_PATH = 'pages';
 
 export default class ApplicationController {
   private readonly baseURL: URL;
   private readonly configURL: URL;
-  private readonly menuURL: URL;
+  // @ts-ignore
+  private isConfigReady: boolean;
 
   private __getBaseURL() {
     const getBaseElementHref = () => {
@@ -53,9 +53,7 @@ export default class ApplicationController {
 
     const loadConfiguration = async() => {
       try {
-        let config = await fetchJSON(this.configURL.href);
-        let menu = await fetchJSON(this.menuURL.href);
-        return { config, menu };
+        return fetchJSON(this.configURL.href);
       } catch (error) {
         return error;
       }
@@ -66,45 +64,62 @@ export default class ApplicationController {
       .catch(error => callback(error))
   }
 
-  // private __prepareConfiguration(rawConfig) {
-  //   const getIdentity = () => {
-  //     if (rawConfig.identity) {
-  //       return rawConfig.identity;
-  //     }
-  //   }
-  //
-  //   let config: {[key: string]: any} = {};
-  //
-  //   // baseURL
-  //   config.baseURL = this.baseURL.href;
-  //
-  //   // TODO: menu
-  //
-  //   // identity
-  //   config.identity = getIdentity()
-  //   if (rawConfig.profile) {}
-  //
-  //   // TODO: modals
-  //
-  //   return config;
-  // }
+  private __prepareConfiguration(rawConfig) {
+    const getConfigValue = (key) => {
+      if (rawConfig[key]) {
+        return rawConfig[key];
+      }
+      return defaultConfig[key];
+    };
+
+    const getTrimmedPath = (path) => {
+      if (path.startsWith('/')) {
+        path = path.slice(1);
+      }
+      if (!path.endsWith('/')) {
+        path += '/';
+      }
+      return path;
+    }
+
+    let config: {[key: string]: any} = {};
+
+    // baseURL
+    config.baseURL = this.baseURL.href;
+
+    // identity
+    config.identity = getConfigValue('identity');
+
+    // version
+    config.version  = getConfigValue('version');
+
+    // TODO: menu
+
+    // TODO: modals
+
+    // pages pathname
+    config.pagesPathname = getTrimmedPath(PAGES_PATH);
+
+    // TODO: pages
+
+    return config;
+  }
 
   constructor(element) {
-    this.baseURL   = this.__getBaseURL();
+    this.baseURL = this.__getBaseURL();
     this.configURL = this.__getResourceURL(CONFIG_PATH);
-    this.menuURL   = this.__getResourceURL(MENU_PATH);
+    this.isConfigReady = false;
 
-    this.__getConfiguration((error, configuration) => {
+    this.__getConfiguration((error, config) => {
       if (error) {
         console.error(error);
         return;
       }
-      console.log(configuration);
+      console.log('rawConfig', config);
 
-      // const t = AppConfigurationHelper._prepareConfiguration(configuration, this.baseURL.href);
-      // console.log(t);
-      //
-      // console.log(this.__prepareConfiguration(configuration));
+      console.log('config', this.__prepareConfiguration(config));
+
+      this.isConfigReady = true;
     });
 
     console.log(element);

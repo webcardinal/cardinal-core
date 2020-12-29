@@ -160,7 +160,9 @@ export class PskAppRouter {
     }
 
     render() {
+        console.log('this.routesItems', this.routesItems);
         let routes = this.renderItems(this.routesItems);
+        console.log('routes', routes);
 
         if (routes.length === 0) {
             return <psk-ui-loader shouldBeRendered={true}/>
@@ -185,6 +187,7 @@ export class PskAppRouter {
             return <stencil-route url={path} exact={true} component="psk-route-redirect"
                                   componentProps={{url: this.routesItems[0].path}}/>
         });
+      console.log('landingPagesRoutes', landingPagesRoutes);
 
 
         return (

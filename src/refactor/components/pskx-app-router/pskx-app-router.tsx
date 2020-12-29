@@ -6,9 +6,9 @@ import { promisifyEvent } from '../../utils';
 @Component({
   tag: 'pskx-app-router'
 })
-export class PskxAppContainer {
+export class PskxAppRouter {
 
-  @Prop() menuItems?: MenuItem[] = [];
+  @Prop() routes?: MenuItem[] = [];
 
   @Prop() historyType: ExtendedHistoryType;
 
@@ -24,25 +24,39 @@ export class PskxAppContainer {
 
   async componentWillLoad() {
     try {
-      this.menuItems = await promisifyEvent(this.getRoutesEvent);
+      this.routes = await promisifyEvent(this.getRoutesEvent);
       this.historyType = await promisifyEvent(this.getHistoryTypeEvent);
     } catch (error) {
       console.error(error);
     }
   }
 
-  render() {
-    const host = {
-      attributes: {
-        class: 'psk-app-router'
-      }
+  private __getRouteProps = (route) => {
+    const { path: url, component, componentProps } = route;
+    return { url, component, componentProps };
+  }
+
+  private __renderRoutes = (routes) => {
+    if (!Array.isArray(routes) || routes.length === 0) {
+      return null;
     }
+    return routes.map(route => {
+      if (route.children) {
+        return this.__renderRoutes(route.children.items);
+      } else {
+        return <stencil-route {...this.__getRouteProps(route)}/>;
+      }
+    })
+  }
+
+  render() {
+    const routes = this.__renderRoutes(this.routes);
 
     return (
-      <Host {...host.attributes}>
+      <Host>
         <stencil-router>
           <stencil-route-switch scrollTopOffset={0}>
-
+            { routes }
           </stencil-route-switch>
         </stencil-router>
       </Host>

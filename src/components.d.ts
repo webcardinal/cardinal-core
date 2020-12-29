@@ -374,7 +374,7 @@ export namespace Components {
     }
     interface PskxAppRouter {
         "historyType": ExtendedHistoryType;
-        "menuItems"?: MenuItem[];
+        "routes"?: MenuItem[];
     }
     interface QueryPageLink {
         "activeClass": string;
@@ -1313,9 +1313,9 @@ declare namespace LocalJSX {
     }
     interface PskxAppRouter {
         "historyType"?: ExtendedHistoryType;
-        "menuItems"?: MenuItem[];
         "onGetHistoryType"?: (event: CustomEvent<any>) => void;
         "onNeedRoutes"?: (event: CustomEvent<any>) => void;
+        "routes"?: MenuItem[];
     }
     interface QueryPageLink {
         "activeClass"?: string;
