@@ -1,7 +1,7 @@
 import { Component, Element, h, Prop, State } from '@stencil/core';
 
-import { DefaultApplicationController } from '../../../controllers'; // TODO: remove this
-// import DefaultApplicationController from '../../../controllers/ApplicationController';
+// import { DefaultApplicationController } from '../../../controllers'; // TODO: remove this
+import DefaultApplicationController from '../../../controllers/ApplicationController';
 
 import { TableOfContentProperty } from '../../../decorators';
 import { ControllerRegistryService } from '../../../services';

@@ -1,5 +1,4 @@
 import { Component, Element, h, Host, Prop } from '@stencil/core';
-import { MenuItem } from '../../../interfaces/MenuItem';
 
 @Component({
   tag: 'pskx-app-menu-item'
@@ -7,7 +6,9 @@ import { MenuItem } from '../../../interfaces/MenuItem';
 export class PskxAppMenuItem {
   @Element() host: HTMLElement;
 
-  @Prop() item: MenuItem;
+  @Prop() item;
+
+  @Prop() href: string = '';
 
   @Prop() level: number = 0;
 

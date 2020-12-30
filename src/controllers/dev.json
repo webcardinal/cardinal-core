@@ -2845,7 +2845,7 @@
           },
           {
             "name":"CSBWizard",
-            "indexed":"false",
+            "indexed":false,
             "path":"/?Tools/csbwizard",
             "icon":"fa-bars",
             "type":"route",
@@ -2859,7 +2859,7 @@
           },
           {
             "name":"Governance",
-            "indexed":"false",
+            "indexed":false,
             "path":"/?Tools/governance",
             "icon":"fa-bars",
             "type":"route",
@@ -2873,7 +2873,7 @@
           },
           {
             "name":"PSKMonitor",
-            "indexed":"false",
+            "indexed":false,
             "path":"/?Tools/pskmonitor",
             "icon":"fa-bars",
             "type":"route",
@@ -2887,7 +2887,7 @@
           },
           {
             "name":"pskwallet",
-            "indexed":"false",
+            "indexed":false,
             "path":"/?Tools/pskwallet",
             "icon":"fa-bars",
             "type":"route",
@@ -2901,7 +2901,7 @@
           },
           {
             "name":"Tool List",
-            "indexed":"false",
+            "indexed":false,
             "path":"/?Tools/tool-list",
             "icon":"fa-bars",
             "type":"route",
@@ -2954,7 +2954,7 @@
           },
           {
             "name":"Unit testing map",
-            "indexed":"false",
+            "indexed":false,
             "path":"/?Development/unit-testing-map",
             "icon":"fa-bars",
             "type":"route",
@@ -3010,7 +3010,7 @@
           },
           {
             "name":"Development guide",
-            "indexed":"false",
+            "indexed":false,
             "path":"/?Development/development-guide",
             "icon":"fa-bars",
             "type":"route",
@@ -3024,7 +3024,7 @@
           },
           {
             "name":"Communication",
-            "indexed":"false",
+            "indexed":false,
             "path":"/?Development/communication",
             "icon":"fa-bars",
             "type":"route",
@@ -3038,7 +3038,7 @@
           },
           {
             "name":"Advanced",
-            "indexed":"false",
+            "indexed":false,
             "path":"/?Development/advanced",
             "icon":"fa-bars",
             "type":"route",

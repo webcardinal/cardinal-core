@@ -1,6 +1,5 @@
 import { Component, Element, Event, EventEmitter, h, Prop } from '@stencil/core';
-import { MenuItem } from '../../../interfaces/MenuItem';
-import { promisifyEvent } from '../../utils';
+import { promisifyEventEmit } from '../../utils';
 
 @Component({
   tag: 'pskx-app-menu',
@@ -12,7 +11,7 @@ import { promisifyEvent } from '../../utils';
 export class PskxAppMenu {
   @Element() host: HTMLElement;
 
-  @Prop() items?: MenuItem[] = [];
+  @Prop() items = [];
 
   private slots = {
     before: false,
@@ -20,11 +19,12 @@ export class PskxAppMenu {
   }
   private modes = Object.keys(this.menu);
   private defaultMode = this.modes[0];
+  private href = '';
 
   @Prop({ reflect: true, mutable: true }) mode = this.defaultMode;
 
   @Event({
-    eventName: 'needMenuItems',
+    eventName: 'cardinal:config:getRouting',
     bubbles: true, composed: true, cancelable: true
   }) getItemsEvent: EventEmitter
 
@@ -32,7 +32,10 @@ export class PskxAppMenu {
     // get items
     if (this.items.length === 0) {
       try {
-        this.items = await promisifyEvent(this.getItemsEvent);
+        const routing = await promisifyEventEmit(this.getItemsEvent);
+        this.items = routing.pages;
+        this.href = routing.pagesURL;
+        console.log('items', this.items);
       } catch (error) {
         console.error(error);
       }
@@ -66,7 +69,7 @@ export class PskxAppMenu {
           : null
         ),
         <div class="container app-menu items">
-          {this.items.map(item => <pskx-app-menu-item item={item}/>)}
+          {this.items.map(item => <pskx-app-menu-item item={item} href={this.href}/>)}
         </div>,
         ( this.slots.after
           ? <div class="container after">

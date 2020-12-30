@@ -1,7 +1,7 @@
 import { Component, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
 import { MenuItem } from '../../../interfaces/MenuItem';
 import { ExtendedHistoryType } from '../../../interfaces/ExtendedHistoryType';
-import { promisifyEvent } from '../../utils';
+import { promisifyEventEmit } from '../../utils';
 
 @Component({
   tag: 'pskx-app-router'
@@ -24,8 +24,8 @@ export class PskxAppRouter {
 
   async componentWillLoad() {
     try {
-      this.routes = await promisifyEvent(this.getRoutesEvent);
-      this.historyType = await promisifyEvent(this.getHistoryTypeEvent);
+      this.routes = await promisifyEventEmit(this.getRoutesEvent);
+      this.historyType = await promisifyEventEmit(this.getHistoryTypeEvent);
     } catch (error) {
       console.error(error);
     }

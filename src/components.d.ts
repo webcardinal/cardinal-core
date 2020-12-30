@@ -361,11 +361,12 @@ export namespace Components {
     interface PskxAppContainer {
     }
     interface PskxAppMenu {
-        "items"?: MenuItem[];
+        "items": any[];
         "mode": string;
     }
     interface PskxAppMenuItem {
-        "item": MenuItem;
+        "href": string;
+        "item": any;
         "level": number;
     }
     interface PskxAppRoot {
@@ -1299,12 +1300,13 @@ declare namespace LocalJSX {
     interface PskxAppContainer {
     }
     interface PskxAppMenu {
-        "items"?: MenuItem[];
+        "items"?: any[];
         "mode"?: string;
-        "onNeedMenuItems"?: (event: CustomEvent<any>) => void;
+        "onCardinal:config:getRouting"?: (event: CustomEvent<any>) => void;
     }
     interface PskxAppMenuItem {
-        "item"?: MenuItem;
+        "href"?: string;
+        "item"?: any;
         "level"?: number;
     }
     interface PskxAppRoot {
