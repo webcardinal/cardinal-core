@@ -17,25 +17,22 @@ export class PskxAppMenu {
     before: false,
     after: false
   }
-  private modes = Object.keys(this.menu);
+  private modes = Object.keys(this._menu);
   private defaultMode = this.modes[0];
-  private href = '';
 
   @Prop({ reflect: true, mutable: true }) mode = this.defaultMode;
 
   @Event({
     eventName: 'cardinal:config:getRouting',
     bubbles: true, composed: true, cancelable: true
-  }) getItemsEvent: EventEmitter
+  }) getRoutingConfigEvent: EventEmitter
 
   async componentWillLoad() {
     // get items
     if (this.items.length === 0) {
       try {
-        const routing = await promisifyEventEmit(this.getItemsEvent);
+        const routing = await promisifyEventEmit(this.getRoutingConfigEvent);
         this.items = routing.pages;
-        this.href = routing.pagesURL;
-        console.log('items', this.items);
       } catch (error) {
         console.error(error);
       }
@@ -59,7 +56,7 @@ export class PskxAppMenu {
     }
   }
 
-  private get menu() {
+  private get _menu() {
     const renderMenu = () => {
       return [
         ( this.slots.before
@@ -69,7 +66,7 @@ export class PskxAppMenu {
           : null
         ),
         <div class="container app-menu items">
-          {this.items.map(item => <pskx-app-menu-item item={item} href={this.href}/>)}
+          {this.items.map(item => <pskx-app-menu-item item={item}/>)}
         </div>,
         ( this.slots.after
           ? <div class="container after">
@@ -87,7 +84,7 @@ export class PskxAppMenu {
   }
 
   render() {
-    return this.menu[this.mode];
+    return this._menu[this.mode];
   }
 }
 

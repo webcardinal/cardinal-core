@@ -8,13 +8,13 @@ export class PskxAppMenuItem {
 
   @Prop() item;
 
-  @Prop() href: string = '';
+  @Prop() base: string = '';
 
   @Prop() level: number = 0;
 
   private mode: string | null = null;
 
-  private __setMode() {
+  private _setMode = () => {
     if (!this.mode) {
       let element = this.host.parentElement;
       while (element.tagName.toLowerCase() !== 'pskx-app-menu') {
@@ -22,53 +22,65 @@ export class PskxAppMenuItem {
       }
       this.mode = element.getAttribute('mode');
     }
-  }
+  };
+
+  private _trimmedPath = (path) => {
+    return path.endsWith('/') ? path.slice(0, -1) : path
+  };
 
   handleClick(e: MouseEvent) {
     e.preventDefault();
     e.stopImmediatePropagation();
 
-    this.__setMode();
+    this._setMode();
 
     if (this.mode === 'vertical') {
       const item = e.currentTarget as HTMLElement;
       const dropdown = item.parentElement;
       dropdown.toggleAttribute('active');
     }
-  }
+  };
 
   render() {
+    if (!this.item.indexed) { return null; }
+
+    const { path, name, children } = this.item;
+    const base = this._trimmedPath(this.base) + '/~dev-link';
+    const href = this._trimmedPath(new URL(path, new URL(base, window.location.origin)).href);
     const dropdown = {
       attributes: {
         class: {
           'dropdown': true,
-          [`level-${this.level}`]: true, // this.level > 0
+          [`level-${this.level}`]: true
         }
       },
       items: []
     };
 
-    const { path: url, name, children } = this.item as any;
+    // console.log({ name, base: this.base, path, url });
 
-    if (children && children['type'] === 'known') {
-      const { items } = children;
-      for (let i = 0; i < items.length; i++) {
-        dropdown.items.push(<pskx-app-menu-item item={items[i]} level={this.level + 1}/>)
-      }
+    if (children) {
+      const props = { base: href, level: this.level + 1 } as any;
+      children.forEach(item => {
+        props.item = item;
+        dropdown.items.push(<pskx-app-menu-item {...props}/>)
+      });
     }
 
+    const url = new URL(href).pathname;
+
     return (
-        <Host>
-        { !children
-          ? <stencil-route-link class="item" url={url}>{name}</stencil-route-link>
-          : (
-            <div {...dropdown.attributes}>
-              <div class="item" onClick={this.handleClick.bind(this)}>{name}</div>
-              <div class="items">{dropdown.items}</div>
-            </div>
-          )
-        }
+      <Host>
+      { !children
+        ? <stencil-route-link class="item" url={url} data-test-url={url}>{name}</stencil-route-link>
+        : (
+          <div {...dropdown.attributes}>
+            <div class="item" onClick={this.handleClick.bind(this)}>{name}</div>
+            <div class="items">{dropdown.items}</div>
+          </div>
+        )
+      }
       </Host>
-    )
-  }
+    );
+  };
 }

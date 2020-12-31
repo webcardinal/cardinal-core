@@ -1,3 +1,4 @@
+// types
 type Identity = {
   name: string
   email: string
@@ -12,7 +13,9 @@ type Page = {
   indexed?: boolean
   children?: Array<Page>
 }
+type PagePathname = string
 
+// config
 export default {
   identity: {
     name: 'Cardinal',
@@ -27,5 +30,6 @@ export default {
       path: '/',
       src: 'index.html'
     }
-  ] as Array<Page>
+  ] as Array<Page>,
+  pagesPathname: 'pages' as PagePathname
 }

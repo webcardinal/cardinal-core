@@ -365,7 +365,7 @@ export namespace Components {
         "mode": string;
     }
     interface PskxAppMenuItem {
-        "href": string;
+        "base": string;
         "item": any;
         "level": number;
     }
@@ -374,8 +374,8 @@ export namespace Components {
         "disableSidebar": boolean;
     }
     interface PskxAppRouter {
-        "historyType": ExtendedHistoryType;
-        "routes"?: MenuItem[];
+        "base": string;
+        "routes": any[];
     }
     interface QueryPageLink {
         "activeClass": string;
@@ -1305,7 +1305,7 @@ declare namespace LocalJSX {
         "onCardinal:config:getRouting"?: (event: CustomEvent<any>) => void;
     }
     interface PskxAppMenuItem {
-        "href"?: string;
+        "base"?: string;
         "item"?: any;
         "level"?: number;
     }
@@ -1314,10 +1314,9 @@ declare namespace LocalJSX {
         "disableSidebar"?: boolean;
     }
     interface PskxAppRouter {
-        "historyType"?: ExtendedHistoryType;
-        "onGetHistoryType"?: (event: CustomEvent<any>) => void;
-        "onNeedRoutes"?: (event: CustomEvent<any>) => void;
-        "routes"?: MenuItem[];
+        "base"?: string;
+        "onCardinal:config:getRouting"?: (event: CustomEvent<any>) => void;
+        "routes"?: any[];
     }
     interface QueryPageLink {
         "activeClass"?: string;
