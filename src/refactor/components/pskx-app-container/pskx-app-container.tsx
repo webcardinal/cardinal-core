@@ -1,7 +1,10 @@
 import { Component, Element, h } from '@stencil/core';
 
 @Component({
-  tag: 'pskx-app-container'
+  tag: 'pskx-app-container',
+  styleUrls: {
+    default: '../../styles/psk-app-container/psk-app-container.scss'
+  }
 })
 export class PskxAppContainer {
   @Element() host: HTMLElement;

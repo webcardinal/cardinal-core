@@ -16,6 +16,8 @@ import { ExtendedHistoryType } from '../../../interfaces/ExtendedHistoryType';
   shadow: true
 })
 export class PskxAppRoot {
+  @Element() host: HTMLElement;
+
   @TableOfContentProperty({
     isMandatory: false,
     description: [
@@ -23,21 +25,17 @@ export class PskxAppRoot {
       `If no controller is provided, a default controller will be passed to the component.`,
       `It is recommended that each app to extend the provided default controller and adapt it to the application needs.`
     ],
-    propertyType: `string`,
-    defaultValue: `null`
+    propertyType: 'string'
   })
   @Prop() controller: any;
 
-  @Prop() disableSidebar: boolean = false;
-
-  @Element() host: HTMLElement;
-
   @State() historyType: ExtendedHistoryType;
-  @State() htmlLoader: HTMLElement;
+  @State() loaderElement: HTMLElement;
+
   @State() hasSlot: boolean = false;
   @State() disconnected: boolean = false;
 
-  __createLoader() {
+  private _createLoader = () => {
     const NR_CIRCLES = 12;
     let circles = "";
 
@@ -48,6 +46,7 @@ export class PskxAppRoot {
     let node = document.createElement("div");
     node.className = "app-loader";
     node.innerHTML = `<div class='sk-fading-circle'>${circles}</div>`;
+
     return node;
   }
 
@@ -61,8 +60,8 @@ export class PskxAppRoot {
 
   async componentWillLoad() {
     if (this.host.parentElement) {
-      this.htmlLoader = this.__createLoader();
-      this.host.parentElement.appendChild(this.htmlLoader);
+      this.loaderElement = this._createLoader();
+      this.host.parentElement.appendChild(this.loaderElement);
     }
 
     let innerHTML = this.host.innerHTML;
@@ -89,8 +88,10 @@ export class PskxAppRoot {
   }
 
   async componentDidLoad() {
-    if (this.htmlLoader && this.htmlLoader.parentNode) {
-      this.htmlLoader.parentNode.removeChild(this.htmlLoader);
+    console.log('pskx-app-root loaded!');
+
+    if (this.loaderElement) {
+      this.loaderElement.remove();
     }
   }
 

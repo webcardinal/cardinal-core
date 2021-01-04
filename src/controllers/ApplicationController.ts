@@ -81,8 +81,6 @@ export default class ApplicationController {
       return result;
     };
 
-    const getVersion = (rawVersion = getRaw('version')) => rawVersion;
-
     const getBaseURL = (rawBaseURL = this.baseURL.href) => this._trimPathname(rawBaseURL);
 
     const getPages = (baseURL = this.baseURL.href, rawPages = getRaw('pages')) => {
@@ -154,7 +152,8 @@ export default class ApplicationController {
 
     const config: any = {
       identity: getIdentity(),
-      version: getVersion(),
+      version: getRaw('version'),
+      theme: getRaw('theme'),
       routing: {
         baseURL: getBaseURL(),
         pages: getPages(),
@@ -163,8 +162,6 @@ export default class ApplicationController {
     };
 
     // TODO: modals
-
-    // TODO: theme
 
     // TODO: and many more...
 
@@ -197,8 +194,15 @@ export default class ApplicationController {
       event.preventDefault();
       event.stopImmediatePropagation();
 
-      let { callback } = event.detail;
-      if (typeof callback !== 'function') {
+      let callback;
+
+      console.log(event, key);
+
+      if (typeof event.detail === 'function') {
+        callback = event.detail;
+      } else if (event.detail && typeof event.detail.callback === 'function') {
+        callback = event.detail.callback;
+      } else {
         return;
       }
 
@@ -236,6 +240,26 @@ export default class ApplicationController {
     });
 
     element.addEventListener(EVENTS.GET_ROUTING, this._registerListener('routing'));
+    // TODO: production version
+    // element.addEventListener(EVENTS.GET_THEME, this._registerListener('theme'));
+
+    // TODO: development progress
+    element.addEventListener('getThemeConfig', this._registerListener('theme'));
+    window.basePath = this.baseURL.href;
+
+    const t_debugger = [
+      'getAppVersion',
+      'needRoutes',
+      'needMenuItems',
+      'getUserInfo',
+      'getHistoryType',
+      'getModals',
+      'getTags',
+      'getConfiguration',
+      'validateUrl',
+      'getCustomLandingPage'
+    ];
+    for (const t of t_debugger) element.addEventListener(t, (e) => console.log(e, t))
 
     console.log(element);
   }

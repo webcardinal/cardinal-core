@@ -360,6 +360,10 @@ export namespace Components {
     }
     interface PskxAppContainer {
     }
+    interface PskxAppLoader {
+        "src": string;
+        "type": string;
+    }
     interface PskxAppMenu {
         "items": any[];
         "mode": string;
@@ -371,7 +375,6 @@ export namespace Components {
     }
     interface PskxAppRoot {
         "controller": any;
-        "disableSidebar": boolean;
     }
     interface PskxAppRouter {
         "base": string;
@@ -815,6 +818,12 @@ declare global {
         prototype: HTMLPskxAppContainerElement;
         new (): HTMLPskxAppContainerElement;
     };
+    interface HTMLPskxAppLoaderElement extends Components.PskxAppLoader, HTMLStencilElement {
+    }
+    var HTMLPskxAppLoaderElement: {
+        prototype: HTMLPskxAppLoaderElement;
+        new (): HTMLPskxAppLoaderElement;
+    };
     interface HTMLPskxAppMenuElement extends Components.PskxAppMenu, HTMLStencilElement {
     }
     var HTMLPskxAppMenuElement: {
@@ -920,6 +929,7 @@ declare global {
         "psk-user-profile-renderer": HTMLPskUserProfileRendererElement;
         "psk-wizard": HTMLPskWizardElement;
         "pskx-app-container": HTMLPskxAppContainerElement;
+        "pskx-app-loader": HTMLPskxAppLoaderElement;
         "pskx-app-menu": HTMLPskxAppMenuElement;
         "pskx-app-menu-item": HTMLPskxAppMenuItemElement;
         "pskx-app-root": HTMLPskxAppRootElement;
@@ -1299,6 +1309,10 @@ declare namespace LocalJSX {
     }
     interface PskxAppContainer {
     }
+    interface PskxAppLoader {
+        "src"?: string;
+        "type"?: string;
+    }
     interface PskxAppMenu {
         "items"?: any[];
         "mode"?: string;
@@ -1311,7 +1325,6 @@ declare namespace LocalJSX {
     }
     interface PskxAppRoot {
         "controller"?: any;
-        "disableSidebar"?: boolean;
     }
     interface PskxAppRouter {
         "base"?: string;
@@ -1415,6 +1428,7 @@ declare namespace LocalJSX {
         "psk-user-profile-renderer": PskUserProfileRenderer;
         "psk-wizard": PskWizard;
         "pskx-app-container": PskxAppContainer;
+        "pskx-app-loader": PskxAppLoader;
         "pskx-app-menu": PskxAppMenu;
         "pskx-app-menu-item": PskxAppMenuItem;
         "pskx-app-root": PskxAppRoot;
@@ -1495,6 +1509,7 @@ declare module "@stencil/core" {
             "psk-user-profile-renderer": LocalJSX.PskUserProfileRenderer & JSXBase.HTMLAttributes<HTMLPskUserProfileRendererElement>;
             "psk-wizard": LocalJSX.PskWizard & JSXBase.HTMLAttributes<HTMLPskWizardElement>;
             "pskx-app-container": LocalJSX.PskxAppContainer & JSXBase.HTMLAttributes<HTMLPskxAppContainerElement>;
+            "pskx-app-loader": LocalJSX.PskxAppLoader & JSXBase.HTMLAttributes<HTMLPskxAppLoaderElement>;
             "pskx-app-menu": LocalJSX.PskxAppMenu & JSXBase.HTMLAttributes<HTMLPskxAppMenuElement>;
             "pskx-app-menu-item": LocalJSX.PskxAppMenuItem & JSXBase.HTMLAttributes<HTMLPskxAppMenuItemElement>;
             "pskx-app-root": LocalJSX.PskxAppRoot & JSXBase.HTMLAttributes<HTMLPskxAppRootElement>;
