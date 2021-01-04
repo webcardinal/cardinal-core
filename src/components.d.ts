@@ -358,28 +358,6 @@ export namespace Components {
         "componentRender": string;
         "wizardSteps"?: WizardStep[];
     }
-    interface PskxAppContainer {
-    }
-    interface PskxAppLoader {
-        "src": string;
-        "type": string;
-    }
-    interface PskxAppMenu {
-        "items": any[];
-        "mode": string;
-    }
-    interface PskxAppMenuItem {
-        "base": string;
-        "item": any;
-        "level": number;
-    }
-    interface PskxAppRoot {
-        "controller": any;
-    }
-    interface PskxAppRouter {
-        "base": string;
-        "routes": any[];
-    }
     interface QueryPageLink {
         "activeClass": string;
         "anchorClass"?: string;
@@ -812,42 +790,6 @@ declare global {
         prototype: HTMLPskWizardElement;
         new (): HTMLPskWizardElement;
     };
-    interface HTMLPskxAppContainerElement extends Components.PskxAppContainer, HTMLStencilElement {
-    }
-    var HTMLPskxAppContainerElement: {
-        prototype: HTMLPskxAppContainerElement;
-        new (): HTMLPskxAppContainerElement;
-    };
-    interface HTMLPskxAppLoaderElement extends Components.PskxAppLoader, HTMLStencilElement {
-    }
-    var HTMLPskxAppLoaderElement: {
-        prototype: HTMLPskxAppLoaderElement;
-        new (): HTMLPskxAppLoaderElement;
-    };
-    interface HTMLPskxAppMenuElement extends Components.PskxAppMenu, HTMLStencilElement {
-    }
-    var HTMLPskxAppMenuElement: {
-        prototype: HTMLPskxAppMenuElement;
-        new (): HTMLPskxAppMenuElement;
-    };
-    interface HTMLPskxAppMenuItemElement extends Components.PskxAppMenuItem, HTMLStencilElement {
-    }
-    var HTMLPskxAppMenuItemElement: {
-        prototype: HTMLPskxAppMenuItemElement;
-        new (): HTMLPskxAppMenuItemElement;
-    };
-    interface HTMLPskxAppRootElement extends Components.PskxAppRoot, HTMLStencilElement {
-    }
-    var HTMLPskxAppRootElement: {
-        prototype: HTMLPskxAppRootElement;
-        new (): HTMLPskxAppRootElement;
-    };
-    interface HTMLPskxAppRouterElement extends Components.PskxAppRouter, HTMLStencilElement {
-    }
-    var HTMLPskxAppRouterElement: {
-        prototype: HTMLPskxAppRouterElement;
-        new (): HTMLPskxAppRouterElement;
-    };
     interface HTMLQueryPageLinkElement extends Components.QueryPageLink, HTMLStencilElement {
     }
     var HTMLQueryPageLinkElement: {
@@ -928,12 +870,6 @@ declare global {
         "psk-user-profile": HTMLPskUserProfileElement;
         "psk-user-profile-renderer": HTMLPskUserProfileRendererElement;
         "psk-wizard": HTMLPskWizardElement;
-        "pskx-app-container": HTMLPskxAppContainerElement;
-        "pskx-app-loader": HTMLPskxAppLoaderElement;
-        "pskx-app-menu": HTMLPskxAppMenuElement;
-        "pskx-app-menu-item": HTMLPskxAppMenuItemElement;
-        "pskx-app-root": HTMLPskxAppRootElement;
-        "pskx-app-router": HTMLPskxAppRouterElement;
         "query-page-link": HTMLQueryPageLinkElement;
         "query-pages-router": HTMLQueryPagesRouterElement;
     }
@@ -1307,30 +1243,6 @@ declare namespace LocalJSX {
         "onNeedWizardConfiguration"?: (event: CustomEvent<any>) => void;
         "wizardSteps"?: WizardStep[];
     }
-    interface PskxAppContainer {
-    }
-    interface PskxAppLoader {
-        "src"?: string;
-        "type"?: string;
-    }
-    interface PskxAppMenu {
-        "items"?: any[];
-        "mode"?: string;
-        "onCardinal:config:getRouting"?: (event: CustomEvent<any>) => void;
-    }
-    interface PskxAppMenuItem {
-        "base"?: string;
-        "item"?: any;
-        "level"?: number;
-    }
-    interface PskxAppRoot {
-        "controller"?: any;
-    }
-    interface PskxAppRouter {
-        "base"?: string;
-        "onCardinal:config:getRouting"?: (event: CustomEvent<any>) => void;
-        "routes"?: any[];
-    }
     interface QueryPageLink {
         "activeClass"?: string;
         "anchorClass"?: string;
@@ -1427,12 +1339,6 @@ declare namespace LocalJSX {
         "psk-user-profile": PskUserProfile;
         "psk-user-profile-renderer": PskUserProfileRenderer;
         "psk-wizard": PskWizard;
-        "pskx-app-container": PskxAppContainer;
-        "pskx-app-loader": PskxAppLoader;
-        "pskx-app-menu": PskxAppMenu;
-        "pskx-app-menu-item": PskxAppMenuItem;
-        "pskx-app-root": PskxAppRoot;
-        "pskx-app-router": PskxAppRouter;
         "query-page-link": QueryPageLink;
         "query-pages-router": QueryPagesRouter;
     }
@@ -1508,12 +1414,6 @@ declare module "@stencil/core" {
             "psk-user-profile": LocalJSX.PskUserProfile & JSXBase.HTMLAttributes<HTMLPskUserProfileElement>;
             "psk-user-profile-renderer": LocalJSX.PskUserProfileRenderer & JSXBase.HTMLAttributes<HTMLPskUserProfileRendererElement>;
             "psk-wizard": LocalJSX.PskWizard & JSXBase.HTMLAttributes<HTMLPskWizardElement>;
-            "pskx-app-container": LocalJSX.PskxAppContainer & JSXBase.HTMLAttributes<HTMLPskxAppContainerElement>;
-            "pskx-app-loader": LocalJSX.PskxAppLoader & JSXBase.HTMLAttributes<HTMLPskxAppLoaderElement>;
-            "pskx-app-menu": LocalJSX.PskxAppMenu & JSXBase.HTMLAttributes<HTMLPskxAppMenuElement>;
-            "pskx-app-menu-item": LocalJSX.PskxAppMenuItem & JSXBase.HTMLAttributes<HTMLPskxAppMenuItemElement>;
-            "pskx-app-root": LocalJSX.PskxAppRoot & JSXBase.HTMLAttributes<HTMLPskxAppRootElement>;
-            "pskx-app-router": LocalJSX.PskxAppRouter & JSXBase.HTMLAttributes<HTMLPskxAppRouterElement>;
             "query-page-link": LocalJSX.QueryPageLink & JSXBase.HTMLAttributes<HTMLQueryPageLinkElement>;
             "query-pages-router": LocalJSX.QueryPagesRouter & JSXBase.HTMLAttributes<HTMLQueryPagesRouterElement>;
         }
