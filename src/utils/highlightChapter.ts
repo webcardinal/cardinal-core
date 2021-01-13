@@ -1,4 +1,4 @@
-import { ChapterDetails } from "../interfaces/ChapterDetails";
+import { ChapterDetails } from "../interfaces";
 import { closestParentTagElement } from "./utilFunctions";
 
 export function highlightChapter(): void {

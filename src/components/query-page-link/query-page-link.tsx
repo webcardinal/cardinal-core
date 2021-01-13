@@ -1,4 +1,4 @@
-import { Component, Prop, State, Watch, Element, ComponentInterface, h } from '@stencil/core';
+import { Component, ComponentInterface,  Element, h, Prop, State, Watch } from "@stencil/core";
 
 import {
   RouterHistory,

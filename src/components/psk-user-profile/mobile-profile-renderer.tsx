@@ -1,7 +1,5 @@
-import { Component, h,  Prop, } from '@stencil/core';
-import { TableOfContentProperty } from '../../decorators/TableOfContentProperty';
-import CustomTheme from "../../decorators/CustomTheme";
-import {BindModel} from '../../decorators/BindModel';
+import { Component, h,  Prop, } from "@stencil/core";
+import { BindModel, CustomTheme, TableOfContentProperty } from "../../decorators";
 
 @Component({
   tag: 'mobile-profile-renderer',

@@ -1,6 +1,5 @@
-import { Component, h, Prop } from '@stencil/core';
-import { TableOfContentProperty } from '../../decorators/TableOfContentProperty';
-import CustomTheme from '../../decorators/CustomTheme';
+import { Component, h, Prop } from "@stencil/core";
+import { CustomTheme, TableOfContentProperty } from "../../decorators";
 
 @Component({
 	tag: 'psk-page-not-found',
@@ -9,8 +8,8 @@ import CustomTheme from '../../decorators/CustomTheme';
 export class PskPageNotFound {
 	@CustomTheme()
 	@TableOfContentProperty({
-		description: `This property is the base path of the website. 
-		If this parameter is sent to the component, then when the user navigates to an unknown page, he will be redirected to the base path. 
+		description: `This property is the base path of the website.
+		If this parameter is sent to the component, then when the user navigates to an unknown page, he will be redirected to the base path.
 		It is not mandatory to be the root of the application, it can be the root of a section inside the website.`,
 		specialNote: `If this parameter is missing, urlDestination parameter is checked.`,
 		isMandatory: false,
@@ -27,7 +26,7 @@ export class PskPageNotFound {
 	@Prop() urlDestination?: string = null;
 
 	@TableOfContentProperty({
-		description: `This property allows the component to display a custom Page 
+		description: `This property allows the component to display a custom Page
 		not found content in case the user navigates to an unknown page.`,
 		specialNote: `If this parameter is missing, psk-page-not-found-renderer is assumed.`,
 		isMandatory: false,

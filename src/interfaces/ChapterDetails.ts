@@ -1,4 +1,4 @@
-export interface ChapterDetails {
+export default interface ChapterDetails {
   height: number;
   verticalOffset: number;
   guid: string;

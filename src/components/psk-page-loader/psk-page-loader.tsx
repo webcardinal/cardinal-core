@@ -1,7 +1,5 @@
-import { Component, h, Prop, State, Watch,Element } from "@stencil/core";
-import { TableOfContentProperty } from "../../decorators/TableOfContentProperty";
-import { BindModel } from "../../decorators/BindModel";
-import CustomTheme from "../../decorators/CustomTheme";
+import { Component, Element, h, Prop, State, Watch } from "@stencil/core";
+import { BindModel, CustomTheme, TableOfContentProperty } from "../../decorators";
 
 @Component({
   tag: 'psk-page-loader',

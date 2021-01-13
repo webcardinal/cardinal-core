@@ -1,8 +1,5 @@
-import { Component, Prop, h } from '@stencil/core';
-
-import CustomTheme from '../../decorators/CustomTheme';
-import { BindModel } from '../../decorators/BindModel';
-import { TableOfContentProperty } from '../../decorators/TableOfContentProperty';
+import { Component, h, Prop} from "@stencil/core";
+import { BindModel, CustomTheme, TableOfContentProperty } from "../../decorators";
 
 @Component({
   tag: 'psk-user-profile-renderer',

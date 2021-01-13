@@ -1,12 +1,6 @@
-import { Component, Listen, Prop, State, Event, EventEmitter, h } from '@stencil/core';
-
-import { MenuItem } from "../../interfaces/MenuItem";
-import { ExtendedHistoryType } from "../../interfaces/ExtendedHistoryType";
-
-import CustomTheme from "../../decorators/CustomTheme";
-import { TableOfContentProperty } from '../../decorators/TableOfContentProperty';
-import { TableOfContentEvent } from '../../decorators/TableOfContentEvent';
-
+import { Component, Event, EventEmitter, h, Listen, Prop, State } from "@stencil/core";
+import { CustomTheme, TableOfContentEvent, TableOfContentProperty } from "../../decorators";
+import { MenuItem, ExtendedHistoryType } from "../../interfaces";
 import { MOBILE_MAX_WIDTH } from "../../utils/constants";
 
 @Component({

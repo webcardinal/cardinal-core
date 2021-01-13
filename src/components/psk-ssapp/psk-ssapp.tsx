@@ -1,10 +1,8 @@
-import { Component, h, Prop, State, Element, Watch } from '@stencil/core';
-import { TableOfContentProperty } from '../../decorators/TableOfContentProperty';
+import { Component, Element, h, Prop, State, Watch } from "@stencil/core";
 import { MatchResults, RouterHistory } from "@stencil/router";
-import { BindModel } from "../../decorators/BindModel";
-import CustomTheme from "../../decorators/CustomTheme";
+import { BindModel, CustomTheme, TableOfContentProperty } from "../../decorators";
 import SSAppInstanceRegistry from "./SSAppInstancesRegistry.js";
-import NavigatinTrackerService from "./NavigationTrackerService.js";
+import NavigationTrackerService from "./NavigationTrackerService.js";
 
 declare const $$: any;
 
@@ -93,7 +91,7 @@ export class PskSelfSovereignApp {
 		this.eventHandler = this.__ssappEventHandler.bind(this);
 		window.document.addEventListener(this.digestKeySsiHex, this.eventHandler);
 		window.document.addEventListener(this.parsedParams, this.eventHandler);
-		NavigatinTrackerService.getInstance().listenForSSAppHistoryChanges();
+		NavigationTrackerService.getInstance().listenForSSAppHistoryChanges();
 	}
 
 	@Watch("seed")
@@ -107,7 +105,7 @@ export class PskSelfSovereignApp {
 
 		if (this.componentInitialized) {
 			this.digestKeySsiHex = this.__digestMessage(this.seed);
-			NavigatinTrackerService.getInstance().setIdentity(this.digestKeySsiHex);
+			NavigationTrackerService.getInstance().setIdentity(this.digestKeySsiHex);
 			if (typeof callback === "function") {
 				callback();
 			}

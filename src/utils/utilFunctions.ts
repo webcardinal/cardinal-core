@@ -1,42 +1,9 @@
+import { getElement } from "@stencil/core";
 import { INVALID_ID_CHARACTERS_REGEX } from "./constants";
-import {getElement} from "@stencil/core";
 
-export function format(first: string, middle: string, last: string): string {
-  return (
-    (first || "") + (middle ? ` ${middle}` : "") + (last ? ` ${last}` : "")
-  );
-}
-
-export function scrollToElement(
-  elementId: string,
-  htmlView: HTMLElement
-): void {
-  const selector = normalizeElementId(elementId);
-  const chapterElm = htmlView.querySelector(`#${selector}`);
-
-  if (!chapterElm) {
-    return;
-  }
-
-  chapterElm.scrollIntoView();
-
-  let basePath = window.location.href;
-  let queryOperator = "?";
-  if (basePath.indexOf("chapter=") !== -1) {
-    basePath = window.location.href.split("chapter=")[0];
-    if (basePath.length > 0) {
-      queryOperator = basePath[basePath.length - 1];
-      basePath = basePath.substring(0, basePath.length - 1);
-    }
-  } else {
-    queryOperator = basePath.indexOf("?") > 0 ? "&" : "?";
-  }
-  let chapterKey = `${queryOperator}chapter=`;
-  window.history.pushState({}, "", `${basePath}${chapterKey}${selector}`);
-}
-//TODO refactor this
 /**
- * @deprecated You should create your own Event. See /events/PskButtonEvent.ts example
+ * @deprecated You should create your own Event.
+ * See /events/PskButtonEvent.ts example
  * @param eventName
  * @param options
  * @param trigger
@@ -93,6 +60,46 @@ export function closestParentTagElement(
   return retval;
 }
 
+
+/**
+ * normalize a string to be compliant with a HTML id value
+ * @param source
+ */
+export function normalizeElementId(source: string): string {
+  let normalizedId = source.replace(INVALID_ID_CHARACTERS_REGEX, "-").toLowerCase();
+  normalizedId = normalizedId.replace(/(-+){2}/gm, "-");
+  normalizedId = normalizedId.replace(/(-+)$/gm, "");
+  return normalizedId;
+}
+
+export function scrollToElement(
+  elementId: string,
+  htmlView: HTMLElement
+): void {
+  const selector = normalizeElementId(elementId);
+  const chapterElm = htmlView.querySelector(`#${selector}`);
+
+  if (!chapterElm) {
+    return;
+  }
+
+  chapterElm.scrollIntoView();
+
+  let basePath = window.location.href;
+  let queryOperator = "?";
+  if (basePath.indexOf("chapter=") !== -1) {
+    basePath = window.location.href.split("chapter=")[0];
+    if (basePath.length > 0) {
+      queryOperator = basePath[basePath.length - 1];
+      basePath = basePath.substring(0, basePath.length - 1);
+    }
+  } else {
+    queryOperator = basePath.indexOf("?") > 0 ? "&" : "?";
+  }
+  let chapterKey = `${queryOperator}chapter=`;
+  window.history.pushState({}, "", `${basePath}${chapterKey}${selector}`);
+}
+
 export function normalizeInnerHTML(source: string = ""): string {
   return source.replace(/<!----->/g, "").replace(/<!---->/g, "");
 }
@@ -114,7 +121,6 @@ export function normalizeCamelCaseToDashed(source: string): string {
     .join("");
 }
 
-
 export function normalizeDashedToCamelCase(source: string): string {
   if (!source || typeof source !== 'string' || source.length === 0) {
     return '';
@@ -130,23 +136,12 @@ export function normalizeDashedToCamelCase(source: string): string {
     })
     .join("");
 }
-/**
- * normalize a string to be compliant with a HTML id value
- * @param source
- */
-export function normalizeElementId(source: string): string {
-  let normalizedId = source.replace(INVALID_ID_CHARACTERS_REGEX, "-").toLowerCase();
-  normalizedId = normalizedId.replace(/(-+){2}/gm, "-");
-  normalizedId = normalizedId.replace(/(-+)$/gm, "");
-  return normalizedId;
-}
 
 /**
- *
  * @param source
  * @param regex
  * @param replaceString
- * @param applyCallback - A callback function that will be applyed to the string result
+ * @param applyCallback - A callback function that will be applied to the string result
  */
 export function normalizeRegexToString(
   source: string,
@@ -159,6 +154,13 @@ export function normalizeRegexToString(
     return applyCallback(result);
   }
   return result;
+}
+
+export function normalizeModelChain(chain){
+  if(typeof chain !== "string"){
+    throw new Error("Invalid model chain");
+  }
+  return chain.split("@").join("");
 }
 
 export function canAttachShadow(tagName: string): boolean {
@@ -188,13 +190,6 @@ export function canAttachShadow(tagName: string): boolean {
   ].find((htmlTag: string) => htmlTag === tagName);
 
   return found === tagName;
-}
-
-export function normalizeModelChain(chain){
-  if(typeof chain !== "string"){
-    throw new Error("Invalid model chain");
-  }
-  return chain.split("@").join("");
 }
 
 export function stringToBoolean(str){

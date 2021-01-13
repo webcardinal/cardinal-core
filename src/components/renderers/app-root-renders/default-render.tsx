@@ -1,6 +1,6 @@
-import {Component, Event, EventEmitter, h, Prop, State} from "@stencil/core";
-import CustomTheme from "../../../decorators/CustomTheme";
-import {MOBILE_MAX_WIDTH} from "../../../utils/constants";
+import { Component, Event, EventEmitter, h, Prop, State } from "@stencil/core";
+import { CustomTheme } from "../../../decorators";
+import { MOBILE_MAX_WIDTH } from "../../../utils/constants";
 
 @Component({
 	tag: 'psk-default-renderer',

@@ -1,8 +1,6 @@
-import {Component, Event, EventEmitter, h, Prop} from '@stencil/core';
-import {MenuItem} from "../../interfaces/MenuItem";
-import CustomTheme from "../../decorators/CustomTheme";
-import { TableOfContentProperty } from '../../decorators/TableOfContentProperty';
-import {ExtendedHistoryType} from "../../interfaces/ExtendedHistoryType";
+import { Component, Event, EventEmitter, h, Prop } from "@stencil/core";
+import { CustomTheme, TableOfContentProperty } from "../../decorators";
+import { MenuItem, ExtendedHistoryType } from "../../interfaces";
 
 @Component({
   tag: 'psk-menu-item-renderer',

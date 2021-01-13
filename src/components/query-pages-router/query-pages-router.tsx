@@ -1,7 +1,7 @@
-import { Component, h, Element, Prop, Watch, State } from '@stencil/core';
-import { LocationSegments, RouterHistory, injectHistory } from "@stencil/router";
-import { MenuItem } from "../../interfaces/MenuItem";
+import { Component, Element, h, Prop, State, Watch } from "@stencil/core";
 import { HTMLStencilElement } from "@stencil/core/internal";
+import { injectHistory, LocationSegments, RouterHistory } from "@stencil/router";
+import { MenuItem } from "../../interfaces";
 
 @Component({
   tag: 'query-pages-router',

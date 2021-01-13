@@ -1,5 +1,5 @@
-import {Component, Event, EventEmitter, h, Listen, Prop, State} from '@stencil/core';
-import {injectHistory, RouterHistory} from "@stencil/router";
+import { Component, Event, EventEmitter, h, Listen, Prop, State } from "@stencil/core";
+import { injectHistory, RouterHistory } from "@stencil/router";
 
 @Component({
   tag: 'expandable-renderer',

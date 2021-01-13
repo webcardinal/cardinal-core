@@ -1,6 +1,5 @@
-import {Component, h, Prop, Watch} from '@stencil/core';
-import { TableOfContentProperty } from '../../decorators/TableOfContentProperty';
-import CustomTheme from '../../decorators/CustomTheme';
+import { Component, h, Prop, Watch } from "@stencil/core";
+import { CustomTheme, TableOfContentProperty } from "../../decorators";
 
 @Component({
   tag: 'psk-ui-loader',
