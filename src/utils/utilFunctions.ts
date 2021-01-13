@@ -1,5 +1,4 @@
 import { getElement } from "@stencil/core";
-import { INVALID_ID_CHARACTERS_REGEX } from "./constants";
 
 /**
  * @deprecated You should create your own Event.
@@ -66,7 +65,7 @@ export function closestParentTagElement(
  * @param source
  */
 export function normalizeElementId(source: string): string {
-  let normalizedId = source.replace(INVALID_ID_CHARACTERS_REGEX, "-").toLowerCase();
+  let normalizedId = source.replace(/[^A-Za-z0-9_-]/g, "-").toLowerCase();
   normalizedId = normalizedId.replace(/(-+){2}/gm, "-");
   normalizedId = normalizedId.replace(/(-+)$/gm, "");
   return normalizedId;

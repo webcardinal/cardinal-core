@@ -8,8 +8,7 @@ export const DATA_DEFINED_EVENTS: string = "data-define-events";
 export const DATA_DEFINED_CONTROLLERS: string = "data-define-controller";
 
 export const EVENTS_TYPES = {
+  PSK_BUTTON_EVT: "PSK_BUTTON_EVT",
   PSK_SUB_MENU_EVT: "PSK_SUB_MENU_EVT"
 };
-
-export const INVALID_ID_CHARACTERS_REGEX = /[^A-Za-z0-9_-]/g;
 

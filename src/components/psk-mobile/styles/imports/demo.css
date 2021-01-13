@@ -1,0 +1,47 @@
+.mobile > main .main-cover {
+  position: absolute;
+}
+
+:host([id="demo-title"]) .mobile {
+  height: auto;
+}
+:host([id="demo-title"]) .mobile > main {
+  display: none;
+}
+
+:host([id="demo-footer"]) .mobile {
+  height: auto;
+}
+:host([id="demo-footer"]) .mobile > header,
+:host([id="demo-footer"]) .mobile > main {
+  display: none;
+}
+
+:host([id="demo-options"]) .mobile {
+  height: 250px;
+}
+:host([id="demo-options"]) .mobile > header .options-menu {
+  visibility: hidden;
+  display: none;
+}
+:host([id="demo-options"]) .mobile > header .options-menu[hidden] {
+  visibility: visible !important;
+  display: block !important;
+}
+
+:host([id="demo-content"]) .mobile {
+  height: 350px;
+}
+:host([id="demo-content"]) .mobile > header .aside-menu {
+  height: calc(350px - 4rem);
+}
+
+:host([id="demo-overall"]) .mobile {
+  height: calc(100vh - 15rem);
+}
+
+@media (max-width: 550px) {
+  :host([id="demo-title"]) .mobile > header .title {
+    font-size: 3vw;
+  }
+}

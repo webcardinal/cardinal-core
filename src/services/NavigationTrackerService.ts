@@ -1,6 +1,8 @@
 const SSAPP_HISTORY_CHANGED_EVT = "ssapp-history-changed";
 
 class NavigationTrackerService {
+  private identity: any;
+  private ssAppPage: any;
 
   setIdentity(identity) {
     this.identity = identity;
@@ -14,7 +16,7 @@ class NavigationTrackerService {
   }
 
   listenForSSAppHistoryChanges() {
-    window.document.addEventListener(SSAPP_HISTORY_CHANGED_EVT, (evt) => {
+    window.document.addEventListener(SSAPP_HISTORY_CHANGED_EVT, (evt: CustomEvent) => {
       let eventData = evt.detail;
 
       if(eventData.ssappPageUrl){

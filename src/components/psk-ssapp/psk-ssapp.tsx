@@ -1,8 +1,8 @@
 import { Component, Element, h, Prop, State, Watch } from "@stencil/core";
 import { MatchResults, RouterHistory } from "@stencil/router";
 import { BindModel, CustomTheme, TableOfContentProperty } from "../../decorators";
+import { NavigationTrackerService } from "../../services";
 import SSAppInstanceRegistry from "./SSAppInstancesRegistry.js";
-import NavigationTrackerService from "./NavigationTrackerService.js";
 
 declare const $$: any;
 

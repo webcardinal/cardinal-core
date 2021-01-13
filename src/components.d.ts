@@ -45,14 +45,48 @@ export namespace Components {
         "historyType": ExtendedHistoryType;
         "routesItems"?: MenuItem[];
     }
+    interface PskButton {
+        "buttonClass": string | null;
+        "disabled": string | boolean;
+        "doubleClickEventName": string | null;
+        "eventData": any | null;
+        "eventDispatcher": string | null;
+        "eventName": string | null;
+        "label": string | null;
+        "touchEventName": string | null;
+        "type": string;
+    }
+    interface PskButtonLink {
+        "eventData": any | null;
+        "eventDispatcher": string | null;
+        "eventName": string | null;
+        "icon"?: string;
+        "name"?: string;
+        "page": string;
+    }
     interface PskDefaultRenderer {
         "disableSidebar": boolean;
         "mobileLayout": boolean;
+    }
+    interface PskLink {
+        "chapter": string;
+        "page": string;
+        "tag": string;
     }
     interface PskMenuItemRenderer {
         "active": boolean;
         "historyType": ExtendedHistoryType;
         "value": MenuItem;
+    }
+    interface PskMobile {
+        "controllerName"?: string | null;
+        "disableHeader": boolean;
+        "disableSidebar": boolean;
+        "enableBack": boolean;
+        "history": RouterHistory;
+        "title": string;
+        "toggleOptions": (visible: any) => Promise<void>;
+        "toggleSidebar": (visible: any) => Promise<void>;
     }
     interface PskPageLoader {
         "pageUrl": string;
@@ -164,17 +198,41 @@ declare global {
         prototype: HTMLPskAppRouterElement;
         new (): HTMLPskAppRouterElement;
     };
+    interface HTMLPskButtonElement extends Components.PskButton, HTMLStencilElement {
+    }
+    var HTMLPskButtonElement: {
+        prototype: HTMLPskButtonElement;
+        new (): HTMLPskButtonElement;
+    };
+    interface HTMLPskButtonLinkElement extends Components.PskButtonLink, HTMLStencilElement {
+    }
+    var HTMLPskButtonLinkElement: {
+        prototype: HTMLPskButtonLinkElement;
+        new (): HTMLPskButtonLinkElement;
+    };
     interface HTMLPskDefaultRendererElement extends Components.PskDefaultRenderer, HTMLStencilElement {
     }
     var HTMLPskDefaultRendererElement: {
         prototype: HTMLPskDefaultRendererElement;
         new (): HTMLPskDefaultRendererElement;
     };
+    interface HTMLPskLinkElement extends Components.PskLink, HTMLStencilElement {
+    }
+    var HTMLPskLinkElement: {
+        prototype: HTMLPskLinkElement;
+        new (): HTMLPskLinkElement;
+    };
     interface HTMLPskMenuItemRendererElement extends Components.PskMenuItemRenderer, HTMLStencilElement {
     }
     var HTMLPskMenuItemRendererElement: {
         prototype: HTMLPskMenuItemRendererElement;
         new (): HTMLPskMenuItemRendererElement;
+    };
+    interface HTMLPskMobileElement extends Components.PskMobile, HTMLStencilElement {
+    }
+    var HTMLPskMobileElement: {
+        prototype: HTMLPskMobileElement;
+        new (): HTMLPskMobileElement;
     };
     interface HTMLPskPageLoaderElement extends Components.PskPageLoader, HTMLStencilElement {
     }
@@ -250,8 +308,12 @@ declare global {
         "psk-app-menu": HTMLPskAppMenuElement;
         "psk-app-root": HTMLPskAppRootElement;
         "psk-app-router": HTMLPskAppRouterElement;
+        "psk-button": HTMLPskButtonElement;
+        "psk-button-link": HTMLPskButtonLinkElement;
         "psk-default-renderer": HTMLPskDefaultRendererElement;
+        "psk-link": HTMLPskLinkElement;
         "psk-menu-item-renderer": HTMLPskMenuItemRendererElement;
+        "psk-mobile": HTMLPskMobileElement;
         "psk-page-loader": HTMLPskPageLoaderElement;
         "psk-page-not-found": HTMLPskPageNotFoundElement;
         "psk-page-not-found-renderer": HTMLPskPageNotFoundRendererElement;
@@ -310,16 +372,50 @@ declare namespace LocalJSX {
         "onNeedRoutes"?: (event: CustomEvent<any>) => void;
         "routesItems"?: MenuItem[];
     }
+    interface PskButton {
+        "buttonClass"?: string | null;
+        "disabled"?: string | boolean;
+        "doubleClickEventName"?: string | null;
+        "eventData"?: any | null;
+        "eventDispatcher"?: string | null;
+        "eventName"?: string | null;
+        "label"?: string | null;
+        "touchEventName"?: string | null;
+        "type"?: string;
+    }
+    interface PskButtonLink {
+        "eventData"?: any | null;
+        "eventDispatcher"?: string | null;
+        "eventName"?: string | null;
+        "icon"?: string;
+        "name"?: string;
+        "page"?: string;
+    }
     interface PskDefaultRenderer {
         "disableSidebar"?: boolean;
         "mobileLayout"?: boolean;
         "onGetAppVersion"?: (event: CustomEvent<any>) => void;
+    }
+    interface PskLink {
+        "chapter"?: string;
+        "onGetTags"?: (event: CustomEvent<any>) => void;
+        "onValidateUrl"?: (event: CustomEvent<any>) => void;
+        "page"?: string;
+        "tag"?: string;
     }
     interface PskMenuItemRenderer {
         "active"?: boolean;
         "historyType"?: ExtendedHistoryType;
         "onMenuClicked"?: (event: CustomEvent<any>) => void;
         "value"?: MenuItem;
+    }
+    interface PskMobile {
+        "controllerName"?: string | null;
+        "disableHeader"?: boolean;
+        "disableSidebar"?: boolean;
+        "enableBack"?: boolean;
+        "history"?: RouterHistory;
+        "title"?: string;
     }
     interface PskPageLoader {
         "pageUrl"?: string;
@@ -396,8 +492,12 @@ declare namespace LocalJSX {
         "psk-app-menu": PskAppMenu;
         "psk-app-root": PskAppRoot;
         "psk-app-router": PskAppRouter;
+        "psk-button": PskButton;
+        "psk-button-link": PskButtonLink;
         "psk-default-renderer": PskDefaultRenderer;
+        "psk-link": PskLink;
         "psk-menu-item-renderer": PskMenuItemRenderer;
+        "psk-mobile": PskMobile;
         "psk-page-loader": PskPageLoader;
         "psk-page-not-found": PskPageNotFound;
         "psk-page-not-found-renderer": PskPageNotFoundRenderer;
@@ -422,8 +522,12 @@ declare module "@stencil/core" {
             "psk-app-menu": LocalJSX.PskAppMenu & JSXBase.HTMLAttributes<HTMLPskAppMenuElement>;
             "psk-app-root": LocalJSX.PskAppRoot & JSXBase.HTMLAttributes<HTMLPskAppRootElement>;
             "psk-app-router": LocalJSX.PskAppRouter & JSXBase.HTMLAttributes<HTMLPskAppRouterElement>;
+            "psk-button": LocalJSX.PskButton & JSXBase.HTMLAttributes<HTMLPskButtonElement>;
+            "psk-button-link": LocalJSX.PskButtonLink & JSXBase.HTMLAttributes<HTMLPskButtonLinkElement>;
             "psk-default-renderer": LocalJSX.PskDefaultRenderer & JSXBase.HTMLAttributes<HTMLPskDefaultRendererElement>;
+            "psk-link": LocalJSX.PskLink & JSXBase.HTMLAttributes<HTMLPskLinkElement>;
             "psk-menu-item-renderer": LocalJSX.PskMenuItemRenderer & JSXBase.HTMLAttributes<HTMLPskMenuItemRendererElement>;
+            "psk-mobile": LocalJSX.PskMobile & JSXBase.HTMLAttributes<HTMLPskMobileElement>;
             "psk-page-loader": LocalJSX.PskPageLoader & JSXBase.HTMLAttributes<HTMLPskPageLoaderElement>;
             "psk-page-not-found": LocalJSX.PskPageNotFound & JSXBase.HTMLAttributes<HTMLPskPageNotFoundElement>;
             "psk-page-not-found-renderer": LocalJSX.PskPageNotFoundRenderer & JSXBase.HTMLAttributes<HTMLPskPageNotFoundRendererElement>;
