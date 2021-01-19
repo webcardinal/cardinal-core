@@ -112,12 +112,13 @@ export default function CustomTheme(): CustomThemeInterface {
       else {
 
         let injectThemeStyle = (theme) => {
+          const { basePath } = window.WebCardinal;
           let componentName = host.tagName.toLowerCase();
 
           let addStyleElement = (parent)=>{
             return new Promise((resolve) => {
               // @ts-ignore
-              let themeStylePath = window.basePath + "themes/" + theme + "/components/" + componentName + "/" + componentName + ".css";
+              let themeStylePath = basePath + "/themes/" + theme + "/components/" + componentName + "/" + componentName + ".css";
 
               if (!dependencies[themeStylePath]) {
                 dependencies[themeStylePath] = new Promise((resolve, reject) => {

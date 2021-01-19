@@ -44,11 +44,12 @@ async function getTheme(host: HTMLElement, asyncCallback: (host: HTMLElement) =>
 }
 
 async function injectTheme(host: HTMLElement) {
+  const { basePath } = window.WebCardinal;
   const componentName = host.tagName.toLowerCase();
   const componentMode = (host as any).mode || host.getAttribute('mode') || 'default';
 
   const file = componentName + (componentMode !== 'default' ? `.${componentMode}` : '') + '.css';
-  const path = `${(window as any).basePath}themes/${GLOBALS.THEME}/components/${componentName}/${file}`;
+  const path = `${basePath}/themes/${GLOBALS.THEME}/components/${componentName}/${file}`;
 
   if (!GLOBALS.IMPORTS[path]) {
     const [ status, style ] = await getDependency(path);
