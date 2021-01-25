@@ -1,6 +1,6 @@
 import { Component, Event, EventEmitter, h, Prop, State } from "@stencil/core";
+import { CustomTheme, TableOfContentEvent, TableOfContentProperty } from "@cardinal/internals";
 import { MenuItem, ExtendedHistoryType } from "../../interfaces";
-import { CustomTheme, TableOfContentEvent, TableOfContentProperty } from "../../decorators";
 
 declare const $$: any;
 

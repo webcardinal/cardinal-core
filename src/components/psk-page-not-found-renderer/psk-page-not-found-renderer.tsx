@@ -1,5 +1,5 @@
 import { Component, h } from "@stencil/core";
-import { CustomTheme } from "../../decorators";
+import { CustomTheme } from "@cardinal/internals";
 
 @Component({
     tag: 'psk-page-not-found-renderer',

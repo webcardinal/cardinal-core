@@ -1,5 +1,5 @@
 import { Component, Event, EventEmitter, h, Prop, State } from "@stencil/core";
-import { CustomTheme, TableOfContentEvent, TableOfContentProperty } from "../../decorators";
+import { CustomTheme, TableOfContentEvent, TableOfContentProperty } from "@cardinal/internals";
 
 let tagsDictionary;
 

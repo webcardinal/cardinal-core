@@ -1,6 +1,6 @@
 import { Component, Prop, Element, h } from "@stencil/core";
-import { CustomTheme, BindModel, TableOfContentProperty } from "../../decorators";
-import { dispatchEvent } from "../../events";
+import { CustomTheme, BindModel, TableOfContentProperty } from "@cardinal/internals";
+import { dispatchEvent } from "@cardinal/internals";
 
 @Component({
   tag: "psk-button-link",

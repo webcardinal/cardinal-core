@@ -1,11 +1,4 @@
-import { setMode } from '@stencil/core';
+import { globals, WebCardinalWindow } from "@cardinal/internals";
+declare global { interface Window extends WebCardinalWindow {}}
+export default globals;
 
-declare global {
-  interface Window {
-    [key: string]: any
-  }
-}
-
-export default () => setMode(element => {
-  return (element as any).mode || element.getAttribute('mode') || 'default';
-});

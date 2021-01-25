@@ -1,5 +1,5 @@
 import { Component, h, Prop } from "@stencil/core";
-import { CustomTheme, TableOfContentProperty } from "../../decorators";
+import { CustomTheme, TableOfContentProperty } from "@cardinal/internals";
 
 @Component({
 	tag: 'psk-page-not-found',

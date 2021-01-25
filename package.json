@@ -1,7 +1,7 @@
 {
   "name": "@cardinal/core",
   "version": "1.0.0",
-  "description": "PskCardinal core components, decorators, controllers and util functions.",
+  "description": "PskCardinal core components.",
   "main": "./build/dist/index.cjs.js",
   "module": "./build/dist/index.js",
   "es2015": "./build/dist/esm/index.mjs",
@@ -14,12 +14,14 @@
     "build/dist"
   ],
   "scripts": {
+    "internals": "cd node_modules/@cardinal/internals && npm install && npm run build",
     "build": "stencil build --prod",
     "dev": "stencil build --dev",
     "generate": "stencil generate"
   },
   "dependencies": {},
   "devDependencies": {
+    "@cardinal/internals": "https://github.com/webcardinal/cardinal-internals.git",
     "@stencil/core": "^2.3.0",
     "@stencil/router": "^1.0.1"
   },

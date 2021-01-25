@@ -1,5 +1,5 @@
 import { Component, h,  Prop, } from "@stencil/core";
-import { BindModel, CustomTheme, TableOfContentProperty } from "../../decorators";
+import { BindModel, CustomTheme, TableOfContentProperty } from "@cardinal/internals";;
 
 @Component({
   tag: 'mobile-profile-renderer',

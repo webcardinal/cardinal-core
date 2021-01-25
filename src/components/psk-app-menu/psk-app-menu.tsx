@@ -1,7 +1,7 @@
 import { Component, Event, EventEmitter, h, Listen, Prop, State } from "@stencil/core";
-import { CustomTheme, TableOfContentEvent, TableOfContentProperty } from "../../decorators";
+import { CustomTheme, TableOfContentEvent, TableOfContentProperty } from "@cardinal/internals";
+import { MOBILE_MAX_WIDTH } from "@cardinal/internals"; // utils
 import { MenuItem, ExtendedHistoryType } from "../../interfaces";
-import { MOBILE_MAX_WIDTH } from "../../utils/constants";
 
 @Component({
   tag: 'psk-app-menu',

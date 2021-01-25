@@ -1,5 +1,5 @@
 import { Component, Event, EventEmitter, h, Prop } from "@stencil/core";
-import { CustomTheme, TableOfContentProperty } from "../../decorators";
+import { CustomTheme, TableOfContentProperty } from "@cardinal/internals";
 import { MenuItem, ExtendedHistoryType } from "../../interfaces";
 
 @Component({

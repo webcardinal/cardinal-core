@@ -1,5 +1,5 @@
 import { Component, getElement, h, Listen, Prop, State } from "@stencil/core";
-import { TableOfContentProperty } from "../../decorators";
+import { TableOfContentProperty } from "@cardinal/internals";
 
 @Component({
   tag: 'dropdown-renderer',
