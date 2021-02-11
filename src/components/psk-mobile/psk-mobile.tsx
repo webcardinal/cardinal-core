@@ -148,7 +148,6 @@ export class PskMobile {
         console.log(error);
         return;
       }
-      console.log({ coreType });
       this.coreType = coreType;
     })
 
