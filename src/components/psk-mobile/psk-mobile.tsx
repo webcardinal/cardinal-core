@@ -1,4 +1,4 @@
-import { Component, Prop, State, Element, Listen, Method, h } from "@stencil/core";
+import { Component, Element, Event, EventEmitter, h, Listen, Method, Prop, State } from "@stencil/core";
 import { RouterHistory } from "@stencil/router";
 import { CustomTheme, TableOfContentProperty } from "@cardinal/internals";
 import { ControllerRegistryService } from "@cardinal/internals";
@@ -62,7 +62,13 @@ export class PskMobile {
 
   @Prop() history: RouterHistory;
 
+  @Event({
+    eventName: 'webcardinal:config:getCoreType',
+    bubbles: true, cancelable: true, composed: true,
+  }) getCoreType: EventEmitter;
+
   @State() controller: any | null;
+  @State() coreType = 'webcardinal';
 
   @State() aside = {
     disabled: this.disableSidebar,
@@ -154,6 +160,14 @@ export class PskMobile {
   async componentWillLoad() {
     PskMobile.disablePullDownToRefresh();
 
+    this.getCoreType.emit((error, coreType) => {
+      if (error) {
+        console.log(error);
+        return;
+      }
+      this.coreType = coreType;
+    })
+
     const options = this.__findElementBySlot('options');
     if (options) {
       this.options.disabled = false;
@@ -239,8 +253,18 @@ export class PskMobile {
                 }
               </div>
               <div class='aside-menu' hidden={this.aside.hidden}>
-                <psk-user-profile/>
-                <psk-app-menu hamburger-max-width={0} item-renderer='sidebar-renderer'/>
+                { this.coreType === 'webcardinal'
+                  ? (
+                    <wcc-app-menu style={{
+                      '--wcc-app-menu-vertical-background': 'transparent'
+                    }} />
+                  )
+                  : [
+                    <psk-user-profile/>,
+                    <psk-app-menu hamburger-max-width={0} item-renderer='sidebar-renderer'/>
+                  ]
+                }
+
               </div>
               <div class='options-menu' hidden={this.options.hidden}>
                 <slot name='options'/>

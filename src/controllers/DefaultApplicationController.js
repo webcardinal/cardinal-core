@@ -47,6 +47,7 @@ export default class DefaultApplicationController  {
         this.configuration = AppConfigurationHelper._prepareConfiguration(_configuration, basePath);
         this.configuration.theme = _configuration.theme;
         this.configuration.appVersion = _configuration.appVersion;
+        this.configuration.coreType = 'cardinal'; // @label: WebCardinal
         this.configIsLoaded = true;
         while (this.pendingRequests.length) {
           let request = this.pendingRequests.pop();
@@ -63,6 +64,7 @@ export default class DefaultApplicationController  {
     element.addEventListener("getHistoryType", this._provideConfig("historyType"));
     element.addEventListener("getModals", this._provideConfig("modals"));
     element.addEventListener("getTags", this._provideConfig("tags"));
+    element.addEventListener("webcardinal:config:getCoreType", this._provideConfig("coreType")) // @label: WebCardinal
     element.addEventListener("getConfiguration", this._provideConfig());
     element.addEventListener("validateUrl", (e) => {
       e.stopImmediatePropagation();
@@ -73,7 +75,6 @@ export default class DefaultApplicationController  {
         console.error("Callback was not properly provided!");
       }
     });
-
 
     //this should be added in a SSApp lifecycle mechanism
     element.addEventListener("getCustomLandingPage",(e)=>{
@@ -87,7 +88,6 @@ export default class DefaultApplicationController  {
       }
       callback();
     });
-
   }
 
   _provideConfig(configName) {

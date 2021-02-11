@@ -415,6 +415,7 @@ declare namespace LocalJSX {
         "disableSidebar"?: boolean;
         "enableBack"?: boolean;
         "history"?: RouterHistory;
+        "onWebcardinal:config:getCoreType"?: (event: CustomEvent<any>) => void;
         "title"?: string;
     }
     interface PskPageLoader {
