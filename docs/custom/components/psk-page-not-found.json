@@ -1,0 +1,79 @@
+{
+  "dirPath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-page-not-found",
+  "filePath": "./src/components/psk-page-not-found/psk-page-not-found.tsx",
+  "fileName": "psk-page-not-found.tsx",
+  "readmePath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-page-not-found/readme.md",
+  "usagesDir": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-page-not-found/usage",
+  "tag": "psk-page-not-found",
+  "usage": {},
+  "docs": "",
+  "docsTags": [],
+  "encapsulation": "shadow",
+  "dependents": [],
+  "dependencies": [
+    "stencil-router-redirect"
+  ],
+  "dependencyGraph": {
+    "psk-page-not-found": [
+      "stencil-router-redirect"
+    ]
+  },
+  "props": [
+    {
+      "name": "basePath",
+      "type": "string",
+      "mutable": false,
+      "attr": "base-path",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "pageRenderer",
+      "type": "string",
+      "mutable": false,
+      "attr": "page-renderer",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "default": "\"psk-page-not-found-renderer\"",
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "urlDestination",
+      "type": "string",
+      "mutable": false,
+      "attr": "url-destination",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "default": "null",
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "styles": [],
+  "slots": [],
+  "parts": [],
+  "listeners": []
+}

@@ -1,0 +1,91 @@
+{
+  "dirPath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/query-pages-router",
+  "filePath": "./src/components/query-pages-router/query-pages-router.tsx",
+  "fileName": "query-pages-router.tsx",
+  "readmePath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/query-pages-router/readme.md",
+  "usagesDir": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/query-pages-router/usage",
+  "tag": "query-pages-router",
+  "usage": {},
+  "docs": "",
+  "docsTags": [],
+  "encapsulation": "shadow",
+  "dependents": [],
+  "dependencies": [
+    "stencil-route"
+  ],
+  "dependencyGraph": {
+    "query-pages-router": [
+      "stencil-route"
+    ]
+  },
+  "props": [
+    {
+      "name": "history",
+      "type": "RouterHistory",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "RouterHistory"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "location",
+      "type": "LocationSegments",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "LocationSegments"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "pages",
+      "type": "MenuItem[]",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "MenuItem[]"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "redirectTo",
+      "type": "string",
+      "mutable": false,
+      "attr": "redirect-to",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "default": "\"\"",
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "styles": [],
+  "slots": [],
+  "parts": [],
+  "listeners": []
+}

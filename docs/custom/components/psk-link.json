@@ -1,0 +1,101 @@
+{
+  "dirPath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-link",
+  "filePath": "./src/components/psk-link/psk-link.tsx",
+  "fileName": "psk-link.tsx",
+  "readmePath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-link/readme.md",
+  "usagesDir": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-link/usage",
+  "tag": "psk-link",
+  "usage": {},
+  "docs": "",
+  "docsTags": [],
+  "encapsulation": "shadow",
+  "dependents": [
+    "psk-button-link"
+  ],
+  "dependencies": [
+    "stencil-route-link"
+  ],
+  "dependencyGraph": {
+    "psk-link": [
+      "stencil-route-link"
+    ],
+    "psk-button-link": [
+      "psk-link"
+    ]
+  },
+  "props": [
+    {
+      "name": "chapter",
+      "type": "string",
+      "mutable": false,
+      "attr": "chapter",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "page",
+      "type": "string",
+      "mutable": false,
+      "attr": "page",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "tag",
+      "type": "string",
+      "mutable": false,
+      "attr": "tag",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [
+    {
+      "event": "getTags",
+      "detail": "any",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "",
+      "docsTags": []
+    },
+    {
+      "event": "validateUrl",
+      "detail": "any",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "",
+      "docsTags": []
+    }
+  ],
+  "styles": [],
+  "slots": [],
+  "parts": [],
+  "listeners": []
+}

@@ -1,0 +1,98 @@
+{
+  "dropdown-renderer": {
+    "source": "@cardinal/core",
+    "path": "components/dropdown-renderer.json"
+  },
+  "event-expandable-renderer": {
+    "source": "@cardinal/core",
+    "path": "components/event-expandable-renderer.json"
+  },
+  "expandable-renderer": {
+    "source": "@cardinal/core",
+    "path": "components/expandable-renderer.json"
+  },
+  "mobile-profile-renderer": {
+    "source": "@cardinal/core",
+    "path": "components/mobile-profile-renderer.json"
+  },
+  "psk-app-menu": {
+    "source": "@cardinal/core",
+    "path": "components/psk-app-menu.json"
+  },
+  "psk-app-root": {
+    "source": "@cardinal/core",
+    "path": "components/psk-app-root.json"
+  },
+  "psk-app-router": {
+    "source": "@cardinal/core",
+    "path": "components/psk-app-router.json"
+  },
+  "psk-button": {
+    "source": "@cardinal/core",
+    "path": "components/psk-button.json"
+  },
+  "psk-button-link": {
+    "source": "@cardinal/core",
+    "path": "components/psk-button-link.json"
+  },
+  "psk-default-renderer": {
+    "source": "@cardinal/core",
+    "path": "components/psk-default-renderer.json"
+  },
+  "psk-link": {
+    "source": "@cardinal/core",
+    "path": "components/psk-link.json"
+  },
+  "psk-menu-item-renderer": {
+    "source": "@cardinal/core",
+    "path": "components/psk-menu-item-renderer.json"
+  },
+  "psk-mobile": {
+    "source": "@cardinal/core",
+    "path": "components/psk-mobile.json"
+  },
+  "psk-page-loader": {
+    "source": "@cardinal/core",
+    "path": "components/psk-page-loader.json"
+  },
+  "psk-page-not-found": {
+    "source": "@cardinal/core",
+    "path": "components/psk-page-not-found.json"
+  },
+  "psk-page-not-found-renderer": {
+    "source": "@cardinal/core",
+    "path": "components/psk-page-not-found-renderer.json"
+  },
+  "psk-route-redirect": {
+    "source": "@cardinal/core",
+    "path": "components/psk-route-redirect.json"
+  },
+  "psk-ssapp": {
+    "source": "@cardinal/core",
+    "path": "components/psk-ssapp.json"
+  },
+  "psk-ui-loader": {
+    "source": "@cardinal/core",
+    "path": "components/psk-ui-loader.json"
+  },
+  "psk-user-profile": {
+    "source": "@cardinal/core",
+    "path": "components/psk-user-profile.json"
+  },
+  "psk-user-profile-renderer": {
+    "source": "@cardinal/core",
+    "path": "components/psk-user-profile-renderer.json"
+  },
+  "query-page-link": {
+    "source": "@cardinal/core",
+    "path": "components/query-page-link.json"
+  },
+  "query-pages-router": {
+    "source": "@cardinal/core",
+    "path": "components/query-pages-router.json"
+  },
+  "sidebar-renderer": {
+    "source": "@cardinal/core",
+    "path": "components/sidebar-renderer.json"
+  }
+}

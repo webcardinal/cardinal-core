@@ -1,0 +1,297 @@
+{
+  "dirPath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/query-page-link",
+  "filePath": "./src/components/query-page-link/query-page-link.tsx",
+  "fileName": "query-page-link.tsx",
+  "readmePath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/query-page-link/readme.md",
+  "usagesDir": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/query-page-link/usage",
+  "tag": "query-page-link",
+  "usage": {},
+  "docs": "Modified from original component stencil-route-link\r\nhttps://github.com/ionic-team/stencil-router/blob/master/packages/router/src/components/route-link/route-link.tsx",
+  "docsTags": [],
+  "encapsulation": "none",
+  "dependents": [],
+  "dependencies": [],
+  "dependencyGraph": {},
+  "props": [
+    {
+      "name": "activeClass",
+      "type": "string",
+      "mutable": false,
+      "attr": "active-class",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "default": "'link-active'",
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "anchorClass",
+      "type": "string",
+      "mutable": false,
+      "attr": "anchor-class",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "anchorId",
+      "type": "string",
+      "mutable": false,
+      "attr": "anchor-id",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "anchorRole",
+      "type": "string",
+      "mutable": false,
+      "attr": "anchor-role",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "anchorTabIndex",
+      "type": "string",
+      "mutable": false,
+      "attr": "anchor-tab-index",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "anchorTitle",
+      "type": "string",
+      "mutable": false,
+      "attr": "anchor-title",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "ariaHaspopup",
+      "type": "string",
+      "mutable": false,
+      "attr": "aria-haspopup",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "ariaLabel",
+      "type": "string",
+      "mutable": false,
+      "attr": "aria-label",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "ariaPosinset",
+      "type": "string",
+      "mutable": false,
+      "attr": "aria-posinset",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "ariaSetsize",
+      "type": "number",
+      "mutable": false,
+      "attr": "aria-setsize",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "number"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "custom",
+      "type": "string",
+      "mutable": false,
+      "attr": "custom",
+      "reflectToAttr": false,
+      "docs": "Custom tag to use instead of an anchor",
+      "docsTags": [],
+      "default": "'a'",
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "exact",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "exact",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "history",
+      "type": "RouterHistory",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "RouterHistory"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "location",
+      "type": "LocationSegments",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "LocationSegments"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "strict",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "strict",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "url",
+      "type": "string",
+      "mutable": false,
+      "attr": "url",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "urlMatch",
+      "type": "string",
+      "mutable": false,
+      "attr": "url-match",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "styles": [],
+  "slots": [],
+  "parts": [],
+  "listeners": []
+}

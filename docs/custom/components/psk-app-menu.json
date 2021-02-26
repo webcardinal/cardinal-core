@@ -1,0 +1,142 @@
+{
+  "dirPath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-app-menu",
+  "filePath": "./src/components/psk-app-menu/psk-app-menu.tsx",
+  "fileName": "psk-app-menu.tsx",
+  "readmePath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-app-menu/readme.md",
+  "usagesDir": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-app-menu/usage",
+  "tag": "psk-app-menu",
+  "usage": {},
+  "docs": "",
+  "docsTags": [],
+  "encapsulation": "shadow",
+  "dependents": [
+    "psk-default-renderer",
+    "psk-mobile"
+  ],
+  "dependencies": [],
+  "dependencyGraph": {
+    "psk-default-renderer": [
+      "psk-app-menu"
+    ],
+    "psk-mobile": [
+      "psk-app-menu"
+    ]
+  },
+  "props": [
+    {
+      "name": "hamburgerMaxWidth",
+      "type": "number",
+      "mutable": false,
+      "attr": "hamburger-max-width",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "default": "MOBILE_MAX_WIDTH",
+      "values": [
+        {
+          "type": "number"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "historyType",
+      "type": "\"browser\" | \"hash\" | \"query\"",
+      "mutable": false,
+      "attr": "history-type",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "browser",
+          "type": "string"
+        },
+        {
+          "value": "hash",
+          "type": "string"
+        },
+        {
+          "value": "query",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "itemRenderer",
+      "type": "string",
+      "mutable": false,
+      "attr": "item-renderer",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "menuItems",
+      "type": "MenuItem[]",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "default": "null",
+      "values": [
+        {
+          "type": "MenuItem[]"
+        }
+      ],
+      "optional": true,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [
+    {
+      "event": "getHistoryType",
+      "detail": "any",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "",
+      "docsTags": []
+    },
+    {
+      "event": "menuEvent",
+      "detail": "any",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "",
+      "docsTags": []
+    },
+    {
+      "event": "needMenuItems",
+      "detail": "any",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "",
+      "docsTags": []
+    }
+  ],
+  "styles": [],
+  "slots": [],
+  "parts": [],
+  "listeners": [
+    {
+      "event": "resize",
+      "target": "window",
+      "capture": true,
+      "passive": true
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "dirPath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-app-menu",
+  "filePath": "./src/components/psk-app-menu/psk-menu-item-renderer.tsx",
+  "fileName": "psk-menu-item-renderer.tsx",
+  "readmePath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-app-menu/readme.md",
+  "usagesDir": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-app-menu/usage",
+  "tag": "psk-menu-item-renderer",
+  "usage": {},
+  "docs": "",
+  "docsTags": [],
+  "encapsulation": "shadow",
+  "dependents": [],
+  "dependencies": [],
+  "dependencyGraph": {},
+  "props": [
+    {
+      "name": "active",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "active",
+      "reflectToAttr": true,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "historyType",
+      "type": "\"browser\" | \"hash\" | \"query\"",
+      "mutable": false,
+      "attr": "history-type",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "browser",
+          "type": "string"
+        },
+        {
+          "value": "hash",
+          "type": "string"
+        },
+        {
+          "value": "query",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "value",
+      "type": "MenuItem",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "MenuItem"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [
+    {
+      "event": "menuClicked",
+      "detail": "any",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "",
+      "docsTags": []
+    }
+  ],
+  "styles": [],
+  "slots": [],
+  "parts": [],
+  "listeners": []
+}

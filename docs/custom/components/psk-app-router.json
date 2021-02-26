@@ -1,0 +1,111 @@
+{
+  "dirPath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-app-router",
+  "filePath": "./src/components/psk-app-router/psk-app-router.tsx",
+  "fileName": "psk-app-router.tsx",
+  "readmePath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-app-router/readme.md",
+  "usagesDir": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-app-router/usage",
+  "tag": "psk-app-router",
+  "usage": {},
+  "docs": "",
+  "docsTags": [],
+  "encapsulation": "shadow",
+  "dependents": [
+    "psk-default-renderer"
+  ],
+  "dependencies": [
+    "stencil-route",
+    "psk-ui-loader",
+    "stencil-router",
+    "stencil-route-switch",
+    "stencil-router-redirect"
+  ],
+  "dependencyGraph": {
+    "psk-app-router": [
+      "stencil-route",
+      "psk-ui-loader",
+      "stencil-router",
+      "stencil-route-switch",
+      "stencil-router-redirect"
+    ],
+    "psk-default-renderer": [
+      "psk-app-router"
+    ]
+  },
+  "props": [
+    {
+      "name": "historyType",
+      "type": "\"browser\" | \"hash\" | \"query\"",
+      "mutable": false,
+      "attr": "history-type",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "browser",
+          "type": "string"
+        },
+        {
+          "value": "hash",
+          "type": "string"
+        },
+        {
+          "value": "query",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "routesItems",
+      "type": "MenuItem[]",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "default": "[]",
+      "values": [
+        {
+          "type": "MenuItem[]"
+        }
+      ],
+      "optional": true,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [
+    {
+      "event": "getCustomLandingPage",
+      "detail": "any",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "",
+      "docsTags": []
+    },
+    {
+      "event": "getHistoryType",
+      "detail": "any",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "",
+      "docsTags": []
+    },
+    {
+      "event": "needRoutes",
+      "detail": "any",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "",
+      "docsTags": []
+    }
+  ],
+  "styles": [],
+  "slots": [],
+  "parts": [],
+  "listeners": []
+}

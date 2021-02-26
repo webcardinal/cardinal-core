@@ -1,0 +1,130 @@
+{
+  "dirPath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/renderers/menu-renderers/event-expdable-renderer",
+  "filePath": "./src/components/renderers/menu-renderers/event-expdable-renderer/event-expandable-renderer.tsx",
+  "fileName": "event-expandable-renderer.tsx",
+  "readmePath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/renderers/menu-renderers/event-expdable-renderer/readme.md",
+  "usagesDir": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/renderers/menu-renderers/event-expdable-renderer/usage",
+  "tag": "event-expandable-renderer",
+  "usage": {},
+  "docs": "",
+  "docsTags": [],
+  "encapsulation": "none",
+  "dependents": [
+    "sidebar-renderer"
+  ],
+  "dependencies": [
+    "stencil-route-link"
+  ],
+  "dependencyGraph": {
+    "event-expandable-renderer": [
+      "stencil-route-link"
+    ],
+    "sidebar-renderer": [
+      "event-expandable-renderer"
+    ]
+  },
+  "props": [
+    {
+      "name": "active",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "active",
+      "reflectToAttr": true,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "firstMenuChild",
+      "type": "any",
+      "mutable": false,
+      "attr": "first-menu-child",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "any"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "history",
+      "type": "RouterHistory",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "RouterHistory"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "item",
+      "type": "any",
+      "mutable": false,
+      "attr": "item",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "any"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "somethingChanged",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "something-changed",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "url",
+      "type": "any",
+      "mutable": false,
+      "attr": "url",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "any"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "styles": [],
+  "slots": [],
+  "parts": [],
+  "listeners": []
+}

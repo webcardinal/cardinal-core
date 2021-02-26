@@ -1,0 +1,76 @@
+{
+  "dirPath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-user-profile",
+  "filePath": "./src/components/psk-user-profile/psk-user-profile.tsx",
+  "fileName": "psk-user-profile.tsx",
+  "readmePath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-user-profile/readme.md",
+  "usagesDir": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-user-profile/usage",
+  "tag": "psk-user-profile",
+  "usage": {},
+  "docs": "",
+  "docsTags": [],
+  "encapsulation": "none",
+  "dependents": [
+    "psk-default-renderer",
+    "psk-mobile"
+  ],
+  "dependencies": [],
+  "dependencyGraph": {
+    "psk-default-renderer": [
+      "psk-user-profile"
+    ],
+    "psk-mobile": [
+      "psk-user-profile"
+    ]
+  },
+  "props": [
+    {
+      "name": "profileRenderer",
+      "type": "any",
+      "mutable": false,
+      "attr": "profile-renderer",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "any"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "userInfo",
+      "type": "any",
+      "mutable": false,
+      "attr": "user-info",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "default": "null",
+      "values": [
+        {
+          "type": "any"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [
+    {
+      "event": "getUserInfo",
+      "detail": "any",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "",
+      "docsTags": []
+    }
+  ],
+  "styles": [],
+  "slots": [],
+  "parts": [],
+  "listeners": []
+}

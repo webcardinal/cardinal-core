@@ -1,0 +1,91 @@
+{
+  "dirPath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-app-menu",
+  "filePath": "./src/components/psk-app-menu/dropdown-renderer.tsx",
+  "fileName": "dropdown-renderer.tsx",
+  "readmePath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-app-menu/readme.md",
+  "usagesDir": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-app-menu/usage",
+  "tag": "dropdown-renderer",
+  "usage": {},
+  "docs": "",
+  "docsTags": [],
+  "encapsulation": "none",
+  "dependents": [],
+  "dependencies": [],
+  "dependencyGraph": {},
+  "props": [
+    {
+      "name": "active",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "active",
+      "reflectToAttr": true,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "somethingChanged",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "something-changed",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "url",
+      "type": "any",
+      "mutable": false,
+      "attr": "url",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "any"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "styles": [],
+  "slots": [],
+  "parts": [],
+  "listeners": [
+    {
+      "event": "click",
+      "target": "window",
+      "capture": true,
+      "passive": false
+    },
+    {
+      "event": "menuClicked",
+      "target": "window",
+      "capture": true,
+      "passive": false
+    },
+    {
+      "event": "routeChanged",
+      "target": "window",
+      "capture": false,
+      "passive": false
+    }
+  ]
+}

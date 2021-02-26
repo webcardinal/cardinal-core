@@ -1,0 +1,84 @@
+{
+  "dirPath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/renderers/app-root-renders",
+  "filePath": "./src/components/renderers/app-root-renders/default-render.tsx",
+  "fileName": "default-render.tsx",
+  "readmePath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/renderers/app-root-renders/readme.md",
+  "usagesDir": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/renderers/app-root-renders/usage",
+  "tag": "psk-default-renderer",
+  "usage": {},
+  "docs": "",
+  "docsTags": [],
+  "encapsulation": "shadow",
+  "dependents": [],
+  "dependencies": [
+    "psk-app-menu",
+    "psk-user-profile",
+    "psk-app-router"
+  ],
+  "dependencyGraph": {
+    "psk-default-renderer": [
+      "psk-app-menu",
+      "psk-user-profile",
+      "psk-app-router"
+    ],
+    "psk-app-router": [
+      "stencil-route",
+      "psk-ui-loader",
+      "stencil-router",
+      "stencil-route-switch",
+      "stencil-router-redirect"
+    ]
+  },
+  "props": [
+    {
+      "name": "disableSidebar",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "disable-sidebar",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "mobileLayout",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "mobile-layout",
+      "reflectToAttr": false,
+      "docs": "",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [
+    {
+      "event": "getAppVersion",
+      "detail": "any",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "",
+      "docsTags": []
+    }
+  ],
+  "styles": [],
+  "slots": [],
+  "parts": [],
+  "listeners": []
+}
