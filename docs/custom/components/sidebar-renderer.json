@@ -1,9 +1,6 @@
 {
-  "dirPath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/renderers/menu-renderers/sidebar-renderer",
   "filePath": "./src/components/renderers/menu-renderers/sidebar-renderer/sidebar-renderer.tsx",
   "fileName": "sidebar-renderer.tsx",
-  "readmePath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/renderers/menu-renderers/sidebar-renderer/readme.md",
-  "usagesDir": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/renderers/menu-renderers/sidebar-renderer/usage",
   "tag": "sidebar-renderer",
   "usage": {},
   "docs": "",

@@ -1,9 +1,6 @@
 {
-  "dirPath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/query-page-link",
   "filePath": "./src/components/query-page-link/query-page-link.tsx",
   "fileName": "query-page-link.tsx",
-  "readmePath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/query-page-link/readme.md",
-  "usagesDir": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/query-page-link/usage",
   "tag": "query-page-link",
   "usage": {},
   "docs": "Modified from original component stencil-route-link\r\nhttps://github.com/ionic-team/stencil-router/blob/master/packages/router/src/components/route-link/route-link.tsx",

@@ -1,9 +1,6 @@
 {
-  "dirPath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-app-menu",
   "filePath": "./src/components/psk-app-menu/psk-app-menu.tsx",
   "fileName": "psk-app-menu.tsx",
-  "readmePath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-app-menu/readme.md",
-  "usagesDir": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-app-menu/usage",
   "tag": "psk-app-menu",
   "usage": {},
   "docs": "",

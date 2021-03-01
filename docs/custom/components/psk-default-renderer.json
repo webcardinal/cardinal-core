@@ -1,9 +1,6 @@
 {
-  "dirPath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/renderers/app-root-renders",
   "filePath": "./src/components/renderers/app-root-renders/default-render.tsx",
   "fileName": "default-render.tsx",
-  "readmePath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/renderers/app-root-renders/readme.md",
-  "usagesDir": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/renderers/app-root-renders/usage",
   "tag": "psk-default-renderer",
   "usage": {},
   "docs": "",

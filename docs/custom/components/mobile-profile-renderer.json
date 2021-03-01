@@ -1,9 +1,6 @@
 {
-  "dirPath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-user-profile",
   "filePath": "./src/components/psk-user-profile/mobile-profile-renderer.tsx",
   "fileName": "mobile-profile-renderer.tsx",
-  "readmePath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-user-profile/readme.md",
-  "usagesDir": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-user-profile/usage",
   "tag": "mobile-profile-renderer",
   "usage": {},
   "docs": "",

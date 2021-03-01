@@ -1,9 +1,6 @@
 {
-  "dirPath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-ui-loader",
   "filePath": "./src/components/psk-ui-loader/psk-ui-loader.tsx",
   "fileName": "psk-ui-loader.tsx",
-  "readmePath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-ui-loader/readme.md",
-  "usagesDir": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-ui-loader/usage",
   "tag": "psk-ui-loader",
   "usage": {},
   "docs": "",

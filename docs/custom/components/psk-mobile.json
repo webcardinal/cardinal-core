@@ -1,9 +1,6 @@
 {
-  "dirPath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-mobile",
   "filePath": "./src/components/psk-mobile/psk-mobile.tsx",
   "fileName": "psk-mobile.tsx",
-  "readmePath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-mobile/readme.md",
-  "usagesDir": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-mobile/usage",
   "tag": "psk-mobile",
   "usage": {},
   "docs": "",

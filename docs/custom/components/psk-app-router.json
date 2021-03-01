@@ -1,9 +1,6 @@
 {
-  "dirPath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-app-router",
   "filePath": "./src/components/psk-app-router/psk-app-router.tsx",
   "fileName": "psk-app-router.tsx",
-  "readmePath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-app-router/readme.md",
-  "usagesDir": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-app-router/usage",
   "tag": "psk-app-router",
   "usage": {},
   "docs": "",

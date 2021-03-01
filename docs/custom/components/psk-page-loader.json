@@ -1,9 +1,6 @@
 {
-  "dirPath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-page-loader",
   "filePath": "./src/components/psk-page-loader/psk-page-loader.tsx",
   "fileName": "psk-page-loader.tsx",
-  "readmePath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-page-loader/readme.md",
-  "usagesDir": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-page-loader/usage",
   "tag": "psk-page-loader",
   "usage": {},
   "docs": "",

@@ -1,9 +1,6 @@
 {
-  "dirPath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/renderers/menu-renderers/expandable-renderer",
   "filePath": "./src/components/renderers/menu-renderers/expandable-renderer/expandable-renderer.tsx",
   "fileName": "expandable-renderer.tsx",
-  "readmePath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/renderers/menu-renderers/expandable-renderer/readme.md",
-  "usagesDir": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/renderers/menu-renderers/expandable-renderer/usage",
   "tag": "expandable-renderer",
   "usage": {},
   "docs": "",

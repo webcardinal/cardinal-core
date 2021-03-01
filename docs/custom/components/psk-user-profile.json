@@ -1,9 +1,6 @@
 {
-  "dirPath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-user-profile",
   "filePath": "./src/components/psk-user-profile/psk-user-profile.tsx",
   "fileName": "psk-user-profile.tsx",
-  "readmePath": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-user-profile/readme.md",
-  "usagesDir": "D:/Work/webcardinal-app-starter/.webcardinal/components/cardinal-core/src/components/psk-user-profile/usage",
   "tag": "psk-user-profile",
   "usage": {},
   "docs": "",
