@@ -1,98 +1,74 @@
 {
   "dropdown-renderer": {
-    "source": "@cardinal/core",
-    "path": "components/dropdown-renderer.json"
+    "source": "@cardinal/core"
   },
   "event-expandable-renderer": {
-    "source": "@cardinal/core",
-    "path": "components/event-expandable-renderer.json"
+    "source": "@cardinal/core"
   },
   "expandable-renderer": {
-    "source": "@cardinal/core",
-    "path": "components/expandable-renderer.json"
+    "source": "@cardinal/core"
   },
   "mobile-profile-renderer": {
-    "source": "@cardinal/core",
-    "path": "components/mobile-profile-renderer.json"
+    "source": "@cardinal/core"
   },
   "psk-app-menu": {
-    "source": "@cardinal/core",
-    "path": "components/psk-app-menu.json"
+    "source": "@cardinal/core"
   },
   "psk-app-root": {
-    "source": "@cardinal/core",
-    "path": "components/psk-app-root.json"
+    "source": "@cardinal/core"
   },
   "psk-app-router": {
-    "source": "@cardinal/core",
-    "path": "components/psk-app-router.json"
+    "source": "@cardinal/core"
   },
   "psk-button": {
-    "source": "@cardinal/core",
-    "path": "components/psk-button.json"
+    "source": "@cardinal/core"
   },
   "psk-button-link": {
-    "source": "@cardinal/core",
-    "path": "components/psk-button-link.json"
+    "source": "@cardinal/core"
   },
   "psk-default-renderer": {
-    "source": "@cardinal/core",
-    "path": "components/psk-default-renderer.json"
+    "source": "@cardinal/core"
   },
   "psk-link": {
-    "source": "@cardinal/core",
-    "path": "components/psk-link.json"
+    "source": "@cardinal/core"
   },
   "psk-menu-item-renderer": {
-    "source": "@cardinal/core",
-    "path": "components/psk-menu-item-renderer.json"
+    "source": "@cardinal/core"
   },
   "psk-mobile": {
-    "source": "@cardinal/core",
-    "path": "components/psk-mobile.json"
+    "source": "@cardinal/core"
   },
   "psk-page-loader": {
-    "source": "@cardinal/core",
-    "path": "components/psk-page-loader.json"
+    "source": "@cardinal/core"
   },
   "psk-page-not-found": {
-    "source": "@cardinal/core",
-    "path": "components/psk-page-not-found.json"
+    "source": "@cardinal/core"
   },
   "psk-page-not-found-renderer": {
-    "source": "@cardinal/core",
-    "path": "components/psk-page-not-found-renderer.json"
+    "source": "@cardinal/core"
   },
   "psk-route-redirect": {
-    "source": "@cardinal/core",
-    "path": "components/psk-route-redirect.json"
+    "source": "@cardinal/core"
   },
   "psk-ssapp": {
-    "source": "@cardinal/core",
-    "path": "components/psk-ssapp.json"
+    "source": "@cardinal/core"
   },
   "psk-ui-loader": {
-    "source": "@cardinal/core",
-    "path": "components/psk-ui-loader.json"
+    "source": "@cardinal/core"
   },
   "psk-user-profile": {
-    "source": "@cardinal/core",
-    "path": "components/psk-user-profile.json"
+    "source": "@cardinal/core"
   },
   "psk-user-profile-renderer": {
-    "source": "@cardinal/core",
-    "path": "components/psk-user-profile-renderer.json"
+    "source": "@cardinal/core"
   },
   "query-page-link": {
-    "source": "@cardinal/core",
-    "path": "components/query-page-link.json"
+    "source": "@cardinal/core"
   },
   "query-pages-router": {
-    "source": "@cardinal/core",
-    "path": "components/query-pages-router.json"
+    "source": "@cardinal/core"
   },
   "sidebar-renderer": {
-    "source": "@cardinal/core",
-    "path": "components/sidebar-renderer.json"
+    "source": "@cardinal/core"
   }
 }
