@@ -1,6 +1,9 @@
 import { Component, h, Prop} from "@stencil/core";
 import { BindModel, CustomTheme, TableOfContentProperty } from "@cardinal/internals";;
 
+/**
+ * @disable cheatsheet
+ */
 @Component({
   tag: 'psk-user-profile-renderer',
   styleUrl: "../../assets/css/bootstrap/bootstrap.css",

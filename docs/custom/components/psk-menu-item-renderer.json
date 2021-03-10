@@ -4,7 +4,12 @@
   "tag": "psk-menu-item-renderer",
   "usage": {},
   "docs": "",
-  "docsTags": [],
+  "docsTags": [
+    {
+      "text": "cheatsheet",
+      "name": "disable"
+    }
+  ],
   "encapsulation": "shadow",
   "dependents": [],
   "dependencies": [],

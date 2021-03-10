@@ -2,6 +2,9 @@ import { Component, Event, EventEmitter, h, Prop, State } from "@stencil/core";
 import { CustomTheme } from "@cardinal/internals";
 import { MOBILE_MAX_WIDTH } from "@cardinal/internals"; // utils
 
+/**
+ * @disable cheatsheet
+ */
 @Component({
 	tag: 'psk-default-renderer',
 	shadow: true
@@ -27,6 +30,7 @@ export class AppRootDefaultRender {
         if (!err) {
           this.appVersion = appVersion;
         }
+        // @ts-ignore
         resolve();
       });
     })

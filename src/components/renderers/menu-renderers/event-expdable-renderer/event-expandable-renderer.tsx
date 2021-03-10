@@ -2,6 +2,9 @@ import { Component, Element, h, Prop, State } from "@stencil/core";
 import { injectHistory, RouterHistory } from "@stencil/router";
 import { SubMenuItemsEvent } from "@cardinal/internals";
 
+/**
+ * @disable cheatsheet
+ */
 @Component({
   tag: 'event-expandable-renderer',
   shadow: false

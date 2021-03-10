@@ -1,15 +1,19 @@
 {
   "dropdown-renderer": {
-    "source": "@cardinal/core"
+    "source": "@cardinal/core",
+    "disableCheatsheet": true
   },
   "event-expandable-renderer": {
-    "source": "@cardinal/core"
+    "source": "@cardinal/core",
+    "disableCheatsheet": true
   },
   "expandable-renderer": {
-    "source": "@cardinal/core"
+    "source": "@cardinal/core",
+    "disableCheatsheet": true
   },
   "mobile-profile-renderer": {
-    "source": "@cardinal/core"
+    "source": "@cardinal/core",
+    "disableCheatsheet": true
   },
   "psk-app-menu": {
     "source": "@cardinal/core"
@@ -24,16 +28,19 @@
     "source": "@cardinal/core"
   },
   "psk-button-link": {
-    "source": "@cardinal/core"
+    "source": "@cardinal/core",
+    "disableCheatsheet": true
   },
   "psk-default-renderer": {
-    "source": "@cardinal/core"
+    "source": "@cardinal/core",
+    "disableCheatsheet": true
   },
   "psk-link": {
     "source": "@cardinal/core"
   },
   "psk-menu-item-renderer": {
-    "source": "@cardinal/core"
+    "source": "@cardinal/core",
+    "disableCheatsheet": true
   },
   "psk-mobile": {
     "source": "@cardinal/core"
@@ -60,7 +67,8 @@
     "source": "@cardinal/core"
   },
   "psk-user-profile-renderer": {
-    "source": "@cardinal/core"
+    "source": "@cardinal/core",
+    "disableCheatsheet": true
   },
   "query-page-link": {
     "source": "@cardinal/core"
@@ -69,6 +77,7 @@
     "source": "@cardinal/core"
   },
   "sidebar-renderer": {
-    "source": "@cardinal/core"
+    "source": "@cardinal/core",
+    "disableCheatsheet": true
   }
 }

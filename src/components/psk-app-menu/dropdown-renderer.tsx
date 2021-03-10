@@ -1,6 +1,9 @@
 import { Component, getElement, h, Listen, Prop, State } from "@stencil/core";
 import { TableOfContentProperty } from "@cardinal/internals";
 
+/**
+ * @disable cheatsheet
+ */
 @Component({
   tag: 'dropdown-renderer',
   shadow: false

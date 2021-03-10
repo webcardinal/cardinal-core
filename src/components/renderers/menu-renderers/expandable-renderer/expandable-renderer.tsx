@@ -1,6 +1,9 @@
 import { Component, Event, EventEmitter, h, Listen, Prop, State } from "@stencil/core";
 import { injectHistory, RouterHistory } from "@stencil/router";
 
+/**
+ * @disable cheatsheet
+ */
 @Component({
   tag: 'expandable-renderer',
   shadow: false

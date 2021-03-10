@@ -2,6 +2,9 @@ import { Component, Prop, Element, h } from "@stencil/core";
 import { CustomTheme, BindModel, TableOfContentProperty } from "@cardinal/internals";
 import { dispatchEvent } from "@cardinal/internals";
 
+/**
+ * @disable cheatsheet
+ */
 @Component({
   tag: "psk-button-link",
   styleUrl: './psk-button-link.css',

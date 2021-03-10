@@ -2,6 +2,9 @@ import { Component, h, Prop } from "@stencil/core";
 import { CustomTheme } from "@cardinal/internals";
 import { MenuItem, ExtendedHistoryType } from "../../../../interfaces";
 
+/**
+ * @disable cheatsheet
+ */
 @Component({
   tag: 'sidebar-renderer',
   styleUrls:[

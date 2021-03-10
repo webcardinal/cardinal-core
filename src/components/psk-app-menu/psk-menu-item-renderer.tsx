@@ -2,6 +2,9 @@ import { Component, Event, EventEmitter, h, Prop } from "@stencil/core";
 import { CustomTheme, TableOfContentProperty } from "@cardinal/internals";
 import { MenuItem, ExtendedHistoryType } from "../../interfaces";
 
+/**
+ * @disable cheatsheet
+ */
 @Component({
   tag: 'psk-menu-item-renderer',
   styleUrl:"../../assets/fonts/font-awesome/font-awesome.min.css",

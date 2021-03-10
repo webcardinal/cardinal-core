@@ -72,18 +72,20 @@ export class PskAppRoot {
     }
 
     if (typeof this.controller === "string") {
-      return new Promise((resolve, reject) => {
-        ControllerRegistryService.getController(this.controller).then((CTRL) => {
-          // Prevent javascript execution if the node has been removed from DOM
-          if (this.disconnected) {
-            return resolve();
-          }
-          new CTRL(this.host);
-          resolve();
-        }).catch(reject);
-      })
-    }
-    else {
+      return new Promise<void>((resolve, reject) => {
+        ControllerRegistryService.getController(this.controller)
+          .then((CTRL) => {
+            // Prevent javascript execution if the node has been removed from DOM
+            if (this.disconnected) {
+              // @ts-ignore
+              return resolve();
+            }
+            new CTRL(this.host);
+            resolve();
+          })
+          .catch(reject);
+      });
+    } else {
       //load default controller
       new DefaultApplicationController(this.host);
     }
