@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, h, Prop, State } from "@stencil/core";
+import { Component, Event, EventEmitter, h, Prop, State, Element } from "@stencil/core";
 import { CustomTheme, TableOfContentEvent, TableOfContentProperty } from "@cardinal/internals";
 
 let tagsDictionary;
@@ -9,6 +9,7 @@ let tagsDictionary;
 })
 
 export class PskLink {
+  @Element() htmlElement: HTMLElement;
   @CustomTheme()
 
   @TableOfContentProperty({
@@ -105,6 +106,8 @@ export class PskLink {
   }
 
   render() {
+    if(!this.htmlElement.isConnected) return null;
+    
     let errorContent = null;
     if (this.error) {
       errorContent = <div class="tooltip-error">

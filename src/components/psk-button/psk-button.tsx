@@ -18,6 +18,7 @@ export class PskButton {
 	@Element() htmlElement: HTMLElement;
 
 	render() {
+        if(!this.htmlElement.isConnected) return null;
 
     let disabled;
     let touched = false;

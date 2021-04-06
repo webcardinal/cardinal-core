@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, h, Listen, Prop, State } from "@stencil/core";
+import { Component, Event, EventEmitter, h, Listen, Prop, State, Element } from "@stencil/core";
 import { CustomTheme, TableOfContentEvent, TableOfContentProperty } from "@cardinal/internals";
 import { MOBILE_MAX_WIDTH } from "@cardinal/internals"; // utils
 import { MenuItem, ExtendedHistoryType } from "../../interfaces";
@@ -10,6 +10,8 @@ import { MenuItem, ExtendedHistoryType } from "../../interfaces";
 })
 
 export class PskAppMenu {
+  @Element() htmlElement: HTMLElement;
+
   @CustomTheme()
 
   @TableOfContentProperty({
@@ -190,6 +192,7 @@ export class PskAppMenu {
   }
 
   render() {
+    if(!this.htmlElement.isConnected) return null;
     if (!this.menuItems) return null;
     return this.renderMenuItems();
   }

@@ -79,6 +79,7 @@ export class PskPageLoader {
   }
 
   render() {
+    if(!this.element.isConnected) return null;
 
     let renderedComponent = null;
     if( this.type && this.type.toLowerCase()==="iframe"){

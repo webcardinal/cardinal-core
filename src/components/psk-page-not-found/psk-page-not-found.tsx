@@ -1,4 +1,4 @@
-import { Component, h, Prop } from "@stencil/core";
+import { Component, h, Prop, Element } from "@stencil/core";
 import { CustomTheme, TableOfContentProperty } from "@cardinal/internals";
 
 @Component({
@@ -6,6 +6,8 @@ import { CustomTheme, TableOfContentProperty } from "@cardinal/internals";
 	shadow: true
 })
 export class PskPageNotFound {
+    @Element() htmlElement: HTMLElement;
+
 	@CustomTheme()
 	@TableOfContentProperty({
 		description: `This property is the base path of the website.
@@ -36,6 +38,8 @@ export class PskPageNotFound {
 	@Prop() pageRenderer?: string = "psk-page-not-found-renderer";
 
 	render() {
+        if(!this.htmlElement.isConnected) return null;
+
 		if (this.urlDestination !== null) {
 			return (
 				<stencil-router-redirect url={this.urlDestination} />

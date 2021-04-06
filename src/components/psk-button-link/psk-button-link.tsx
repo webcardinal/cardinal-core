@@ -80,6 +80,8 @@ export class PskButtonLink {
   }
 
   render() {
+    if(!this.__host.isConnected) return null;
+    
     const className = { 'button-link': true };
     if (this.__host.className) { className[this.__host.className] = true; }
 

@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, h, Prop } from "@stencil/core";
+import { Component, Event, EventEmitter, h, Prop, Element } from "@stencil/core";
 import { CustomTheme, TableOfContentProperty } from "@cardinal/internals";
 import { MenuItem, ExtendedHistoryType } from "../../interfaces";
 
@@ -12,6 +12,8 @@ import { MenuItem, ExtendedHistoryType } from "../../interfaces";
 })
 
 export class PskMenuItemRenderer {
+  @Element() htmlElement: HTMLElement;
+  
   @CustomTheme()
   @TableOfContentProperty({
     description: `This property is the MenuItem that will be renderer as part of the menu`,
@@ -69,6 +71,7 @@ export class PskMenuItemRenderer {
   }
 
   render() {
+    if(!this.htmlElement.isConnected) return null;
     return (this.renderMenuItem(this.value))
   }
 }

@@ -219,6 +219,8 @@ export class PskMobile {
   }
 
   render() {
+    if(!this.__host.isConnected) return null;
+
     return (
       <div class='mobile'>
         {

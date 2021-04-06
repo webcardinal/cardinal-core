@@ -1,4 +1,4 @@
-import { Component, h, Prop, Watch } from "@stencil/core";
+import { Component, h, Prop, Watch, Element } from "@stencil/core";
 import { CustomTheme, TableOfContentProperty } from "@cardinal/internals";
 
 @Component({
@@ -6,6 +6,8 @@ import { CustomTheme, TableOfContentProperty } from "@cardinal/internals";
   shadow: true
 })
 export class PskUiLoader {
+  @Element() htmlElement: HTMLElement;
+
   @CustomTheme()
   @TableOfContentProperty({
     description: `This is the property that gives the state of the loader, if it is displayed or not. The possible values are true or false.`,
@@ -17,7 +19,7 @@ export class PskUiLoader {
 
   @Watch("shouldBeRendered")
   render() {
-
+    if(!this.htmlElement.isConnected) return null;
 
     if (this.shouldBeRendered) {
       return (

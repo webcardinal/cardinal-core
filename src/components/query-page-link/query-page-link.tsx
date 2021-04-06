@@ -81,6 +81,8 @@ export class QueryPageLink implements ComponentInterface {
 
   // Get the URL for this route link without the root from the router
   render() {
+    if(!this.el.isConnected) return null;
+
     let anchorAttributes: { [key: string]: any} = {
       class: {
         [this.activeClass]: this.match,

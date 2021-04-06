@@ -1,4 +1,4 @@
-import { Component, h } from "@stencil/core";
+import { Component, h, Element } from "@stencil/core";
 import { CustomTheme } from "@cardinal/internals";
 
 @Component({
@@ -7,8 +7,11 @@ import { CustomTheme } from "@cardinal/internals";
     shadow: true
 })
 export class PskPageNotFoundRenderer {
+    @Element() htmlElement: HTMLElement;
     @CustomTheme()
     render() {
+        if(!this.htmlElement.isConnected) return null;
+        
         return (
             <div class="container">
                 <div class="card">

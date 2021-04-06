@@ -1,10 +1,11 @@
-import { Component, EventEmitter, Event, h, Prop } from "@stencil/core";
+import { Component, EventEmitter, Event, h, Prop, Element } from "@stencil/core";
 import { BindModel, TableOfContentEvent, TableOfContentProperty } from "@cardinal/internals";;
 
 @Component({
   tag: 'psk-user-profile'
 })
 export class PskUserProfile {
+  @Element() htmlElement: HTMLElement;
 
   @BindModel() modelHandler;
 
@@ -50,6 +51,7 @@ export class PskUserProfile {
   }
 
   render() {
+    if(!this.htmlElement.isConnected) return null;
 
     let ItemRenderer = this.profileRenderer ? this.profileRenderer : "psk-user-profile-renderer";
 
