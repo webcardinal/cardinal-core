@@ -257,9 +257,7 @@ export class PskMobile {
               <div class='aside-menu' hidden={this.aside.hidden}>
                 { this.coreType === 'webcardinal'
                   ? (
-                    <wcc-app-menu style={{
-                      '--wcc-app-menu-vertical-background': 'transparent'
-                    }} />
+                    <webc-app-menu/>
                   )
                   : [
                     <psk-user-profile/>,
