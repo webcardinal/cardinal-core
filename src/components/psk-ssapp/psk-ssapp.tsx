@@ -175,8 +175,14 @@ export class PskSelfSovereignApp {
     let parentWindow: any = currentWindow.parent;
 
     while (currentWindow !== parentWindow) {
-        currentWindow = parentWindow;
-        parentWindow = currentWindow.parent;
+      currentWindow = parentWindow;
+
+      //same-origin policy applies here
+      try{
+        if(currentWindow.parent.document){
+          parentWindow = currentWindow.parent;
+        }
+      } catch(e){}
     }
 
     parentWindow.document.dispatchEvent(new CustomEvent('ssapp:loading:progress', {
