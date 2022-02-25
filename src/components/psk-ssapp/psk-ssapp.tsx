@@ -1,7 +1,6 @@
-import { Component, Element, h, Prop, State, Watch } from "@stencil/core";
-import { MatchResults, RouterHistory } from "@stencil/router";
-import { BindModel, CustomTheme, TableOfContentProperty } from "@cardinal/internals";
-import { NavigationTrackerService } from "@cardinal/internals";
+import {Component, Element, h, Prop, State, Watch} from "@stencil/core";
+import {MatchResults, RouterHistory} from "@stencil/router";
+import {BindModel, CustomTheme, NavigationTrackerService, TableOfContentProperty} from "@cardinal/internals";
 import SSAppInstanceRegistry from "./SSAppInstancesRegistry.js";
 
 declare const $$: any;
@@ -121,19 +120,23 @@ export class PskSelfSovereignApp {
 	};
 
 	render() {
-		let basePath;
-		let parentWindow = window.parent;
-		let currentWindow = window;
+    let basePath;
+    let parentWindow = window.parent;
+    let currentWindow = window;
 
-		try {
-			while (currentWindow !== parentWindow) {
-				basePath = parentWindow.location.origin+parentWindow.location.pathname;
-				// @ts-ignore
-				currentWindow = parentWindow;
-				parentWindow = parentWindow.parent;
-			}
+    try {
+      while (currentWindow !== parentWindow) {
+        basePath = parentWindow.location.origin + parentWindow.location.pathname;
+        // @ts-ignore
+        currentWindow = parentWindow;
+        parentWindow = parentWindow.parent;
 
-		}
+        // to use for the case when a wallet is added inside another wallet
+        if (parentWindow.hasOwnProperty("isTrustLoader")) {
+          break;
+        }
+      }
+    }
 		catch (e) { }
 		finally {
 			basePath = currentWindow.location.origin+currentWindow.location.pathname;
